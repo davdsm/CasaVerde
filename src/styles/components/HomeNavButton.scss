@@ -1,0 +1,71 @@
+@import "../variables.scss";
+
+button.link {
+    padding: 1rem 1.3125rem;
+    color: $dark-gray;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    background-color: $homepage-links-bg;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (width < 1360px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .link-name {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.25rem;
+
+        .link-icon {
+            min-height: 1.875rem;
+            max-height: 1.875rem;
+            min-width: 1.875rem;
+            max-width: 1.875rem;
+            border-radius: 50%;
+            background-color: $dark-green;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+    .link-arrow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0rem;
+        transform: translateX(-50%);
+
+        svg.dark-green-60 path {
+            fill: $dark-green-60;
+        }
+
+        svg.dark-green path {
+            fill: $dark-green;
+        }
+
+    }
+
+    &:hover .link-arrow {
+        transform: translateX(0%);
+        transition: 0.7s;
+    }
+}

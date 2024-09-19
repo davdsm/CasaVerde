@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+#header {
+
+    position: fixed;
+    width: 100%;
+    background-color: $white;
+    z-index: 20;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.7rem 1.85rem;
+    }
+
+    .navigation-links {
+        display: flex;
+        flex-direction: row;
+        gap: 3.95rem;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        flex: 1;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .navigation-link {
+            color: $header-gray-text;
+            font-size: 1.125rem;
+            font-weight: 400;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+
+            &.active {
+                color: $dark-green;
+            }
+        }
+    }
+}
