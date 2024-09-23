@@ -23,10 +23,20 @@ const OfficesSlider: React.FunctionComponent = () => {
 
   return (
       <Swiper
-      spaceBetween={30}
-      slidesPerView={3}
+      spaceBetween={0}
+      slidesPerView={1}
       modules={[Pagination]}
       pagination={true}
+      breakpoints={{
+        1250: {
+          spaceBetween: 30,
+          slidesPerView: 3
+        },
+        500: {
+          spaceBetween: 15,
+          slidesPerView: 2
+        }
+      }}
       >
         {randomSpaces.map((space) => 
           <SwiperSlide key={space.name}>

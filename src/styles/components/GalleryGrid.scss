@@ -8,6 +8,20 @@
     gap: 0.8rem;
     width: 100%;
 
+    @media (width < 800px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media (width < 550px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 12rem);
+    }
+
+    @media (width < 350px) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 10rem);
+    }
+
     &-item {
         position: relative;
         border-radius: 15px;
@@ -44,6 +58,68 @@
         }
     }
 
+    @media (width < 800px) {
+        &-item:nth-child(1),
+        &-item:nth-child(2),
+        &-item:nth-child(3),
+        &-item:nth-child(5),
+        &-item:nth-child(7) {
+            .vertical-img, .horizontal-img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        &-item:nth-child(4),
+        &-item:nth-child(6) {
+            .vertical-img {
+                width: 100%;
+                height: auto;
+            }
+
+            .horizontal-img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    @media (width < 550px) {
+        &-item:nth-child(1),
+        &-item:nth-child(2),
+        &-item:nth-child(3),
+        &-item:nth-child(4),
+        &-item:nth-child(5) {
+            .vertical-img, .horizontal-img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+    @media (width < 350px) {
+        &-item:nth-child(1),
+        &-item:nth-child(4) {
+            .vertical-img, .horizontal-img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        &-item:nth-child(2),
+        &-item:nth-child(3) {
+            .vertical-img {
+                width: 100%;
+                height: auto;
+            }
+
+            .horizontal-img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
     &-item:nth-child(1) {
         grid-column: 1;
         grid-row: 1;
@@ -51,26 +127,84 @@
     &-item:nth-child(2) {
         grid-column: 2;
         grid-row: 1;
+
+        @media (width < 800px) {
+            grid-column: 2 / span 2;
+            grid-row: 1 / span 2;
+        }
+        @media (width < 550px) {
+            grid-column: 2 / span 2;
+            grid-row: 1 / span 2;
+        }
+        @media (width < 350px) {
+            grid-column: 2 / span 2;
+            grid-row: 1 ;
+        }
     }
     &-item:nth-child(3) {
         grid-column: 3 / span 2;
         grid-row: 1 / span 2;
+
+        @media (width < 800px) {
+            grid-column: 4;
+            grid-row: 1;
+        }
+        @media (width < 550px) {
+            grid-column: 4;
+            grid-row: 1;
+        }
+        @media (width < 350px) {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+        }
     }
     &-item:nth-child(4) {
         grid-column: 5;
         grid-row: 1;
+
+        @media (width < 800px) {
+            grid-column: 5 / span 2;
+            grid-row: 1;
+        }
+        @media (width < 550px) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @media (width < 350px) {
+            grid-column: 3;
+            grid-row: 2;
+        }
     }
     &-item:nth-child(5) {
         grid-column: 6;
         grid-row: 1;
+
+        @media (width < 800px) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @media (width < 550px) {
+            grid-column: 4;
+            grid-row: 2;
+        }
     }
     &-item:nth-child(6) {
         grid-column: 7;
         grid-row: 1;
+
+        @media (width < 800px) {
+            grid-column: 4 / span 2;
+            grid-row: 2;
+        }
     }
     &-item:nth-child(7) {
         grid-column: 8;
         grid-row: 1;
+
+        @media (width < 800px) {
+            grid-column: 6;
+            grid-row: 2;
+        }
     }
     &-item:nth-child(8) {
         grid-column: 1 / span 2;
@@ -103,7 +237,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-        box-sizing: border-box;
         
         button {
             color: $white;

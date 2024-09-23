@@ -10,9 +10,20 @@
     background-color: $white;
     flex: 1 1 25%;
     padding: 3rem 1rem 2rem 1rem;
-    box-sizing: border-box;
     border: 0.5px solid $label-border-gray;
     gap: 2rem;
+
+    @media (width < 1250px) {
+        flex: 1 1 33%;
+    }
+
+    @media (width < 1000px) {
+        flex: 1 1 50%;
+    }
+
+    @media (width < 600px) {
+        flex: 1 1 100%;
+    }
 
     svg {
         height: 4.4rem;
@@ -53,6 +64,10 @@
         line-height: 1.875rem;
         color: $dark-gray;
         text-align: center;
+
+        @media (width < 1250px) {
+            font-size: 1.25rem;
+        }
     }
 
     &-description {
@@ -61,6 +76,10 @@
         line-height: 1.625rem;
         color: $gray;
         text-align: center;
+
+        @media (width < 1250px) {
+            font-size: 1rem;
+        }
     }
 
     .non-included-label {

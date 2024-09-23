@@ -5,17 +5,34 @@
         max-height: 45.7rem;
         width: 100%;
         overflow: hidden;
+        padding-top: 10%;
     }
 
     .intro-section {
         display: flex;
 
+        @media (width < 1000px) {
+            flex-direction: column;
+        }
+
         &-container {
             padding: 6.875rem 7.5rem 0 7.5rem;
+
+            @media (width < 1250px) {
+                padding: 5.44rem 5.44rem 0 5.44rem;
+            }
+
+            @media (width < 1000px) {
+                padding: 3.44rem 2.44rem 0 2.44rem;
+            }
         }
 
         .left-section, .right-section {
             width: 50%;
+
+            @media (width < 1000px) {
+                width: 100%;
+            }
         }
 
         .left-section {
@@ -25,6 +42,18 @@
             justify-content: space-between;
             padding: 0 1rem;
             position: relative;
+
+            @media (width < 1000px) {
+                width: 60%;
+                padding-bottom: 20%;
+            }
+            @media (width < 600px) {
+                width: 80%;
+            }
+            @media (width < 500px) {
+                width: 100%;
+                padding-bottom: 35%;
+            }
 
             .relative-element {
                 position: relative;
@@ -116,7 +145,36 @@
                 @media (width < 1360px) {
                     transform: scale(0.9);
                 }
-        
+                @media (width < 1250px) {
+                    transform: scale(0.8);
+                }
+                @media (width < 1000px) {
+                    transform: scale(0.9);
+                }
+                @media (width < 800px) {
+                    transform: scale(0.8);
+                }
+                @media (width < 750px) {
+                    top: -10%;
+                    transform: scale(0.7)
+                }
+                @media (width < 600px) {
+                    transform: scale(0.8);
+                }
+                @media (width < 450px) {
+                    transform: scale(0.7);
+                }
+                @media (width < 400px) {
+                    top: -25%;
+                    left: 90%;
+                    transform: scale(0.6);
+                }
+                @media (width < 350px) {
+                    top: -30%;
+                    left: 80%;
+                    transform: scale(0.6);
+                }
+
                 .award-image {
         
                     display: flex;
@@ -195,6 +253,18 @@
 
         padding: 6.875rem 8.44rem;
 
+        @media (width < 1250px) {
+            padding: 6.875rem 5.44rem;
+        }
+
+        @media (width < 1000px) {
+            padding: 5.44rem 2.44rem;
+        }
+
+        @media (width < 600px) {
+            padding: 5.44rem 1.44rem;
+        }
+
         .title-and-button {
             display: flex;
             flex-direction: row;
@@ -202,6 +272,11 @@
             align-items: center;
             margin-top: 1rem;
             margin-bottom: 2rem;
+
+            @media (width < 600px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         .swiper-pagination {

@@ -1,6 +1,3 @@
-import Description from "../components/description/Description";
-import benefits from "../pages/homepage/benefits-section/benefits";
-
 const pt = {
     header: {
         homepage: "Início",
@@ -9,7 +6,46 @@ const pt = {
         gallery: "Galeria",
         contacts: "Contactos"
     },
-    footer: {},
+    footer: {
+        help: {
+            title: "Precisa de Ajuda?",
+            description: "Encontrou o espaço que procura? Venha conhecer a história da Casa Verde !",
+            button: "Contactos",
+        },
+        menus: {
+            "menu-1": {
+                title: "Casa Verde",
+                "option-1": "Sobre Nós",
+                "option-2": "Escritórios",
+                "option-3": "Contactos",
+            },
+            "menu-2": {
+                title: "Escritórios",
+                "option-1": "Gabinetes",
+                "option-2": "Loja",
+                "option-3": "Sala Reuniões",
+            },
+            "menu-3": {
+                title: "Apoio",
+                "option-1": "Termos e Condições",
+                "option-2": "Política de Privacidade",
+                "option-3": "Livro de Reclamações",
+            }
+        },
+        newsletter: {
+            placeholder: "Tornar-me membro Casa Verde...",
+            checkbox: "Li e concordo com os termos e condições e a política de privacidade",
+        },
+        contacts: {
+            "call-info": "(chamada para rede móvel nacional)",
+        },
+        social: {
+            instagram: "Instagram",
+            linkedin: "LinkedIn",
+            facebook: "Facebook",
+        },
+        rights: " — Casa Verde. Todos os dieiros reservados."
+    },
     homepage: {
         intro: {
             label: "Casa Verde",

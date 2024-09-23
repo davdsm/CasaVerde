@@ -87,6 +87,10 @@
                 line-height: 1.875rem;
                 width: fit-content;
                 padding: 0;
+
+                @media (width < 1250px) {
+                    font-size: 1.25rem;
+                }
             }
 
             hr {

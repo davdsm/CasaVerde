@@ -8,9 +8,10 @@ interface INavigationLink {
     href: string; 
     id: string; 
     text: string;
+    onClickCallback?: () => void;
   }
 
-const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, text }) => {
+const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, text, onClickCallback }) => {
 
     const [isActive, setIsActive] = useState<boolean>(false);
     const navigate = useNavigate();
@@ -30,6 +31,7 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
     };
 
     const onNavigate = () => {
+        onClickCallback && onClickCallback();
         if ( isNavigationLinkEqualToCurrentPage() ) { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }
         else { navigate(href); }
     }

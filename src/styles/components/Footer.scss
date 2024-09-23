@@ -1,5 +1,535 @@
 @import "../variables.scss";
 
 #footer {
-    background-color: $dark-gray;
+    background-color: $footer-bg;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 4.5rem;
+
+        @media (width < 1000px) {
+            padding: 2.44rem;
+            gap: 2rem;
+        }
+
+        @media (width < 600px) {
+            padding: 1.44rem;
+        }
+    }
+
+    .contacts-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2rem 6rem 2rem 3rem;
+        background-color: $footer-help-bg;
+        border-radius: 16px;
+        overflow: hidden;
+
+        @media (width < 1050px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.3rem;
+
+            @media (width < 1050px) {
+                z-index: 1;
+            }
+
+            .title {
+                font-size: 1.75rem;
+                line-height: 120%;
+                font-weight: 400;
+                color: $light-gray;
+
+                @media (width < 800px) {
+                    font-size: 1.5rem;
+                }
+            }
+    
+            .description {
+                font-size: 0.875rem;
+                line-height: 140%;
+                font-weight: 200;
+                color: $light-gray;
+                opacity: 0.6;
+            }
+        }
+
+        .right-column {
+            position: relative;
+
+            .bg-circle {
+                position: absolute;
+                height: 30rem;
+                width: 30rem;
+                background-color: $footer-newsletter-border;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                border-radius: 50%;
+
+                @media (width < 1100px) {
+                    height: 25rem;
+                    width: 25rem;
+                }
+
+                @media (width < 1050px) {
+                    display: none;
+                }
+            }
+
+            button {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.5rem;
+                background-color: transparent;
+                border: none;
+                font-size: 1.25rem;
+                line-height: 140%;
+                font-weight: 300;
+                color: $white;
+                position: relative;
+                padding: 0;
+
+                @media (width < 800px) {
+                    font-size: 1rem;
+                }
+
+                &:hover svg {
+                    transform: translateX(0%);
+                    transition: 0.7s;
+                }
+
+                svg {
+                    transform: translateX(-50%);
+
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .menus-and-newsletter {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .menus-and-logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @media (width < 1000px) {
+                justify-content: center;
+
+                .logo {
+                    display: none;
+                }
+            }
+
+            .menus {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 65.4%;
+
+                @media (width < 1000px) {
+                    width: 90%;
+                }
+
+                @media (width < 500px) {
+                    flex-wrap: wrap;
+                    row-gap: 2rem;
+                }
+
+                .menu {
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    @media (width < 500px) {
+                        gap: 1rem;
+                        flex: 1 1 50%;
+                    }
+
+                    &-title {
+                        color: $white;
+                        opacity: 0.4;
+                        font-size: 0.625rem;
+                        text-transform: uppercase;
+                    }
+
+                    &-options {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.4rem;
+                    }
+
+                    &-option {
+                        background-color: transparent;
+                        border: none;
+                        padding: 0;
+                        text-align: left;
+                        color: $white;
+                        opacity: 0.6;
+                        font-size: 0.875rem;
+                    }
+                }
+
+            }
+        }
+
+        .newsletter-and-contacts {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @media (width < 1000px) {
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+            
+            .newsletter-input-and-checkbox {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 46%;
+
+                @media (width < 1000px) {
+                    width: 60%;
+                }
+
+                @media (width < 700px) {
+                    width: 80%;
+                }
+
+                @media (width < 500px) {
+                    width: 100%;
+                }
+
+                .newsletter {
+                    width: 100%;
+                    position: relative;
+
+                    button {
+                        position: absolute;
+                        left: 100%;
+                        top: 50%;
+                        transform: translateX(-230%) translateY(-50%);
+                        padding: 0;
+                        margin: 0;
+                        background-color: transparent;
+                        border: none;
+
+                        &:not([disabled]):hover svg {
+                            transition: all 0.5s ease;
+                            transform: scale(1.2);
+                            
+                            path {
+                                opacity: 1;
+                            }
+                        }
+
+                        svg path {
+                            fill: $white;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+
+                .newsletter-input {
+                    font-size: 0.875rem;
+                    font-weight: 100;
+                    line-height: 140%;
+                    border-radius: 11px;
+                    padding: 0.8rem 2.5rem 0.8rem 1.8rem;
+                    width: 100%;
+                    background-color: $footer-help-bg;
+                    border: solid 1px $footer-newsletter-border;
+                    color: $white;
+
+                    &:focus-visible {
+                        outline: 1px solid $footer-newsletter-border;
+                    }
+
+                    &.invalid {
+                        border: solid 1px $footer-newsletter-border-error;
+                    }
+                }
+
+                .checkbox-and-terms {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.2rem;
+
+                    label {
+                        font-size: 0.625rem;
+                        font-weight: 100;
+                        line-height: 140%;
+                        color: $white;
+                        cursor: pointer;
+                    }
+
+                    .checkbox {
+                        position: relative;
+
+                        input {
+                            position: relative;
+                            z-index: 1;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+
+                        .checkbox-checked,
+                        .checkbox-non-checked {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            height: 0.8rem;
+                            width: 0.8rem;
+                        }
+
+                        .checkbox-non-checked path {
+                            fill: $footer-help-bg;
+                            stroke: $footer-newsletter-border;
+                            stroke-width: 30px;
+                        }
+
+                        .checkbox-checked path {
+                            fill: $white;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    span {
+                        height: 0.8rem;
+                        width: 0.8rem;
+                        border-radius: 3px;
+                        background-color: $footer-help-bg;
+                        border: 1px solid $footer-newsletter-border;
+                    }
+
+                    & input:focus-visible {
+                        outline: 1px solid $footer-newsletter-border;
+                    }
+                }
+            }
+
+            .contacts-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-between;
+                font-size: 0.875rem;
+                font-weight: 400;
+                line-height: 140%;
+
+                @media (width < 1000px) {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 2rem;
+                }
+
+                @media (width < 800px) {
+                    font-size: 0.75rem;
+                }
+
+                .contacts {
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    .social-media {
+
+                        display: flex;
+                        flex-direction: row;
+                        gap: 2rem;
+                        padding-top: 1rem;
+
+                        svg path {
+                            fill: #FFFFFF;
+                            opacity: 0.6;
+                        }
+
+                        @media (width >= 1000px) {
+                            display: none;
+                        }
+                    }
+
+                    @media (width < 1000px) {
+                        flex: 1;
+                    }
+
+                    span, a {
+                        text-decoration: none;
+                        color: $white;
+                        opacity: 0.6;
+
+                        @media (width < 1000px) {
+                            text-align: right;
+                        }
+                    }
+    
+                    .phone-info {
+                        font-size: 0.5rem;
+                    }
+                }
+
+                .logo {
+                    @media (width >= 1000px) {
+                        display: none;
+                    }
+                }
+
+                hr {
+                    width: 2.8rem;
+                    margin: 0;
+                    border-bottom: 1px solid white;
+                    border-left: 1px solid white;
+                    border-right: 1px solid white;
+                    border-top: none;
+                    opacity: 0.6;
+
+                    @media (width < 1000px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .social-media-and-rights {
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .social-media {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 65.4%;
+            gap: 8%;
+
+            @media (width < 1000px) {
+                display: none;
+            }
+
+            &-column {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                gap: 1.2rem;
+
+                hr {
+                    border-top: none;
+                    border-left: 1px solid $white;
+                    border-right: 1px solid $white;
+                    border-bottom: 1px solid $white;
+                    opacity: 0.2;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            &-link {
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                a:hover svg, a:hover + a svg {
+                    transition: all 0.5s ease;
+                    transform: scale(1.2);
+                    
+                    path {
+                        opacity: 1;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    line-height: 140%;
+                    color: $white;
+                    opacity: 0.6;
+                }
+
+                svg path {
+                    fill: $white;
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .rights-and-back-to-top {
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .rights {
+                line-height: 140%;
+                font-size: 0.625rem;
+                font-weight: 400;
+                color: $white;
+                opacity: 0.4;
+            }
+
+            .back-to-top {
+                background-color: transparent;
+                border: 1px solid rgba($white, 0.4);
+                border-radius: 50%;
+                min-height: 3.75rem;
+                min-width: 3.75rem;
+                max-height: 3.75rem;
+                max-width: 3.75rem;
+
+                @media (width < 1000px) {
+                    min-height: 2.75rem;
+                    min-width: 2.75rem;
+                    max-height: 2.75rem;
+                    max-width: 2.75rem;
+                }
+
+                &:hover svg {
+                    transform: scale(1.2);
+                    transition: all 0.5s ease;
+                }
+
+                svg {
+                    width: 20%;
+                    height: auto;
+
+                    path {
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+
 }
