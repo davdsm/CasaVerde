@@ -37,12 +37,12 @@ const Header: React.FunctionComponent = () => {
         </div> :
         <div id="header" className="header">
           <div className="container">
-            <GreenLogo />
+            <GreenLogo className="logo" />
             <div className="navigation-links">
               { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
             </div>
             <button className="mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu) } >
-              <FontAwesomeIcon icon={faBars} fontSize={"30px"} />
+              <FontAwesomeIcon icon={faBars} />
             </button>
           </div>
         </div>

@@ -7,23 +7,23 @@ export const navigationLinks = [
         text: TranslationsHelper.all.header.homepage,
     },
     {
-        href: "/about",
-        id: "navigate-to-about",
+        href: "/porque",
+        id: "navigate-to-porque",
         text: TranslationsHelper.all.header.about,
     },
     {
-        href: "/spaces",
-        id: "navigate-to-spaces",
+        href: "/escritorios/",
+        id: "navigate-to-escritorios",
         text: TranslationsHelper.all.header.offices,
     },
     {
-        href: "/gallery",
-        id: "navigate-to-gallery",
+        href: "/galeria",
+        id: "navigate-to-galeria",
         text: TranslationsHelper.all.header.gallery,
     },
     {
-        href: "/contact",
-        id: "navigate-to-contacts",
+        href: "/contactos",
+        id: "navigate-to-contactos",
         text: TranslationsHelper.all.header.contacts,
     },
 ];

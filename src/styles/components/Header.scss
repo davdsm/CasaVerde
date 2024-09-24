@@ -18,6 +18,17 @@
         }
     }
 
+    .logo {
+        height: auto;
+
+        @media (width < 800px) {
+            width: 2.5rem;
+        }
+        @media (width < 600px) {
+            width: 2rem;
+        }
+    }
+
     .navigation-links {
         display: flex;
         flex-direction: row;
@@ -59,8 +70,13 @@
             display: none;
         }
 
-        svg path {
-            fill: $footer-newsletter-border;
+        svg {
+            width: 25px;
+            height: auto;
+
+            path {
+                fill: $footer-newsletter-border;
+            }
         }
     }
 }

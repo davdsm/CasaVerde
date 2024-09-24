@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.gallery-section {
+
+        padding: 6.875rem 8.44rem;
+
+        @media (width < 1250px) {
+            padding: 6.875rem 5.44rem;
+        }
+
+        @media (width < 1000px) {
+            padding: 5.44rem 2.44rem;
+        }
+
+        @media (width < 800px) {
+            padding: 5.44rem 1.44rem;
+        }
+
+        .title-and-button {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+
+            @media (width < 800px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }

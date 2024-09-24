@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import OfficeCard, { SpaceType } from "../../../components/office-card/OfficeCard";
+import OfficeCard, { SpaceType } from "../office-card/OfficeCard";
 import { Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import shuffle from 'lodash/shuffle';

@@ -23,11 +23,11 @@ const App: React.FunctionComponent = () => {
     <Routes>
       <Route element={<Layout />} >
         <Route index element={<Homepage />} />
-        <Route path="about" element={<About />} />
-        <Route path="spaces" element={<Offices />} />
-        <Route path="spaces/:id" element={<IndividualOffice />} />
-        <Route path="gallery" element={<Gallery />} />
-        <Route path="contact" element={<ContactForm />} />
+        <Route path="porque" element={<About />} />
+        <Route path="escritorios" element={<Offices />} />
+        <Route path="escritorios/:id" element={<IndividualOffice />} />
+        <Route path="galeria" element={<Gallery />} />
+        <Route path="contactos" element={<ContactForm />} />
       </Route>
     </Routes>
   )

@@ -1,8 +1,8 @@
 import PresentationVideo from "./PresentationVideo";
 import IntroSection from "./intro-section/IntroSection";
-import OurSpacesSection from "./our-spaces-section/OurSpacesSection";
+import OurSpacesSection from "../../components/our-spaces-section/OurSpacesSection";
 import BenefitsSection from "./benefits-section/BenefitsSection";
-import GallerySection from "./GallerySection";
+import GallerySection from "../../components/gallery-section/GallerySection";
 
 import "../../styles/pages/HomePage.scss";
 

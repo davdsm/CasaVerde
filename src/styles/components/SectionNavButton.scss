@@ -20,7 +20,7 @@ button.section-nav-button {
         line-height: 1.5rem;
     }
 
-    @media (width < 600px) {
+    @media (width < 800px) {
         border: none;
         gap: 0.5rem;
         padding: 0.8rem 0;
@@ -40,7 +40,7 @@ button.section-nav-button {
         gap: 0rem;
         transform: translateX(-100%);
 
-        @media (width < 600px) {
+        @media (width < 800px) {
             transform: none;
         }
 

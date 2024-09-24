@@ -1,8 +1,10 @@
-import Label from "../../../components/label/Label";
-import SectionNavButton from "../../../components/section-nav-button/SectionNavButton";
-import Title from "../../../components/title/Title";
-import TranslationsHelper from "../../../utils/TranslationsHelper";
+import Label from "../label/Label";
+import SectionNavButton from "../section-nav-button/SectionNavButton";
+import Title from "../title/Title";
+import TranslationsHelper from "../../utils/TranslationsHelper";
 import OfficesSlider from "./OfficesSlider";
+
+import "../../styles/components/OurSpacesSection.scss";
 
 const OurSpacesSection: React.FunctionComponent = () => {
 
@@ -13,7 +15,7 @@ const OurSpacesSection: React.FunctionComponent = () => {
         <Title text={TranslationsHelper.all.homepage.spaces.title} />
         <SectionNavButton
           text={TranslationsHelper.all.homepage.spaces.button}
-          link="/spaces"
+          link="/escritorios"
         />
       </div>
       <OfficesSlider />

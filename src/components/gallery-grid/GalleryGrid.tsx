@@ -35,7 +35,7 @@ const GalleryGrid: React.FunctionComponent = () => {
   return (
     <div className="gallery-grid">
         {shuffle(galleryImages).slice(0, numberOfImages).map((galleryImage) =>
-            <GalleryGridItem key={galleryImage.imageAlt} {...galleryImage} />
+            <GalleryGridItem key={galleryImage.imageSrc} {...galleryImage} />
         )}
     </div>
   )

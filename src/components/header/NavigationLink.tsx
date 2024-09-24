@@ -23,7 +23,7 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
     }, [location.pathname]);
 
     const getCurrentPageURL = () => {
-        return location.pathname.startsWith("/spaces") ? "/spaces" : location.pathname;
+        return location.pathname.startsWith("/escritorios") ? "/escritorios" : location.pathname;
     };
 
     const isNavigationLinkEqualToCurrentPage = () => {

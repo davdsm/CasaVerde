@@ -24,15 +24,7 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
     const navigate = useNavigate();
 
     return (
-      <div className="office-card">
-        <img src={imageSrc} alt={name} onLoad={(image) => {
-            if (image.currentTarget.clientHeight > image.currentTarget.clientWidth) {
-                image.currentTarget.className = "vertical-img";
-            }
-            else {
-                image.currentTarget.className = "horizontal-img";
-            }
-        }} />
+      <button className="office-card" style={{ backgroundImage: `url(${imageSrc})` }} onClick={() => navigate(link)}>
         <div className="card-inner-border">
             <span className="card-label">
                 {label === SpaceType.MEETING_ROOM && TranslationsHelper.all.homepage.intro.products["meeting-room"]}
@@ -44,13 +36,13 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
                     <Area />
                     {area}m&#178;
                 </span>
-                <button className="card-info-name" onClick={() => navigate(link)}>
+                <span className="card-info-name">
                     {name}
-                </button>
+                </span>
                 <hr />
             </div>
         </div>
-      </div>
+      </button>
     )
   }
   

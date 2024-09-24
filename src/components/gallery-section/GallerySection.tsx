@@ -4,6 +4,8 @@ import SectionNavButton from "../../components/section-nav-button/SectionNavButt
 import Title from "../../components/title/Title";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 
+import "../../styles/components/GallerySection.scss";
+
 const GallerySection: React.FunctionComponent = () => {
 
   return (
@@ -13,7 +15,7 @@ const GallerySection: React.FunctionComponent = () => {
         <Title text={TranslationsHelper.all.homepage.gallery.title} />
         <SectionNavButton
           text={TranslationsHelper.all.homepage.gallery.button}
-          link="/gallery"
+          link="/galeria"
         />
       </div>
       <GalleryGrid />

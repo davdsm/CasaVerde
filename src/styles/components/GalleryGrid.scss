@@ -29,95 +29,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    &-item:nth-child(1),
-    &-item:nth-child(2),
-    &-item:nth-child(3),
-    &-item:nth-child(4),
-    &-item:nth-child(5),
-    &-item:nth-child(6),
-    &-item:nth-child(7) {
-        .vertical-img, .horizontal-img {
-            width: auto;
-            height: 100%;
-        }
-    }
-
-    &-item:nth-child(8),
-    &-item:nth-child(9),
-    &-item:nth-child(10) {
-        .vertical-img {
-            width: 100%;
-            height: auto;
-        }
-
-        .horizontal-img {
-            width: auto;
-            height: 100%;
-        }
-    }
-
-    @media (width < 800px) {
-        &-item:nth-child(1),
-        &-item:nth-child(2),
-        &-item:nth-child(3),
-        &-item:nth-child(5),
-        &-item:nth-child(7) {
-            .vertical-img, .horizontal-img {
-                width: auto;
-                height: 100%;
-            }
-        }
-
-        &-item:nth-child(4),
-        &-item:nth-child(6) {
-            .vertical-img {
-                width: 100%;
-                height: auto;
-            }
-
-            .horizontal-img {
-                width: auto;
-                height: 100%;
-            }
-        }
-    }
-
-    @media (width < 550px) {
-        &-item:nth-child(1),
-        &-item:nth-child(2),
-        &-item:nth-child(3),
-        &-item:nth-child(4),
-        &-item:nth-child(5) {
-            .vertical-img, .horizontal-img {
-                width: auto;
-                height: 100%;
-            }
-        }
-    }
-
-    @media (width < 350px) {
-        &-item:nth-child(1),
-        &-item:nth-child(4) {
-            .vertical-img, .horizontal-img {
-                width: auto;
-                height: 100%;
-            }
-        }
-
-        &-item:nth-child(2),
-        &-item:nth-child(3) {
-            .vertical-img {
-                width: 100%;
-                height: auto;
-            }
-
-            .horizontal-img {
-                width: auto;
-                height: 100%;
-            }
-        }
+        background-size: cover;
+        border: none;
     }
 
     &-item:nth-child(1) {
@@ -238,7 +151,7 @@
         align-items: center;
         justify-content: flex-end;
         
-        button {
+        span {
             color: $white;
             font-size: 1rem;
             font-weight: 300;

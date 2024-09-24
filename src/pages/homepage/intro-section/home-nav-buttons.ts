@@ -7,17 +7,17 @@ const navButtons = [
     {
         icon: faCouch,
         text: TranslationsHelper.all.homepage.intro.products.offices,
-        link: "/spaces",
+        link: "/escritorios",
     },
     {
         icon: faChartPie,
         text: TranslationsHelper.all.homepage.intro.products["meeting-room"],
-        link: "/spaces/sala-reunioes",
+        link: "/escritorios/sala-reunioes",
     },
     {
         icon: faStore,
         text: TranslationsHelper.all.homepage.intro.products.store,
-        link: "/spaces/loja",
+        link: "/escritorios/loja",
     }
 ];
 

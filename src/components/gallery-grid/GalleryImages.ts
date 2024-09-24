@@ -22,123 +22,103 @@ import OfficeG9_2 from "../../assets/images/G9/895A9670.jpg";
 const galleryImages = [
     {
         imageSrc: Store1,
-        imageAlt: "loja-1",
         office: "Loja",
-        link: "/spaces/loja"
+        link: "/escritorios/loja"
     },
     {
         imageSrc: Store2,
-        imageAlt: "loja-2",
         office: "Loja",
-        link: "/spaces/loja"
+        link: "/escritorios/loja"
     },
     {
         imageSrc: OfficeG1_1,
-        imageAlt: "office-G1-1",
         office: "G1",
-        link: "/spaces/gabinete-1"
+        link: "/escritorios/gabinete-1"
     },
     {
         imageSrc: OfficeG1_2,
-        imageAlt: "office-G1-2",
         office: "G1",
-        link: "/spaces/gabinete-1"
+        link: "/escritorios/gabinete-1"
     },
     {
         imageSrc: OfficeG2_1,
-        imageAlt: "office-G2-1",
         office: "G2",
-        link: "/spaces/gabinete-2"
+        link: "/escritorios/gabinete-2"
     },
     {
         imageSrc: OfficeG2_2,
-        imageAlt: "office-G2-2",
         office: "G2",
-        link: "/spaces/gabinete-2"
+        link: "/escritorios/gabinete-2"
     },
     {
         imageSrc: OfficeG3_1,
-        imageAlt: "office-G3-1",
         office: "G3",
-        link: "/spaces/gabinete-3"
+        link: "/escritorios/gabinete-3"
     },
     {
         imageSrc: OfficeG3_2,
-        imageAlt: "office-G3-2",
         office: "G3",
-        link: "/spaces/gabinete-3"
+        link: "/escritorios/gabinete-3"
     },
     {
         imageSrc: OfficeG4_1,
-        imageAlt: "office-G4-1",
         office: "G4",
-        link: "/spaces/gabinete-4"
+        link: "/escritorios/gabinete-4"
     },
     {
         imageSrc: OfficeG4_2,
-        imageAlt: "office-G4-2",
         office: "G4",
-        link: "/spaces/gabinete-4"
+        link: "/escritorios/gabinete-4"
     },
     {
         imageSrc: OfficeG5_1,
-        imageAlt: "office-G5-1",
         office: "G5",
-        link: "/spaces/gabinete-5"
+        link: "/escritorios/gabinete-5"
     },
     {
         imageSrc: OfficeG5_2,
-        imageAlt: "office-G5-2",
         office: "G5",
-        link: "/spaces/gabinete-5"
+        link: "/escritorios/gabinete-5"
     },
     {
         imageSrc: OfficeG6_1,
-        imageAlt: "office-G6-1",
         office: "G6",
-        link: "/spaces/gabinete-6"
+        link: "/escritorios/gabinete-6"
     },
     {
         imageSrc: OfficeG6_2,
-        imageAlt: "office-G6-2",
         office: "G6",
-        link: "/spaces/gabinete-6"
+        link: "/escritorios/gabinete-6"
     },
     {
         imageSrc: OfficeG7_1,
-        imageAlt: "office-G7-1",
         office: "G7",
-        link: "/spaces/gabinete-7"
+        link: "/escritorios/gabinete-7"
     },
     {
         imageSrc: OfficeG7_2,
-        imageAlt: "office-G7-2",
         office: "G7",
-        link: "/spaces/gabinete-7"
+        link: "/escritorios/gabinete-7"
     },
     {
         imageSrc: OfficeG8_1,
-        imageAlt: "office-G8-1",
         office: "G8",
-        link: "/spaces/gabinete-8"
+        link: "/escritorios/gabinete-8"
     },
     {
         imageSrc: OfficeG8_2,
-        imageAlt: "office-G8-2",
         office: "G8",
-        link: "/spaces/gabinete-8"
+        link: "/escritorios/gabinete-8"
     },
     {
         imageSrc: OfficeG9_1,
-        imageAlt: "office-G9-1",
         office: "G9",
-        link: "/spaces/gabinete-9"
+        link: "/escritorios/gabinete-9"
     },
     {
         imageSrc: OfficeG9_2,
-        imageAlt: "office-G9-2",
         office: "G9",
-        link: "/spaces/gabinete-9"
+        link: "/escritorios/gabinete-9"
     },
 ];
 

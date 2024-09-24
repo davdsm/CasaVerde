@@ -107,7 +107,10 @@ const pt = {
         }
     },
     about: {},
-    offices: {},
+    offices: {
+        label: "Escritórios",
+        title: "Escritórios que respiram Identidade"
+    },
     office: {},
     gallery: {},
     contacts: {}
