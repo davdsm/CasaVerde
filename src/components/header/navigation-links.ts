@@ -12,7 +12,7 @@ export const navigationLinks = [
         text: TranslationsHelper.all.header.about,
     },
     {
-        href: "/escritorios/",
+        href: "/escritorios",
         id: "navigate-to-escritorios",
         text: TranslationsHelper.all.header.offices,
     },

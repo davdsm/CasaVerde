@@ -5,7 +5,18 @@
         max-height: 45.7rem;
         width: 100%;
         overflow: hidden;
-        padding-top: 10%;
+
+        @media (width < 1000px) {
+            padding-top: 5%;
+        }
+
+        @media (width < 800px) {
+            padding-top: 10%;
+        }
+
+        @media (width < 450px) {
+            padding-top: 15%;
+        }
     }
 
     .intro-section {
