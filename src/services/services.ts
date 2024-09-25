@@ -17,12 +17,7 @@ const sendEmail = (email: string) => {
           name: "Ana"
         },
         subject: "Newsletter: nova subscrição",
-        message: 
-        `
-        <h3>Olá!</h3>
-        <p>O email seguinte efetuou uma nova subscrição à newsletter:</p>
-        <p>${email}</p>
-        `
+        message: `<h3>Olá!</h3><p>O email seguinte acabou de subscrever a newsletter:</p><p>${email}</p><p>Casa verde</p>`
       })
     }
   ).then((response) => {
