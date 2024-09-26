@@ -8,10 +8,13 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { navigationLinks } from "./navigation-links";
 
 import "../../styles/components/Header.scss";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FunctionComponent = () => {
 
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
@@ -37,7 +40,9 @@ const Header: React.FunctionComponent = () => {
         </div> :
         <div id="header" className="header">
           <div className="container">
-            <GreenLogo className="logo" />
+            <button className="logo" onClick={() => navigate("/")}>
+              <GreenLogo />
+            </button>
             <div className="navigation-links">
               { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
             </div>

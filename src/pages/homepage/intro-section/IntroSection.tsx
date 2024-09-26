@@ -1,12 +1,8 @@
-import RotatingText from "./RotatingText";
 import TranslationsHelper from "../../../utils/TranslationsHelper";
 import Label from "../../../components/label/Label";
 import Title from "../../../components/title/Title";
 import Description from "../../../components/description/Description";
 import HomeNavButton from "../../../components/home-nav-button/HomeNavButton";
-
-import TopLeftImage from "../../../assets/homepage/top-left-image.png";
-import BottomRightImage from "../../../assets/homepage/bottom-right-image.png";
 
 import navButtons from "./home-nav-buttons";
 
@@ -17,13 +13,8 @@ const IntroSection: React.FunctionComponent = () => {
         <div className="intro-section">
             <div className="left-section">
                 <div className="relative-element">
-                    <div className="top-left-image" >
-                        <img src={TopLeftImage} alt="top-left-image" />
-                        <RotatingText />
-                    </div>
-                    <div className="bottom-right-image" >
-                        <img src={BottomRightImage} alt="bottom-right-image" />
-                    </div>
+                    <div className="top-left-image"></div>
+                    <div className="bottom-right-image"></div>
                     <div className="bg-element">
                         <div className="dotted-bg"></div>
                         <div className="solid-bg"></div>

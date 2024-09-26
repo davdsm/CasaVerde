@@ -19,6 +19,8 @@
     }
 
     .logo {
+        border: none;
+        background-color: $white;
         height: auto;
 
         @media (width < 800px) {

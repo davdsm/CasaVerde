@@ -106,7 +106,42 @@ const pt = {
             button: "Visitar Galeria"
         }
     },
-    about: {},
+    about: {
+        intro: {
+            title: "Porquê Casa Verde",
+            from: "Início",
+            to: "Sobre"
+        },
+        props: {
+            label: "Visão",
+            title: "O porquê",
+            "casa-verde": "Casa Verde",
+            nature: {
+                title: "Contacto com a Natureza",
+                description: "Para que se sintam inspirados a alcançar o sucesso profissional"
+            },
+            privacy: {
+                title: "Privacidade",
+                description: "O ambiente necessário para ser produtivo"
+            },
+            exclusivity: {
+                title: "Exclusividade",
+                description: "Serviços altamente personalizados e a pensar nos clientes"
+            },
+            location: {
+                title: "Perfeita localização",
+                description: "Proximidade do centro da vila e vias de ligação a Guimarães, Braga, Póvoa de Lanhoso e Porto"
+            },
+            productivity: {
+                title: "Produtividade",
+                description: "Foque-se no seu trabalho e disfrute dos nossos serviços incluídos"
+            },
+            refinement: {
+                title: "Requinte",
+                description: "Detalhes e pormenores a pensar no cliente"
+            }
+        },
+    },
     offices: {
         label: "Escritórios",
         title: "Escritórios que respiram Identidade"
