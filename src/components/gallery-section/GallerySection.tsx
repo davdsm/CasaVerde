@@ -5,20 +5,30 @@ import Title from "../../components/title/Title";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 
 import "../../styles/components/GallerySection.scss";
+import React from "react";
 
-const GallerySection: React.FunctionComponent = () => {
+interface IGallerySection {
+  hideHeader?: boolean;
+  exclude?: string;
+}
+
+const GallerySection: React.FunctionComponent<IGallerySection> = ({ hideHeader, exclude }: IGallerySection) => {
 
   return (
     <div className="gallery-section">
-      <Label text={TranslationsHelper.all.homepage.gallery.label} />
-      <div className="title-and-button">
-        <Title text={TranslationsHelper.all.homepage.gallery.title} />
-        <SectionNavButton
-          text={TranslationsHelper.all.homepage.gallery.button}
-          link="/galeria"
-        />
-      </div>
-      <GalleryGrid />
+      { !hideHeader && 
+        <React.Fragment>
+          <Label text={TranslationsHelper.all.homepage.gallery.label} />
+          <div className="title-and-button">
+            <Title text={TranslationsHelper.all.homepage.gallery.title} />
+            <SectionNavButton
+              text={TranslationsHelper.all.homepage.gallery.button}
+              link="/galeria"
+            />
+          </div>
+        </React.Fragment>
+      }
+      <GalleryGrid exclude={exclude} />
     </div>
   )
 }

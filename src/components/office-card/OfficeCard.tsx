@@ -1,7 +1,8 @@
 
 import { useNavigate } from "react-router-dom";
-import Area from "../../assets/homepage/area.svg?react";
 import TranslationsHelper from "../../utils/TranslationsHelper";
+
+import Area from "../../assets/homepage/area.svg?react";
 
 import "../../styles/components/OfficeCard.scss";
 
@@ -24,7 +25,8 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
     const navigate = useNavigate();
 
     return (
-      <button className="office-card" style={{ backgroundImage: `url(${imageSrc})` }} onClick={() => navigate(link)}>
+      <button className="office-card" onClick={() => navigate(link)}>
+        <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>
         <div className="card-inner-border">
             <span className="card-label">
                 {label === SpaceType.MEETING_ROOM && TranslationsHelper.all.homepage.intro.products["meeting-room"]}

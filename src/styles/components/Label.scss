@@ -1,16 +1,14 @@
 @import "../variables.scss";
 
 .label {
-    width: max-content;
-    padding: 1px 0.9375rem;
+    width: fit-content;
     border: 1px solid $label-border-gray;
     border-radius: 5px;
-
-    span {
-        color: $dark-green;
-        text-transform: uppercase;
-        font-size: 0.875rem;
-        font-weight: 600;
-        line-height: 2.25rem;
-    }
+    padding: 1px 0.9375rem;
+    text-wrap: nowrap;
+    color: $dark-green;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 2.25rem;
 }

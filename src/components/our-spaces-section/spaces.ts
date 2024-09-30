@@ -13,7 +13,8 @@ import Store from "../../assets/images/loja/895A9699.png";
 import MeetingRoom from "../../assets/images/meeting-room/895A9690.png";
 
 const spaces = [
-    {
+    {   
+        id: "Sala Reuniões",
         imageSrc: MeetingRoom,
         label: SpaceType.MEETING_ROOM,
         area: 10.12,
@@ -21,6 +22,7 @@ const spaces = [
         link: "/escritorios/sala-reunioes",
     },
     {
+        id: "Loja",
         imageSrc: Store,
         label: SpaceType.STORE,
         area: 94.35,
@@ -28,67 +30,76 @@ const spaces = [
         link: "/escritorios/loja",
     },
     {
+        id: "Gabinete 1",
         imageSrc: G1,
         label: SpaceType.OFFICE,
         area: 27.25,
         name: "Escritório 1",
-        link: "/escritorios/gabinete-1",
+        link: "/escritorios/gabinete1",
     },
     {
+        id: "Gabinete 2",
         imageSrc: G2,
         label: SpaceType.OFFICE,
         area: 20.2,
         name: "Escritório 2",
-        link: "/escritorios/gabinete-2",
+        link: "/escritorios/gabinete2",
     },
     {
+        id: "Gabinete 3",
         imageSrc: G3,
         label: SpaceType.OFFICE,
         area: 30.75,
         name: "Escritório 3",
-        link: "/escritorios/gabinete-3",
+        link: "/escritorios/gabinete3",
     },
     {
+        id: "Gabinete 4",
         imageSrc: G4,
         label: SpaceType.OFFICE,
         area: 22.15,
         name: "Escritório 4",
-        link: "/escritorios/gabinete-4",
+        link: "/escritorios/gabinete4",
     },
     {
+        id: "Gabinete 5",
         imageSrc: G5,
         label: SpaceType.OFFICE,
         area: 22.2,
         name: "Escritório 5",
-        link: "/escritorios/gabinete-5",
+        link: "/escritorios/gabinete5",
     },
     {
+        id: "Gabinete 6",
         imageSrc: G6,
         label: SpaceType.OFFICE,
         area: 23.25,
         name: "Escritório 6",
-        link: "/escritorios/gabinete-6",
+        link: "/escritorios/gabinete6",
     },
     {
+        id: "Gabinete 7",
         imageSrc: G7,
         label: SpaceType.OFFICE,
         area: 24.8,
         name: "Escritório 7",
-        link: "/escritorios/gabinete-7",
+        link: "/escritorios/gabinete7",
     },
     {
+        id: "Gabinete 8",
         imageSrc: G8,
         label: SpaceType.OFFICE,
         area: 20.2,
         name: "Escritório 8",
-        link: "/escritorios/gabinete-8",
+        link: "/escritorios/gabinete8",
     },
     {
+        id: "Gabinete 9",
         imageSrc: G9,
         label: SpaceType.OFFICE,
         area: 8.4,
         name: "Escritório 9",
-        link: "/escritorios/gabinete-9",
+        link: "/escritorios/gabinete9",
     },
 ];
 

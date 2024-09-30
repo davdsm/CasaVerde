@@ -110,11 +110,12 @@
 
                 &:hover svg {
                     transform: translateX(0%);
-                    transition: 0.7s;
+                    transition: all 0.7s ease;
                 }
 
                 svg {
                     transform: translateX(-50%);
+                    transition: all 0.7s ease;
 
                     path {
                         fill: $white;
@@ -237,6 +238,10 @@
                         margin: 0;
                         background-color: transparent;
                         border: none;
+
+                        svg {
+                            transition: all 0.5s ease;
+                        }
 
                         &:not([disabled]):hover svg {
                             transition: all 0.5s ease;
@@ -477,6 +482,10 @@
                     opacity: 0.6;
                 }
 
+                svg {
+                    transition: all 0.5s ease;
+                }
+
                 svg path {
                     fill: $white;
                     opacity: 0.6;
@@ -521,6 +530,7 @@
                 }
 
                 svg {
+                    transition: all 0.5s ease;
                     width: 20%;
                     height: auto;
 

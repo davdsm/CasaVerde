@@ -6,7 +6,11 @@ import OfficesSlider from "./OfficesSlider";
 
 import "../../styles/components/OurSpacesSection.scss";
 
-const OurSpacesSection: React.FunctionComponent = () => {
+interface IOurSpacesSection {
+  exclude?: string;
+}
+
+const OurSpacesSection: React.FunctionComponent<IOurSpacesSection> = ({ exclude }: IOurSpacesSection) => {
 
   return (
     <div className="our-spaces-section">
@@ -18,7 +22,7 @@ const OurSpacesSection: React.FunctionComponent = () => {
           link="/escritorios"
         />
       </div>
-      <OfficesSlider />
+      <OfficesSlider exclude={exclude} />
     </div>
   )
 }

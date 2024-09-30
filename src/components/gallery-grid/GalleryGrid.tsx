@@ -6,7 +6,11 @@ import galleryImages from "./GalleryImages";
 
 import "../../styles/components/GalleryGrid.scss";
 
-const GalleryGrid: React.FunctionComponent = () => {
+interface IGalleryGrid {
+  exclude?: string;
+}
+
+const GalleryGrid: React.FunctionComponent<IGalleryGrid> = ({ exclude }: IGalleryGrid) => {
 
   const [numberOfImages, setNumberOfImages] = useState<number>(10);
 
@@ -34,7 +38,9 @@ const GalleryGrid: React.FunctionComponent = () => {
 
   return (
     <div className="gallery-grid">
-        {shuffle(galleryImages).slice(0, numberOfImages).map((galleryImage) =>
+        { shuffle(galleryImages
+          .filter((galleryImage) => galleryImage.id !== exclude))
+          .slice(0, numberOfImages).map((galleryImage) =>
             <GalleryGridItem key={galleryImage.imageSrc} {...galleryImage} />
         )}
     </div>

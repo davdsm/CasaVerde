@@ -39,6 +39,7 @@ button.section-nav-button {
         align-items: center;
         gap: 0rem;
         transform: translateX(-100%);
+        transition: all 0.7s ease;
 
         @media (width < 800px) {
             transform: none;
@@ -55,6 +56,6 @@ button.section-nav-button {
 
     &:hover .link-arrow {
         transform: translateX(-50%);
-        transition: 0.7s;
+        transition: all 0.7s ease;
     }
 }

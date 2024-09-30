@@ -9,9 +9,7 @@ const Label: React.FunctionComponent<ILabel> = ({ text }: ILabel) => {
 
   return (
     <div className="label" >
-        <span>
-            { text }
-        </span>
+      { text }
     </div>
   )
 }

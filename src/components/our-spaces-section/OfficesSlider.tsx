@@ -9,13 +9,17 @@ import spaces from "./spaces";
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const OfficesSlider: React.FunctionComponent = () => {
+interface IOfficesSlider {
+  exclude?: string;
+}
+
+const OfficesSlider: React.FunctionComponent<IOfficesSlider> = ({ exclude }: IOfficesSlider) => {
 
   const [randomSpaces, setRandomSpaces] = useState<typeof spaces>([]);
 
   useEffect(() => {
 
-    const officesAndStore = spaces.filter((space) => space.label !== SpaceType.MEETING_ROOM);
+    const officesAndStore = spaces.filter((space) => space.id !== exclude && space.label !== SpaceType.MEETING_ROOM);
 
     setRandomSpaces(() => shuffle(officesAndStore).slice(0, 5));
 
@@ -26,7 +30,9 @@ const OfficesSlider: React.FunctionComponent = () => {
       spaceBetween={0}
       slidesPerView={1}
       modules={[Pagination]}
-      pagination={true}
+      pagination={{
+        clickable: true,
+      }}
       breakpoints={{
         1250: {
           spaceBetween: 30,
