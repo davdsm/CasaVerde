@@ -3,30 +3,30 @@ import SectionNavButton from "../../components/section-nav-button/SectionNavButt
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import GridTemplate from "./GridTemplate";
 import { SpaceType } from "../../components/office-card/OfficeCard";
+import shuffle from "lodash/shuffle";
 
-import gallery from "./gallery";
+import galleryImages from "./galleryImages";
 import filters from "./filters";
 
 import "../../styles/pages/Gallery.scss";
-import shuffle from "lodash/shuffle";
 
 const Gallery: React.FunctionComponent = () => {
 
-  type GalleryType = typeof gallery;
+  type GalleryType = typeof galleryImages;
 
-  const [gridTemplateImages, setGridTemplateImages] = useState<GalleryType[]>([shuffle(gallery).slice(0, 7)]);
+  const [gridTemplateImages, setGridTemplateImages] = useState<GalleryType[]>([shuffle(galleryImages).slice(0, 7)]);
   const [gridTemplateRows, setGridTemplateRows] = useState<number[]>([4]);
   const [filterSelected, setFilterSelected] = useState<SpaceType>();
-  const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(gallery.length > 7);
-  const [areAllImagesShown, setAreAllImagesShown] = useState<boolean>(gallery.length <= 7);
+  const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(galleryImages.length > 7);
+  const [areAllImagesShown, setAreAllImagesShown] = useState<boolean>(galleryImages.length <= 7);
 
   const onFilter = (filter?: SpaceType) => {
 
     setFilterSelected(filter);
-    let galleryClone = [...gallery];
+    let galleryClone = [...galleryImages];
 
     if (filter) {
-      galleryClone = [...gallery.filter(({ type }) => type === filter)];
+      galleryClone = [...galleryImages.filter(({ type }) => type === filter)];
     }
 
     if (!areAllImagesShown) {
@@ -45,14 +45,14 @@ const Gallery: React.FunctionComponent = () => {
 
   const onLoadMore = (filter?: SpaceType) => {
 
-    let numberOfImages = gallery.length;
-    let galleryClone = [...gallery];
+    let numberOfImages = galleryImages.length;
+    let galleryClone = [...galleryImages];
     let newImages: GalleryType[] = [];
 
     let filterToUse = filter || filterSelected;
 
     if (filterToUse) {
-      galleryClone = [...gallery.filter(({ type }) => type === filterToUse)];
+      galleryClone = [...galleryImages.filter(({ type }) => type === filterToUse)];
       numberOfImages = galleryClone.length;
     }
 

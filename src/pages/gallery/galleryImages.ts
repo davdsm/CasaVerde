@@ -13,7 +13,7 @@ import lojaImages from "../../assets/images/loja/loja";
 import meetingRoomImages from "../../assets/images/meeting-room/meetingRoom";
 import receptionImages from "../../assets/images/reception/reception";
 
-const gallery = [
+const galleryImages = [
     ...gabinete1Images,
     ...gabinete2Images,
     ...gabinete3Images,
@@ -30,4 +30,4 @@ const gallery = [
     ...detailsImages,
 ];
 
-export default gallery;
+export default galleryImages;
