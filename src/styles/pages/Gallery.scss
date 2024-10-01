@@ -1,0 +1,248 @@
+@import "../variables.scss";
+
+.gallery {
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 8.44rem;
+
+    @media (width < 1300px) {
+        padding: 10rem 7.7rem;
+    }
+    @media (width < 1150px) {
+        padding: 8rem 5.7rem;
+    }
+    @media (width < 800px) {
+        padding: 8rem 1.7rem;
+    }
+
+
+    .filters {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 2rem;
+        width: 90%;
+
+        .filter {
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1.5rem;
+            color: $dark-gray;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+
+            &.active {
+                background-color: $white;
+                color: $dark-green;
+                border-radius: 15px;
+                box-shadow: 0px 0px 30px rgba(black, 0.1);
+                border: 1px solid $label-border-gray;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+    }
+
+    .grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+
+        @media (width < 1150px) {
+            gap: 1rem;
+        }
+        @media (width < 800px) {
+            gap: 0.5rem;
+        }
+        @media (width < 500px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.row-1 {
+            grid-template-rows: repeat(1, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(2, 15rem);
+            }
+        }
+        &.row-2 {
+            grid-template-rows: repeat(2, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(2, 15rem);
+            }
+        }
+        &.row-3 {
+            grid-template-rows: repeat(3, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(4, 15rem);
+            }
+        }
+        &.row-4 {
+            grid-template-rows: repeat(4, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(5, 15rem);
+            }
+        }
+        &.row-6 {
+            grid-template-rows: repeat(6, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(7, 15rem);
+            }
+        }
+        &.row-7 {
+            grid-template-rows: repeat(7, 17.5rem);
+
+            @media (width < 500px) {
+                grid-template-rows: repeat(8, 15rem);
+            }
+        }
+
+        &-parent {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 1.5rem;
+
+            @media (width < 1150px) {
+                gap: 1rem;
+            }
+            @media (width < 800px) {
+                gap: 0.5rem;
+            }
+        }
+
+        &-image {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 15px;
+            height: 100%;
+            width: 100%;
+        }
+
+        :nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+
+            @media (width < 500px) {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+            }
+        }
+
+        :nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+
+        :nth-child(3) {
+            grid-column: 3;
+            grid-row: 1 / span 2;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+        }
+
+        :nth-child(4) {
+            grid-column: 1 / span 2;
+            grid-row: 2 / span 2;
+
+            @media (width < 500px) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+        }
+        :nth-child(5) {
+            grid-column: 3;
+            grid-row: 3;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 3 / span 2;
+            }
+        }
+        :nth-child(6) {
+            grid-column: 1 / span 2;
+            grid-row: 4;
+
+            @media (width < 500px) {
+                grid-column: 1;
+                grid-row: 4;
+            }
+        }
+        :nth-child(7) {
+            grid-column: 3;
+            grid-row: 4;
+
+            @media (width < 500px) {
+                grid-column: 1 / span 2;
+                grid-row: 5;
+            }
+        }
+        :nth-child(8) {
+            grid-column: 1;
+            grid-row: 5 / span 2;
+
+            @media (width < 500px) {
+                grid-column: 1;
+                grid-row: 6 / span 2;
+            }
+        }
+        :nth-child(9) {
+            grid-column: 2;
+            grid-row: 5;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 6;
+            }
+        }
+        :nth-child(10) {
+            grid-column: 3;
+            grid-row: 5;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 7;
+            }
+        }
+        :nth-child(11) {
+            grid-column: 2 / span 2;
+            grid-row: 6 / span 2;
+
+            @media (width < 500px) {
+                grid-column: 1;
+                grid-row: 8;
+            }
+        }
+        :nth-child(12) {
+            grid-column: 1;
+            grid-row: 7;
+
+            @media (width < 500px) {
+                grid-column: 2;
+                grid-row: 8;
+            }
+        }
+    }
+}

@@ -147,8 +147,18 @@ const pt = {
         title: "Escritórios que respiram Identidade"
     },
     office: {},
-    gallery: {},
-    contacts: {}
+    gallery: {
+        "load-more": "Carregar mais",
+        filters: {
+            all: "Todos",
+            store: "Loja",
+            offices: "Escritórios",
+            meetingRoom: "Sala Reuniões",
+            reception: "Receção",
+            exterior: "Espaço exterior",
+            details: "Detalhes",
+        }
+    },
 };
 
 export default pt;

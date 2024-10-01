@@ -10,6 +10,9 @@ export enum SpaceType {
     OFFICE = "office",
     MEETING_ROOM = "meeting-room",
     STORE = "store",
+    EXTERIOR = "exterior",
+    DETAILS = "details",
+    RECEPTION = "reception",
 }
 
 interface IOfficeCard {
