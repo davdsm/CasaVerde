@@ -4,7 +4,7 @@ import { faPaperPlane, faSquare } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
 import { useReducer } from "react";
 import NewsletterFormReducer, { NewsletterFormUpdateType } from "./NewsletterFormReducer";
-import sendEmail from "../../services/services";
+import { subscribeNewsletter } from "../../services/services";
 
 const Newsletter: React.FunctionComponent = () => {
 
@@ -32,7 +32,7 @@ const Newsletter: React.FunctionComponent = () => {
             />
             <button
                 disabled={!newsletterFormState.enableSumbit}
-                onClick={() => sendEmail(newsletterFormState.email)}
+                onClick={() => subscribeNewsletter(newsletterFormState.email)}
             >
             <FontAwesomeIcon icon={faPaperPlane} fontSize={"15px"} />
             </button>

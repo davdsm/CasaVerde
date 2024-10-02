@@ -1,4 +1,4 @@
-const sendEmail = (email: string) => {
+export const subscribeNewsletter = (email: string) => {
   console.log("");
   console.log("Nova subscrição de Newsletter", new Date());
 
@@ -16,8 +16,8 @@ const sendEmail = (email: string) => {
           email: "ana28.98@hotmail.com",
           name: "Ana"
         },
-        subject: "Newsletter: nova subscrição",
-        message: `<h3>Olá!</h3><p>O email seguinte acabou de subscrever a newsletter:</p><p>${email}</p><p>Casa verde</p>`
+        subject: "[Casa Verde] Subscrição Newsletter",
+        message: `<h3>Olá!</h3><br><p>Foi efetuada uma nova subscrição à newsletter:</p><p><b>Email: </b>${email}</p><br><p>Casa verde</p>`
       })
     }
   ).then((response) => {
@@ -31,4 +31,42 @@ const sendEmail = (email: string) => {
   });
 }
 
-export default sendEmail;
+export const submitContactForm = ({
+  name, email, subject, message
+}: {
+  name: string,
+  email: string,
+  subject: string,
+  message: string,
+}) => {
+  console.log("");
+  console.log("Pedido de contacto", new Date());
+
+  fetch(
+    "https://api.davdsm.pt/sendMail", 
+    {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        "davdsmKey": 'd41d8cd98f00b204e9800998ecf8427e'
+      },
+      body: JSON.stringify({
+        sender: "Casa Verde",
+        receiver: {
+          email: "ana28.98@hotmail.com",
+          name: "Ana"
+        },
+        subject: `[Casa Verde] Nova Mensagem: ${subject}`,
+        message: `<h3>Olá!</h3><br><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
+      })
+    }
+  ).then((response) => {
+    console.log("✈️ Email Enviado? - ", response.body);
+    console.log("---------------------------------------------------");
+    console.log("");
+  }).catch((response) => {
+    console.log("✈️ Email Enviado? - ", response.body);
+    console.log("---------------------------------------------------");
+    console.log("");
+  });
+}

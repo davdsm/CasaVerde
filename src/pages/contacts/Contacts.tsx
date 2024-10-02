@@ -1,22 +1,22 @@
-import Contact, { ContactType } from "./Contact";
-
-import contactsInfo from "./contactsInfo";
-
-import "../../styles/pages/Contacts.scss";
 import React, { useReducer } from "react";
 import Label from "../../components/label/Label";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import Title from "../../components/title/Title";
 import ContactsFormReducer, { ContactsFormUpdateType } from "./ContactsFormReducer";
+import Contact, { ContactType } from "./Contact";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { submitContactForm } from "../../services/services";
 
 import Name from "../../assets/contacts/name.svg?react";
 import Email from "../../assets/contacts/email-field.svg?react";
 import Subject from "../../assets/contacts/subject.svg?react";
 import Message from "../../assets/contacts/message.svg?react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-
 import Location from "../../assets/contacts/location.svg?react";
+
+import contactsInfo from "./contactsInfo";
+
+import "../../styles/pages/Contacts.scss";
 
 const Contacts: React.FunctionComponent = () => {
 
@@ -116,7 +116,16 @@ const Contacts: React.FunctionComponent = () => {
             />
             <Message className="message" />
           </div>
-          <button className="send-form" disabled={!ContactsFormState.enableSumbit} onClick={() => console.log("submit")}>
+          <button 
+            className="send-form" 
+            disabled={!ContactsFormState.enableSumbit} 
+            onClick={() => submitContactForm({
+              name: ContactsFormState.name,
+              email: ContactsFormState.email,
+              subject: ContactsFormState.subject,
+              message: ContactsFormState.message
+            })}
+          >
             { TranslationsHelper.all.contacts.form.send }
           </button>
         </div>
