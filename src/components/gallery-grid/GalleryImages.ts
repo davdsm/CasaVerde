@@ -24,121 +24,121 @@ const galleryImages = [
         id: "Loja",
         imageSrc: Store1,
         office: "Loja",
-        link: "/escritorios/loja"
+        link: "/offices/loja"
     },
     {
         id: "Loja",
         imageSrc: Store2,
         office: "Loja",
-        link: "/escritorios/loja"
+        link: "/offices/loja"
     },
     {
         id: "Gabinete 1",
         imageSrc: OfficeG1_1,
         office: "G1",
-        link: "/escritorios/gabinete1"
+        link: "/offices/gabinete1"
     },
     {
         id: "Gabinete 1",
         imageSrc: OfficeG1_2,
         office: "G1",
-        link: "/escritorios/gabinete1"
+        link: "/offices/gabinete1"
     },
     {
         id: "Gabinete 2",
         imageSrc: OfficeG2_1,
         office: "G2",
-        link: "/escritorios/gabinete2"
+        link: "/offices/gabinete2"
     },
     {
         id: "Gabinete 2",
         imageSrc: OfficeG2_2,
         office: "G2",
-        link: "/escritorios/gabinete2"
+        link: "/offices/gabinete2"
     },
     {
         id: "Gabinete 3",
         imageSrc: OfficeG3_1,
         office: "G3",
-        link: "/escritorios/gabinete3"
+        link: "/offices/gabinete3"
     },
     {
         id: "Gabinete 3",
         imageSrc: OfficeG3_2,
         office: "G3",
-        link: "/escritorios/gabinete3"
+        link: "/offices/gabinete3"
     },
     {
         id: "Gabinete 4",
         imageSrc: OfficeG4_1,
         office: "G4",
-        link: "/escritorios/gabinete4"
+        link: "/offices/gabinete4"
     },
     {
         id: "Gabinete 4",
         imageSrc: OfficeG4_2,
         office: "G4",
-        link: "/escritorios/gabinete4"
+        link: "/offices/gabinete4"
     },
     {
         id: "Gabinete 5",
         imageSrc: OfficeG5_1,
         office: "G5",
-        link: "/escritorios/gabinete5"
+        link: "/offices/gabinete5"
     },
     {
         id: "Gabinete 5",
         imageSrc: OfficeG5_2,
         office: "G5",
-        link: "/escritorios/gabinete5"
+        link: "/offices/gabinete5"
     },
     {
         id: "Gabinete 6",
         imageSrc: OfficeG6_1,
         office: "G6",
-        link: "/escritorios/gabinete6"
+        link: "/offices/gabinete6"
     },
     {
         id: "Gabinete 6",
         imageSrc: OfficeG6_2,
         office: "G6",
-        link: "/escritorios/gabinete6"
+        link: "/offices/gabinete6"
     },
     {
         id: "Gabinete 7",
         imageSrc: OfficeG7_1,
         office: "G7",
-        link: "/escritorios/gabinete7"
+        link: "/offices/gabinete7"
     },
     {
         id: "Gabinete 7",
         imageSrc: OfficeG7_2,
         office: "G7",
-        link: "/escritorios/gabinete7"
+        link: "/offices/gabinete7"
     },
     {
         id: "Gabinete 8",
         imageSrc: OfficeG8_1,
         office: "G8",
-        link: "/escritorios/gabinete8"
+        link: "/offices/gabinete8"
     },
     {
         id: "Gabinete 8",
         imageSrc: OfficeG8_2,
         office: "G8",
-        link: "/escritorios/gabinete8"
+        link: "/offices/gabinete8"
     },
     {
         id: "Gabinete 9",
         imageSrc: OfficeG9_1,
         office: "G9",
-        link: "/escritorios/gabinete9"
+        link: "/offices/gabinete9"
     },
     {
         id: "Gabinete 9",
         imageSrc: OfficeG9_2,
         office: "G9",
-        link: "/escritorios/gabinete9"
+        link: "/offices/gabinete9"
     },
 ];
 

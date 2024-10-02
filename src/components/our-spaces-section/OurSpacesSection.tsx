@@ -19,7 +19,7 @@ const OurSpacesSection: React.FunctionComponent<IOurSpacesSection> = ({ exclude 
         <Title text={TranslationsHelper.all.homepage.spaces.title} />
         <SectionNavButton
           text={TranslationsHelper.all.homepage.spaces.button}
-          link="/escritorios"
+          link="/offices"
         />
       </div>
       <OfficesSlider exclude={exclude} />

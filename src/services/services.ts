@@ -3,7 +3,7 @@ const sendEmail = (email: string) => {
   console.log("Nova subscrição de Newsletter", new Date());
 
   fetch(
-    "http://api.davdsm.pt/sendMail", 
+    "https://api.davdsm.pt/sendMail", 
     {
       method: "POST",
       headers: {

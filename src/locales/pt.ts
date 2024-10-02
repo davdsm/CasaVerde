@@ -146,7 +146,6 @@ const pt = {
         label: "Escritórios",
         title: "Escritórios que respiram Identidade"
     },
-    office: {},
     gallery: {
         "load-more": "Carregar mais",
         filters: {
@@ -159,6 +158,22 @@ const pt = {
             details: "Detalhes",
         }
     },
+    contacts: {
+        form: {
+            label: "Enviar Mensagem",
+            title: "Deixa Uma Mensagem aos Nossos Especialistas",
+            fields: {
+                name: "Nome",
+                email: "Email",
+                subject: "Assunto",
+            },
+            send: "Enviar",
+        },
+        phone: "Telefone",
+        email: "Email",
+        adress: "Morada",
+        maps: "Google Maps"
+    }
 };
 
 export default pt;

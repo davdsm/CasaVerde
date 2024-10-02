@@ -5,9 +5,11 @@ import About from "./pages/about/About"
 import Offices from "./pages/offices/Offices"
 import IndividualOffice from "./pages/offices/individual-office/IndividualOffice"
 import Gallery from "./pages/gallery/Gallery"
-import ContactForm from "./pages/contact-form/ContactForm"
+import ContactForm from "./pages/contacts/Contacts"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
+import PrivacyPolicy from "./components/footer/PrivacyPolicy"
+import TermsAndConditions from "./components/footer/TermsAndConditions"
 
 const App: React.FunctionComponent = () => {
 
@@ -23,11 +25,13 @@ const App: React.FunctionComponent = () => {
     <Routes>
       <Route element={<Layout />} >
         <Route index element={<Homepage />} />
-        <Route path="porque" element={<About />} />
-        <Route path="escritorios" element={<Offices />} />
-        <Route path="escritorios/:id" element={<IndividualOffice />} />
-        <Route path="galeria" element={<Gallery />} />
-        <Route path="contactos" element={<ContactForm />} />
+        <Route path="about" element={<About />} />
+        <Route path="offices" element={<Offices />} />
+        <Route path="offices/:id" element={<IndividualOffice />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="contacts" element={<ContactForm />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="terms-conditions" element={<TermsAndConditions />} />
       </Route>
     </Routes>
   )

@@ -1,0 +1,14 @@
+#terms-and-conditions {
+    
+    padding: 10rem 8.44rem;
+
+    @media (width < 1300px) {
+        padding: 10rem 7.7rem;
+    }
+    @media (width < 1150px) {
+        padding: 8rem 5.7rem;
+    }
+    @media (width < 800px) {
+        padding: 8rem 1.7rem;
+    }
+}

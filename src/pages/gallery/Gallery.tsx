@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionNavButton from "../../components/section-nav-button/SectionNavButton";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import GridTemplate from "./GridTemplate";
@@ -9,6 +9,8 @@ import galleryImages from "./galleryImages";
 import filters from "./filters";
 
 import "../../styles/pages/Gallery.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Gallery: React.FunctionComponent = () => {
 
@@ -19,6 +21,20 @@ const Gallery: React.FunctionComponent = () => {
   const [filterSelected, setFilterSelected] = useState<SpaceType>();
   const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(galleryImages.length > 7);
   const [areAllImagesShown, setAreAllImagesShown] = useState<boolean>(galleryImages.length <= 7);
+
+  const [imageFullWidth, setImageFullWidth] = useState<string>();
+
+  const imageFullWidthRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+
+    imageFullWidth && (body.style.overflow = "hidden");
+    !imageFullWidth && (body.style.overflow = "scroll");
+    imageFullWidthRef.current && (imageFullWidthRef.current.style.top = `${window.scrollY}px`);
+
+  }, [imageFullWidth]);
+
 
   const onFilter = (filter?: SpaceType) => {
 
@@ -83,13 +99,31 @@ const Gallery: React.FunctionComponent = () => {
         {gridTemplateRows.map((numberOfRows: number, index) => 
           <div key={index} className={`grid row-${numberOfRows}`} >
             {gridTemplateImages[index].map(({ src, alt }) => 
-              <div key={alt} className="grid-image" style={{ backgroundImage: `url(${src})` }}></div>
+              <div key={alt} className="grid-image" >
+                <button style={{ backgroundImage: `url(${src})` }} onClick={() => setImageFullWidth(src)}></button>
+              </div>
             )}
           </div>
         )}
       </div>
       { showLoadMoreButton && 
         <SectionNavButton text={TranslationsHelper.all.gallery["load-more"]} onClick={onLoadMore} />
+      }
+      { imageFullWidth &&
+        <div ref={imageFullWidthRef} className="image-full-width">
+          <button className="close-mobile-menu" onClick={() => setImageFullWidth(undefined)} >
+            <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
+          </button>
+          <img 
+            src={imageFullWidth}
+            alt="image-full-width"
+            onLoad={(element) => {
+              if (element.currentTarget.width > element.currentTarget.height) {
+                element.currentTarget.className = "horizontal";
+              }
+            }}
+          />
+        </div>
       }
     </div>
   )

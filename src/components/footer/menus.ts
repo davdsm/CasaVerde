@@ -6,15 +6,15 @@ const menus = [
         options: [
             {
                 name: TranslationsHelper.all.footer.menus["menu-1"]["option-1"],
-                link: "/porque",
+                link: "/about",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-1"]["option-2"],
-                link: "/escritorios",
+                link: "/offices",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-1"]["option-3"],
-                link: "/contactos",
+                link: "/contacts",
             }
         ]
     },
@@ -23,15 +23,15 @@ const menus = [
         options: [
             {
                 name: TranslationsHelper.all.footer.menus["menu-2"]["option-1"],
-                link: "/escritorios",
+                link: "/offices",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-2"]["option-2"],
-                link: "/escritorios/loja",
+                link: "/offices/loja",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-2"]["option-3"],
-                link: "/escritorios/sala-reunioes",
+                link: "/offices/sala-reunioes",
             }
         ]
     },
@@ -40,11 +40,11 @@ const menus = [
         options: [
             {
                 name: TranslationsHelper.all.footer.menus["menu-3"]["option-1"],
-                link: "",
+                link: "/terms-conditions",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-3"]["option-2"],
-                link: "",
+                link: "/privacy-policy",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-3"]["option-3"],

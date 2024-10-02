@@ -7,22 +7,22 @@ export const navigationLinks = [
         text: TranslationsHelper.all.header.homepage,
     },
     {
-        href: "/porque",
+        href: "/about",
         id: "navigate-to-porque",
         text: TranslationsHelper.all.header.about,
     },
     {
-        href: "/escritorios",
+        href: "/offices",
         id: "navigate-to-escritorios",
         text: TranslationsHelper.all.header.offices,
     },
     {
-        href: "/galeria",
+        href: "/gallery",
         id: "navigate-to-galeria",
         text: TranslationsHelper.all.header.gallery,
     },
     {
-        href: "/contactos",
+        href: "/contacts",
         id: "navigate-to-contactos",
         text: TranslationsHelper.all.header.contacts,
     },

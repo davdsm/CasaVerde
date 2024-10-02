@@ -23,7 +23,7 @@ const GallerySection: React.FunctionComponent<IGallerySection> = ({ hideHeader, 
             <Title text={TranslationsHelper.all.homepage.gallery.title} />
             <SectionNavButton
               text={TranslationsHelper.all.homepage.gallery.button}
-              link="/galeria"
+              link="/gallery"
             />
           </div>
         </React.Fragment>

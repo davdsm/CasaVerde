@@ -19,11 +19,11 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
 
     useEffect(() => {
         setIsActive(isNavigationLinkEqualToCurrentPage());
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, [location.pathname]);
 
     const getCurrentPageURL = () => {
-        return location.pathname.startsWith("/escritorios") ? "/escritorios" : location.pathname;
+        return location.pathname.startsWith("/offices") ? "/offices" : location.pathname;
     };
 
     const isNavigationLinkEqualToCurrentPage = () => {

@@ -2,6 +2,7 @@
 
 .gallery {
 
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -125,12 +126,28 @@
         }
 
         &-image {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
             border-radius: 15px;
             height: 100%;
             width: 100%;
+            overflow: hidden;
+
+            &:hover button {
+                transform: scale(1.1);
+                transition: all 0.5s ease;
+            }
+
+            button {
+                transition: all 0.5s ease;
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                border: none;
+                border-radius: 15px;
+                background-color: transparent;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
 
         :nth-child(1) {
@@ -242,6 +259,47 @@
             @media (width < 500px) {
                 grid-column: 2;
                 grid-row: 8;
+            }
+        }
+    }
+
+    .image-full-width {
+        position: absolute;
+        z-index: 30;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(#000000, 0.85);
+        padding: 1.85rem 2.85rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        .close-mobile-menu {
+            background-color: transparent;
+            border: none;
+    
+            color: $header-gray-text;
+            font-size: 1.25rem;
+            font-weight: 400;
+            padding: 0 0 1rem 0;
+    
+            svg path {
+                fill: $white;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: 60%;
+            width: auto;
+
+            &.horizontal {
+                width: 60%;
+                height: auto;
             }
         }
     }
