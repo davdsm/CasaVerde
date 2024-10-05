@@ -17,17 +17,17 @@ const IndividualOffice: React.FunctionComponent = () => {
   const [office, setOffice] = useState(offices.loja);
 
   useEffect(() => {
-    if ( id  === "loja" ) setOffice(() => offices.loja)
-    else if ( id  === "sala-reunioes" ) setOffice(() => offices.meetingRoom)
-    else if ( id  === "gabinete1" ) setOffice(() => offices.gabinete1)
-    else if ( id  === "gabinete2" ) setOffice(() => offices.gabinete2)
-    else if ( id  === "gabinete3" ) setOffice(() => offices.gabinete3)
-    else if ( id  === "gabinete4" ) setOffice(() => offices.gabinete4)
-    else if ( id  === "gabinete5" ) setOffice(() => offices.gabinete5)
-    else if ( id  === "gabinete6" ) setOffice(() => offices.gabinete6)
-    else if ( id  === "gabinete7" ) setOffice(() => offices.gabinete7)
-    else if ( id  === "gabinete8" ) setOffice(() => offices.gabinete8)
-    else if ( id  === "gabinete9" ) setOffice(() => offices.gabinete9)
+    if ( id  === "store" ) setOffice(() => offices.loja)
+    else if ( id  === "meeting-room" ) setOffice(() => offices.meetingRoom)
+    else if ( id  === "office1" ) setOffice(() => offices.gabinete1)
+    else if ( id  === "office2" ) setOffice(() => offices.gabinete2)
+    else if ( id  === "office3" ) setOffice(() => offices.gabinete3)
+    else if ( id  === "office4" ) setOffice(() => offices.gabinete4)
+    else if ( id  === "office5" ) setOffice(() => offices.gabinete5)
+    else if ( id  === "office6" ) setOffice(() => offices.gabinete6)
+    else if ( id  === "office7" ) setOffice(() => offices.gabinete7)
+    else if ( id  === "office8" ) setOffice(() => offices.gabinete8)
+    else if ( id  === "office9" ) setOffice(() => offices.gabinete9)
   }, [location.pathname]);
 
   return (

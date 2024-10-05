@@ -21,7 +21,7 @@ const IndividualOfficeInfo: React.FunctionComponent<IIndividualOfficeInfo> = ({
         <span style={{ textWrap: "nowrap" }} >{name}</span>
       </span>
       <span className="price" data-aos="fade-right" data-aos-duration="1500" >
-        Desde {price}/Mês
+        {price > 0 ? `Desde ${price}/Mês` : "Preço sob consulta"}
       </span>
       <span className="description" data-aos="fade-right" data-aos-duration="1500">
         A Casa Verde oferece
