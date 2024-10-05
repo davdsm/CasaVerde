@@ -11,7 +11,12 @@ import Footer from "./components/footer/Footer"
 import PrivacyPolicy from "./components/footer/PrivacyPolicy"
 import TermsAndConditions from "./components/footer/TermsAndConditions"
 
+import "aos/src/sass/aos.scss";
+import Aos from "aos"
+
 const App: React.FunctionComponent = () => {
+
+  Aos.init();
 
   const Layout = () => (
     <React.Fragment>

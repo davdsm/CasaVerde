@@ -10,7 +10,7 @@ interface ITitle {
 const Title: React.FunctionComponent<ITitle> = ({ text }: ITitle) => {
 
   return (
-    <span className="title">
+    <span className="title" data-aos="fade-right" data-aos-duration="1500" >
       { text }
     </span>
   )

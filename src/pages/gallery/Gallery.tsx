@@ -3,7 +3,6 @@ import SectionNavButton from "../../components/section-nav-button/SectionNavButt
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import GridTemplate from "./GridTemplate";
 import { SpaceType } from "../../components/office-card/OfficeCard";
-import shuffle from "lodash/shuffle";
 
 import galleryImages from "./galleryImages";
 import filters from "./filters";
@@ -16,24 +15,30 @@ const Gallery: React.FunctionComponent = () => {
 
   type GalleryType = typeof galleryImages;
 
-  const [gridTemplateImages, setGridTemplateImages] = useState<GalleryType[]>([shuffle(galleryImages).slice(0, 7)]);
+  const [gridTemplateImages, setGridTemplateImages] = useState<GalleryType[]>([galleryImages.slice(0, 7)]);
   const [gridTemplateRows, setGridTemplateRows] = useState<number[]>([4]);
   const [filterSelected, setFilterSelected] = useState<SpaceType>();
   const [showLoadMoreButton, setShowLoadMoreButton] = useState<boolean>(galleryImages.length > 7);
   const [areAllImagesShown, setAreAllImagesShown] = useState<boolean>(galleryImages.length <= 7);
 
+  const [showImageFullWidth, setShowImageFullWidth] = useState<boolean>(false);
   const [imageFullWidth, setImageFullWidth] = useState<string>();
 
   const imageFullWidthRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+
     const body = document.getElementsByTagName("body")[0];
+    const header = document.getElementById("header");
 
-    imageFullWidth && (body.style.overflow = "hidden");
-    !imageFullWidth && (body.style.overflow = "scroll");
-    imageFullWidthRef.current && (imageFullWidthRef.current.style.top = `${window.scrollY}px`);
+    showImageFullWidth && (body.style.overflow = "hidden");
+    !showImageFullWidth && (body.style.overflow = "scroll");
+    imageFullWidthRef.current && header && (imageFullWidthRef.current.style.top = `${ window.scrollY - header.clientHeight - 1 }px`);
+    imageFullWidthRef.current && showImageFullWidth && (imageFullWidthRef.current.style.display = "flex");
+    imageFullWidthRef.current && showImageFullWidth && (imageFullWidthRef.current.style.animationName = "fade-in-left-100");
+    imageFullWidthRef.current && !showImageFullWidth && (imageFullWidthRef.current.style.animationName = "fade-out-left-100");
 
-  }, [imageFullWidth]);
+  }, [showImageFullWidth]);
 
 
   const onFilter = (filter?: SpaceType) => {
@@ -47,7 +52,7 @@ const Gallery: React.FunctionComponent = () => {
 
     if (!areAllImagesShown) {
 
-      const newImages: GalleryType[] = [shuffle(galleryClone).slice(0, 7)];
+      const newImages: GalleryType[] = [galleryClone.slice(0, 7)];
 
       setGridTemplateRows(() => [4]);
       setGridTemplateImages(() => newImages);
@@ -75,7 +80,7 @@ const Gallery: React.FunctionComponent = () => {
     const { images, rows } = GridTemplate(numberOfImages);
     setGridTemplateRows(() => rows);
 
-    images.map((number) => (newImages = [...newImages, shuffle(galleryClone).splice(0, number)]));
+    images.map((number) => (newImages = [...newImages, galleryClone.splice(0, number)]));
     setGridTemplateImages(() => newImages);
 
     !filter && setShowLoadMoreButton(() => false);
@@ -84,7 +89,7 @@ const Gallery: React.FunctionComponent = () => {
 
   return (
     <div className="gallery container">
-      <div className="filters">
+      <div className="filters" data-aos="fade-right" data-aos-duration="1500">
         {filters.map(({ type, name }) => 
           <button
             key={name}
@@ -99,8 +104,11 @@ const Gallery: React.FunctionComponent = () => {
         {gridTemplateRows.map((numberOfRows: number, index) => 
           <div key={index} className={`grid row-${numberOfRows}`} >
             {gridTemplateImages[index].map(({ src, alt }) => 
-              <div key={alt} className="grid-image" >
-                <button style={{ backgroundImage: `url(${src})` }} onClick={() => setImageFullWidth(src)}></button>
+              <div key={alt} className="grid-image" data-aos="fade-up" data-aos-duration="1500" >
+                <button style={{ backgroundImage: `url(${src})` }} onClick={() => {
+                  setImageFullWidth(src);
+                  setShowImageFullWidth(true);
+                }}></button>
               </div>
             )}
           </div>
@@ -109,22 +117,22 @@ const Gallery: React.FunctionComponent = () => {
       { showLoadMoreButton && 
         <SectionNavButton text={TranslationsHelper.all.gallery["load-more"]} onClick={onLoadMore} />
       }
-      { imageFullWidth &&
-        <div ref={imageFullWidthRef} className="image-full-width">
-          <button className="close-mobile-menu" onClick={() => setImageFullWidth(undefined)} >
-            <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
-          </button>
-          <img 
-            src={imageFullWidth}
-            alt="image-full-width"
-            onLoad={(element) => {
-              if (element.currentTarget.width > element.currentTarget.height) {
-                element.currentTarget.className = "horizontal";
-              }
-            }}
-          />
-        </div>
-      }
+      <div ref={imageFullWidthRef} className="image-full-width">
+        <button className="close-mobile-menu" onClick={() => {
+            setShowImageFullWidth(false);
+          }} >
+          <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
+        </button>
+        <img 
+          src={imageFullWidth}
+          alt="image-full-width"
+          onLoad={(element) => {
+            if (element.currentTarget.width > element.currentTarget.height) {
+              element.currentTarget.className = "horizontal";
+            }
+          }}
+        />
+      </div>
     </div>
   )
 }

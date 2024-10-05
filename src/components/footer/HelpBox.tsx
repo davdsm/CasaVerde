@@ -8,7 +8,7 @@ const HelpBox: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="contacts-box">
+    <div className="contacts-box" data-aos="fade-down" data-delay="200" data-aos-duration="2000">
         <div className="left-column">
             <span className="title">
               {TranslationsHelper.all.footer.help.title}
@@ -17,7 +17,7 @@ const HelpBox: React.FunctionComponent = () => {
               {TranslationsHelper.all.footer.help.description}
             </span>
         </div>
-        <div className="right-column">
+        <div className="right-column" >
           <div className="bg-circle"></div>
           <button onClick={() => navigate("/contact")}>
             {TranslationsHelper.all.footer.help.button}

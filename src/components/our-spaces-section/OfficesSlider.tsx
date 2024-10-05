@@ -27,22 +27,24 @@ const OfficesSlider: React.FunctionComponent<IOfficesSlider> = ({ exclude }: IOf
 
   return (
       <Swiper
-      spaceBetween={0}
-      slidesPerView={1}
-      modules={[Pagination]}
-      pagination={{
-        clickable: true,
-      }}
-      breakpoints={{
-        1250: {
-          spaceBetween: 30,
-          slidesPerView: 3
-        },
-        500: {
-          spaceBetween: 15,
-          slidesPerView: 2
-        }
-      }}
+        spaceBetween={0}
+        slidesPerView={1}
+        modules={[Pagination]}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          1250: {
+            spaceBetween: 30,
+            slidesPerView: 3
+          },
+          500: {
+            spaceBetween: 15,
+            slidesPerView: 2
+          }
+        }}
+        data-aos="fade-up"
+        data-aos-duration="2000"
       >
         {randomSpaces.map((space) => 
           <SwiperSlide key={space.name}>

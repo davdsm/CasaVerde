@@ -19,7 +19,7 @@ const spaces = [
         label: SpaceType.MEETING_ROOM,
         area: 10.12,
         name: "Sala Reuniões",
-        link: "/offices/sala-reunioes",
+        link: "/offices/meeting-room",
     },
     {
         id: "Loja",
@@ -27,7 +27,7 @@ const spaces = [
         label: SpaceType.STORE,
         area: 94.35,
         name: "Loja",
-        link: "/offices/loja",
+        link: "/offices/store",
     },
     {
         id: "Gabinete 1",
@@ -35,7 +35,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 27.25,
         name: "Escritório 1",
-        link: "/offices/gabinete1",
+        link: "/offices/office1",
     },
     {
         id: "Gabinete 2",
@@ -43,7 +43,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 20.2,
         name: "Escritório 2",
-        link: "/offices/gabinete2",
+        link: "/offices/office2",
     },
     {
         id: "Gabinete 3",
@@ -51,7 +51,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 30.75,
         name: "Escritório 3",
-        link: "/offices/gabinete3",
+        link: "/offices/office3",
     },
     {
         id: "Gabinete 4",
@@ -59,7 +59,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 22.15,
         name: "Escritório 4",
-        link: "/offices/gabinete4",
+        link: "/offices/office4",
     },
     {
         id: "Gabinete 5",
@@ -67,7 +67,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 22.2,
         name: "Escritório 5",
-        link: "/offices/gabinete5",
+        link: "/offices/office5",
     },
     {
         id: "Gabinete 6",
@@ -75,7 +75,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 23.25,
         name: "Escritório 6",
-        link: "/offices/gabinete6",
+        link: "/offices/office6",
     },
     {
         id: "Gabinete 7",
@@ -83,7 +83,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 24.8,
         name: "Escritório 7",
-        link: "/offices/gabinete7",
+        link: "/offices/office7",
     },
     {
         id: "Gabinete 8",
@@ -91,7 +91,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 20.2,
         name: "Escritório 8",
-        link: "/offices/gabinete8",
+        link: "/offices/office8",
     },
     {
         id: "Gabinete 9",
@@ -99,7 +99,7 @@ const spaces = [
         label: SpaceType.OFFICE,
         area: 8.4,
         name: "Escritório 9",
-        link: "/offices/gabinete9",
+        link: "/offices/office9",
     },
 ];
 

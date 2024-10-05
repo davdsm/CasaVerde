@@ -9,7 +9,7 @@ import WhiteLogo from "../../assets/logo/logo-white.svg?react";
 const Contacts: React.FunctionComponent = () => {
 
   return (
-    <div className="contacts-section">
+    <div className="contacts-section" data-aos="fade-left" data-delay="200" data-aos-duration="2000" >
         <hr/>
         <div className="contacts">
             <span>+351 962 342 739</span>

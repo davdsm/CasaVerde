@@ -53,6 +53,7 @@ button.link {
         align-items: center;
         gap: 0rem;
         transform: translateX(-50%);
+        transition: all 0.7s ease;
 
         svg.dark-green-60 path {
             fill: $dark-green-60;
@@ -66,6 +67,6 @@ button.link {
 
     &:hover .link-arrow {
         transform: translateX(0%);
-        transition: 0.7s;
+        transition: all 0.7s ease;
     }
 }

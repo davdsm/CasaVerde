@@ -2,6 +2,7 @@
 
 #footer {
     background-color: $footer-bg;
+    overflow: hidden;
 
     .container {
         display: flex;
@@ -62,8 +63,7 @@
                 font-size: 0.875rem;
                 line-height: 140%;
                 font-weight: 200;
-                color: $light-gray;
-                opacity: 0.6;
+                color: rgba($light-gray, 0.6);
             }
         }
 
@@ -170,8 +170,7 @@
                     }
 
                     &-title {
-                        color: $white;
-                        opacity: 0.4;
+                        color: rgba($white, 0.4);
                         font-size: 0.625rem;
                         text-transform: uppercase;
                     }
@@ -187,8 +186,7 @@
                         border: none;
                         padding: 0;
                         text-align: left;
-                        color: $white;
-                        opacity: 0.6;
+                        color: rgba($white, 0.6);
                         font-size: 0.875rem;
                     }
                 }
@@ -253,8 +251,7 @@
                         }
 
                         svg path {
-                            fill: $white;
-                            opacity: 0.5;
+                            fill: rgba($white, 0.5);
                         }
                     }
                 }
@@ -320,8 +317,7 @@
                         }
 
                         .checkbox-checked path {
-                            fill: $white;
-                            opacity: 0.5;
+                            fill: rgba($white, 0.5);
                         }
                     }
 
@@ -372,8 +368,7 @@
                         padding-top: 1rem;
 
                         svg path {
-                            fill: #FFFFFF;
-                            opacity: 0.6;
+                            fill: rgba($white, 0.6);
                         }
 
                         @media (width >= 1000px) {
@@ -387,8 +382,7 @@
 
                     span, a {
                         text-decoration: none;
-                        color: $white;
-                        opacity: 0.6;
+                        color: rgba($white, 0.6);
 
                         @media (width < 1000px) {
                             text-align: right;
@@ -409,11 +403,10 @@
                 hr {
                     width: 2.8rem;
                     margin: 0;
-                    border-bottom: 1px solid white;
-                    border-left: 1px solid white;
-                    border-right: 1px solid white;
+                    border-bottom: 1px solid rgba($white, 0.6);
+                    border-left: 1px solid rgba($white, 0.6);
+                    border-right: 1px solid rgba($white, 0.6);
                     border-top: none;
-                    opacity: 0.6;
 
                     @media (width < 1000px) {
                         display: none;
@@ -448,10 +441,9 @@
 
                 hr {
                     border-top: none;
-                    border-left: 1px solid $white;
-                    border-right: 1px solid $white;
-                    border-bottom: 1px solid $white;
-                    opacity: 0.2;
+                    border-left: 1px solid rgba($white, 0.2);
+                    border-right: 1px solid rgba($white, 0.2);
+                    border-bottom: 1px solid rgba($white, 0.2);
                     width: 100%;
                     margin: 0;
                 }
@@ -478,8 +470,7 @@
                     font-size: 0.75rem;
                     font-weight: 400;
                     line-height: 140%;
-                    color: $white;
-                    opacity: 0.6;
+                    color: rgba($white, 0.6);
                 }
 
                 svg {
@@ -487,8 +478,7 @@
                 }
 
                 svg path {
-                    fill: $white;
-                    opacity: 0.6;
+                    fill: rgba($white, 0.6);
                 }
             }
         }
@@ -504,8 +494,7 @@
                 line-height: 140%;
                 font-size: 0.625rem;
                 font-weight: 400;
-                color: $white;
-                opacity: 0.4;
+                color: rgba($white, 0.4);
             }
 
             .back-to-top {

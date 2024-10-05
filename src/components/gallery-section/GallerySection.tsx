@@ -19,7 +19,7 @@ const GallerySection: React.FunctionComponent<IGallerySection> = ({ hideHeader, 
       { !hideHeader && 
         <React.Fragment>
           <Label text={TranslationsHelper.all.homepage.gallery.label} />
-          <div className="title-and-button">
+          <div className="title-and-button" data-aos="fade-right" data-aos-duration="1500">
             <Title text={TranslationsHelper.all.homepage.gallery.title} />
             <SectionNavButton
               text={TranslationsHelper.all.homepage.gallery.button}

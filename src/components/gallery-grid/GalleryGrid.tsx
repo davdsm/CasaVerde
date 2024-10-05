@@ -37,12 +37,12 @@ const GalleryGrid: React.FunctionComponent<IGalleryGrid> = ({ exclude }: IGaller
   window.onresize = updateNumberOfImagesInGallery;
 
   return (
-    <div className="gallery-grid">
-        { shuffle(galleryImages
-          .filter((galleryImage) => galleryImage.id !== exclude))
-          .slice(0, numberOfImages).map((galleryImage) =>
-            <GalleryGridItem key={galleryImage.imageSrc} {...galleryImage} />
-        )}
+    <div className="gallery-grid" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
+      { shuffle(galleryImages
+        .filter((galleryImage) => galleryImage.id !== exclude))
+        .slice(0, numberOfImages).map((galleryImage) =>
+          <GalleryGridItem key={galleryImage.imageSrc} {...galleryImage} />
+      )}
     </div>
   )
 }

@@ -14,14 +14,14 @@ interface IBenefitCard {
 const BenefitCard: React.FunctionComponent<IBenefitCard> = ({ icon: Icon, title, description, included, className }: IBenefitCard) => {
 
     return (
-      <div className={`benefit-card ${className || ""}`}>
+      <div key={title} className={`benefit-card ${ className || "" }`} data-aos="fade-up" data-aos-duration="1500" data-aos-anchor-placement="bottom-bottom" >
         {!included && 
-            <span className="non-included-label">
+            <span className="non-included-label" >
                 {TranslationsHelper.all.homepage.benefits["non-included-label"]}
             </span>
         }
         <Icon />
-        <div className="card-info">
+        <div className="card-info" >
             <span className="benefit-card-title">{title}</span>
             <span className="benefit-card-description">{description}</span>
         </div>

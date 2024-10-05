@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { navigationLinks } from "./navigation-links";
+import Aos from "aos";
 
 import "../../styles/components/Header.scss";
 
@@ -18,6 +19,7 @@ const Header: React.FunctionComponent = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    Aos.refresh();
   }, [location.pathname]);
 
   useEffect(() => {
@@ -30,12 +32,14 @@ const Header: React.FunctionComponent = () => {
     mobileHeader && openMobileMenu && (mobileHeader.style.top = `${window.scrollY}px`);
     mobileHeader && !openMobileMenu && (mobileHeader.style.top = "0px");
     mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.top = `${window.scrollY}px`);
+    mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.display = "flex");
+    mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.animationName = "fade-in-left-100");
+    mobileHeaderRef.current && !openMobileMenu && (mobileHeaderRef.current.style.animationName = "fade-out-left-100");
   }, [openMobileMenu]);
 
   return (
     <React.Fragment>
-      { openMobileMenu ?
-        <div id="mobile-header" ref={mobileHeaderRef} >
+        <div id="mobile-header"  ref={mobileHeaderRef} >
           <button className="close-mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu)} >
             <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
           </button>
@@ -46,7 +50,7 @@ const Header: React.FunctionComponent = () => {
               {...navigationLink}
             />
           )}
-        </div> :
+        </div>
         <div id="header" className="header" style={{ top: 0 }}>
           <div className="container">
             <button className="logo" onClick={() => navigate("/")}>
@@ -60,7 +64,7 @@ const Header: React.FunctionComponent = () => {
             </button>
           </div>
         </div>
-      }
+      {/* } */}
     </React.Fragment>
   )
 }

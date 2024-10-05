@@ -12,16 +12,18 @@ const IndividualOfficeInfo: React.FunctionComponent<IIndividualOfficeInfo> = ({
 
   return (
     <div className="individual-office-info">
-      <span className="area">
+      <span className="area" data-aos="fade-right" data-aos-duration="1500">
         <Area />
         {area}m&#178;
       </span>
-      <span className="name">
+      <span className="name" data-aos="fade-right" data-aos-duration="1500">
         Casa Verde - 
         <span style={{ textWrap: "nowrap" }} >{name}</span>
       </span>
-      <span className="price">Desde {price}/Mês</span>
-      <span className="description">
+      <span className="price" data-aos="fade-right" data-aos-duration="1500" >
+        Desde {price}/Mês
+      </span>
+      <span className="description" data-aos="fade-right" data-aos-duration="1500">
         A Casa Verde oferece
         { name === "Loja" ? " uma loja única, situada ": ( name === "Sala Reuniões" ? " uma sala de reuniões, situada " : " gabinetes únicos, situados ") }
         numa casa histórica cuidadosamente restaurada, onde o charme do passado se encontra com a funcionalidade moderna.

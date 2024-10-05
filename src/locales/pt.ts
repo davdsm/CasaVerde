@@ -77,7 +77,7 @@ const pt = {
             },
             "green-spaces": {
                 title: "Espaços Verdes",
-                description: "A Casa Verde oferece internet de fibra óptica de alta velocidade e serviço telefónico"
+                description: "A Casa Verde oferece uma vaste de espaços comuns exteriores como a sua manutenção"
             },
             cleaning: {
                 title: "Serviço de limpeza",

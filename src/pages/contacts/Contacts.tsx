@@ -36,7 +36,7 @@ const Contacts: React.FunctionComponent = () => {
     <div className="contacts-page container">
       <div className="contact-form">
         <div className="image">
-          <div className="adress">
+          <div className="adress" >
             <div className="icon" ><Location /></div>
             <span className="name">
               { TranslationsHelper.all.homepage.intro.label }
@@ -53,10 +53,10 @@ const Contacts: React.FunctionComponent = () => {
             </a>
           </div>
         </div>
-        <div className="form">
+        <div className="form" data-aos="fade-right" data-aos-duration="1500" >
           <Label text={TranslationsHelper.all.contacts.form.label} />
           <Title text={TranslationsHelper.all.contacts.form.title} />
-          <div className="form-field">
+          <div className="form-field" >
             <input 
               className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`} 
               type="text" 
@@ -71,7 +71,7 @@ const Contacts: React.FunctionComponent = () => {
             />
             <Name className="name" />
           </div>
-          <div className="form-field">
+          <div className="form-field" >
             <input 
               className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`} 
               type="email" 
@@ -86,7 +86,7 @@ const Contacts: React.FunctionComponent = () => {
             />
             <Email className="email" />
           </div>
-          <div className="form-field">
+          <div className="form-field" >
             <input 
               className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`} 
               type="text" 
@@ -101,7 +101,7 @@ const Contacts: React.FunctionComponent = () => {
             />
             <Subject className="subject" />
           </div>
-          <div className="form-field">
+          <div className="form-field" >
             <textarea 
               className={`form-field-input ${ContactsFormState.invalidMessage ? "invalid" : ""}`} 
               placeholder={""}
@@ -117,7 +117,7 @@ const Contacts: React.FunctionComponent = () => {
             <Message className="message" />
           </div>
           <button 
-            className="send-form" 
+            className="send-form"
             disabled={!ContactsFormState.enableSumbit} 
             onClick={() => submitContactForm({
               name: ContactsFormState.name,

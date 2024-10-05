@@ -1,11 +1,16 @@
 @import "../variables.scss";
+@import "../animations.scss";
 
 #header {
 
-    position: fixed;
+    position: sticky;
     width: 100%;
     background-color: $white;
     z-index: 20;
+
+    animation: fade-in-down 1s ease forwards;
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 
     .container {
         display: flex;
@@ -86,7 +91,7 @@
 #mobile-header {
     position: absolute;
     background-color: $white;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
@@ -94,6 +99,10 @@
     width: 100vw;
     padding: 1.85rem 2.85rem;
     z-index: 30;
+
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
 
     .close-mobile-menu {
         padding-bottom: 1rem;
@@ -113,9 +122,5 @@
         background-color: transparent;
         border: none;
         padding: 0;
-
-        &.active {
-            color: $dark-green;
-        }
     }
 }

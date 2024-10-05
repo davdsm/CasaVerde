@@ -16,7 +16,7 @@ const Newsletter: React.FunctionComponent = () => {
   });
 
   return (
-    <div className="newsletter-input-and-checkbox">
+    <div className="newsletter-input-and-checkbox" data-aos="fade-right" data-delay="200" data-aos-duration="2000" >
         <div className="newsletter">
             <input 
             className={`newsletter-input ${newsletterFormState.invalidEmail ? "invalid" : ""}`} 

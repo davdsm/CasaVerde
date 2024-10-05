@@ -15,7 +15,7 @@ const OurSpacesSection: React.FunctionComponent<IOurSpacesSection> = ({ exclude 
   return (
     <div className="our-spaces-section">
       <Label text={TranslationsHelper.all.homepage.spaces.label} />
-      <div className="title-and-button">
+      <div className="title-and-button" data-aos="fade-right" data-aos-duration="1500" >
         <Title text={TranslationsHelper.all.homepage.spaces.title} />
         <SectionNavButton
           text={TranslationsHelper.all.homepage.spaces.button}

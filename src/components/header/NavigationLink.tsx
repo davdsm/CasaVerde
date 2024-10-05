@@ -19,7 +19,6 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
 
     useEffect(() => {
         setIsActive(isNavigationLinkEqualToCurrentPage());
-        // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, [location.pathname]);
 
     const getCurrentPageURL = () => {
@@ -37,7 +36,7 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
     }
 
     return (
-        <button id={id} className={`navigation-link ${ isActive ? "active" : ""}`} onClick={() => onNavigate()}>
+        <button id={id} className="navigation-link" style={isActive ? { color: "#008D36" } : undefined} onClick={() => onNavigate()} >
             {text}
         </button>
     )

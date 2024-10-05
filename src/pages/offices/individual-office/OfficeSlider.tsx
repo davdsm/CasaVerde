@@ -25,6 +25,8 @@ const OfficeSlider: React.FunctionComponent<IOfficeSlider> = ({ images }: IOffic
         navigation={true}
         loop={true}
         effect={"fade"}
+        data-aos="fade-down" 
+        data-aos-duration="1500"
       >
         {images.map(({ src, alt }) => 
           <SwiperSlide key={alt} style={{ backgroundImage: `url(${src})` }} > 

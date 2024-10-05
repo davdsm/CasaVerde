@@ -28,7 +28,7 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
     const navigate = useNavigate();
 
     return (
-      <button className="office-card" onClick={() => navigate(link)}>
+      <button className="office-card" onClick={() => navigate(link)} data-aos="fade-up" data-aos-duration="2000" >
         <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>
         <div className="card-inner-border">
             <span className="card-label">

@@ -12,12 +12,12 @@ const navButtons = [
     {
         icon: faChartPie,
         text: TranslationsHelper.all.homepage.intro.products["meeting-room"],
-        link: "/offices/sala-reunioes",
+        link: "/offices/meeting-room",
     },
     {
         icon: faStore,
         text: TranslationsHelper.all.homepage.intro.products.store,
-        link: "/offices/loja",
+        link: "/offices/store",
     }
 ];
 

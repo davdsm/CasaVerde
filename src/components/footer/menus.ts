@@ -27,11 +27,11 @@ const menus = [
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-2"]["option-2"],
-                link: "/offices/loja",
+                link: "/offices/store",
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-2"]["option-3"],
-                link: "/offices/sala-reunioes",
+                link: "/offices/meeting-room",
             }
         ]
     },

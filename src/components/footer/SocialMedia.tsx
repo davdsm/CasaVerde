@@ -19,7 +19,7 @@ const SocialMedia: React.FunctionComponent<ISocialMedia> = ({ type, name, link }
   return (
     <div className="social-media-column">
         <hr />
-        <div className="social-media-link">
+        <div className="social-media-link" data-aos="fade-up" data-delay="200" data-aos-duration="2000">
             <a href={link}>{name}</a>
             <a href={link}>
                 { type === SocialMediaType.INSTAGRAM && <FontAwesomeIcon icon={faInstagram} fontSize={"15px"} /> }

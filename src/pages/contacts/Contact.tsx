@@ -17,7 +17,7 @@ interface IContact {
 const Contact: React.FunctionComponent<IContact> = ({ type, name, value }: IContact) => {
 
   return (
-    <div className="contact">
+    <div className="contact" data-aos="fade-up" data-aos-duration="1500">
       <div className="icon">
         { type === ContactType.TELEFONE && <Telefone /> }
         { type === ContactType.EMAIL && <Email /> }

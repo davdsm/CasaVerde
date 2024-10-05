@@ -23,7 +23,7 @@ const Footer: React.FunctionComponent = () => {
             <div className="menus">
               { menus.map(({ title, options }) => <Menu key={title} title={title} options={options}/>) }
             </div>
-            <div className="logo">
+            <div className="logo" data-aos="fade-left" data-delay="200" data-aos-duration="2000">
               <WhiteLogo />
             </div>
           </div>
@@ -32,15 +32,15 @@ const Footer: React.FunctionComponent = () => {
             <Contacts />
           </div>
         </div>
-        <div className="social-media-and-rights">
+        <div className="social-media-and-rights" data-aos="fade-up"data-delay="200" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
           <div className="social-media">
             { socialMedia.map((social) => <SocialMedia key={social.name} {...social}/>) }
           </div>
           <div className="rights-and-back-to-top">
-            <span className="rights">
+            <span className="rights" >
               &#169; { new Date().getFullYear() }	{ TranslationsHelper.all.footer.rights }
             </span>
-            <button className="back-to-top">
+            <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })} >
               <BackToTopArrow />
             </button>
           </div>

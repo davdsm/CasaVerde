@@ -4,8 +4,10 @@ import benefits from "./benefits";
 const BenefitsSection: React.FunctionComponent = () => {
 
   return (
-    <div className="benefits-section">
-      {benefits.map((benefit) => <BenefitCard key={benefit.title} {...benefit} />)}
+    <div className="benefits-section-container">
+      <div className="benefits-section">
+        {benefits.map((benefit) => <BenefitCard key={benefit.title} {...benefit} />)}
+      </div>
     </div>
   )
 }

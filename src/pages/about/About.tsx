@@ -12,9 +12,9 @@ const About: React.FunctionComponent = () => {
 
   return (
     <div className="about container">
-      <div className="intro-section">
+      <div className="intro-section" data-aos="fade-up" data-aos-duration="1500">
         <Title text={TranslationsHelper.all.about.intro.title} />
-        <div className="intro-navigation">
+        <div className="intro-navigation" data-aos="fade-right" data-aos-duration="1500">
           {TranslationsHelper.all.about.intro.from}
           <div className="link-arrow">
             <FontAwesomeIcon icon={faChevronRight} fontSize={"15px"} />
@@ -26,7 +26,7 @@ const About: React.FunctionComponent = () => {
       <div className="why-section">
         <div className="label-and-title">
           <Label text={TranslationsHelper.all.about.props.label} />
-          <span className="title">
+          <span className="title" data-aos="fade-right" data-aos-duration="1500">
             {TranslationsHelper.all.about.props.title}
             &nbsp;
             <span className="dark-green-text">{TranslationsHelper.all.about.props["casa-verde"]}</span>
