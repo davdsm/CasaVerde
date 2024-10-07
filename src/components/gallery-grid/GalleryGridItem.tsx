@@ -11,7 +11,14 @@ const GalleryGridItem: React.FunctionComponent<IGalleryGridItem> = ({ imageSrc, 
   const navigate = useNavigate();
 
   return (
-    <button className="gallery-grid-item" style={{ backgroundImage: `url(${imageSrc})` }} onClick={() => { navigate(link) }} >
+    <button
+      className="gallery-grid-item"
+      style={{ backgroundImage: `url(${imageSrc})` }}
+      onClick={() => { 
+        if (location.pathname !== link) { navigate(link) }
+        else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
+      }}
+    >
       <div className="gallery-grid-item-hover">
         <span>{ office }</span>
       </div>

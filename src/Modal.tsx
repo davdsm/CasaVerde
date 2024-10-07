@@ -21,10 +21,7 @@ class Modal extends React.Component<IModal> {
       const body = document.getElementsByTagName("body")[0];
       body && (body.ariaHidden = "true");
 
-      console.log(window.scrollY);
-
       if (this.childrenRef.current) {
-        this.childrenRef.current.style.top = `${window.scrollY}px`
         this.childrenRef.current.style.animationName = "fade-in-left-100";
       }
     }

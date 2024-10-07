@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { submitContactForm } from "../../services/services";
+import { Helmet } from "react-helmet-async";
 
 import Name from "../../assets/contacts/name.svg?react";
 import Email from "../../assets/contacts/email-field.svg?react";
@@ -35,112 +36,117 @@ const Contacts: React.FunctionComponent = () => {
   });
 
   return (
-    <div className="contacts-page container">
-      <div className="contact-form">
-        <div className="image">
-          <div className="adress" >
-            <div className="icon" ><Location /></div>
-            <span className="name">
-              { TranslationsHelper.all.homepage.intro.label }
-            </span>
-            <span>
-              { ADDRESS }
-            </span>
-            <a className="google-maps" href="https://maps.app.goo.gl/WMVK4Dek57yxhW6X8" target="_blank">
-              <div className="link-arrow">
-                <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
-                <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
-              </div>
-              <span>{ TranslationsHelper.all.contacts.maps }</span>
-            </a>
+    <React.Fragment>
+      <Helmet>
+        <title>Casa Verde | Contactos</title>
+      </Helmet>
+      <div className="contacts-page container">
+        <div className="contact-form">
+          <div className="image">
+            <div className="adress" >
+              <div className="icon" ><Location /></div>
+              <span className="name">
+                { TranslationsHelper.all.homepage.intro.label }
+              </span>
+              <span>
+                { ADDRESS }
+              </span>
+              <a className="google-maps" href="https://maps.app.goo.gl/WMVK4Dek57yxhW6X8" target="_blank">
+                <div className="link-arrow">
+                  <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
+                  <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
+                </div>
+                <span>{ TranslationsHelper.all.contacts.maps }</span>
+              </a>
+            </div>
+          </div>
+          <div className="form" data-aos="fade-up" data-aos-duration="1500" >
+            <Label text={TranslationsHelper.all.contacts.form.label} />
+            <Title text={TranslationsHelper.all.contacts.form.title} />
+            <div className="form-field" >
+              <input 
+                className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`} 
+                type="text" 
+                placeholder={TranslationsHelper.all.contacts.form.fields.name}
+                value={ContactsFormState.name}
+                onChange={(event) => dispatchContactsFormUpdate({
+                    type: ContactsFormUpdateType.UPDATE_NAME,
+                    payload: {
+                      name: event.target.value
+                    }
+                })}
+              />
+              <Name className="name" />
+            </div>
+            <div className="form-field" >
+              <input 
+                className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`} 
+                type="email" 
+                placeholder={TranslationsHelper.all.contacts.form.fields.email}
+                value={ContactsFormState.email}
+                onChange={(event) => dispatchContactsFormUpdate({
+                    type: ContactsFormUpdateType.UPDATE_EMAIL,
+                    payload: {
+                    email: event.target.value
+                    }
+                })}
+              />
+              <Email className="email" />
+            </div>
+            <div className="form-field" >
+              <input 
+                className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`} 
+                type="text" 
+                placeholder={TranslationsHelper.all.contacts.form.fields.subject}
+                value={ContactsFormState.subject}
+                onChange={(event) => dispatchContactsFormUpdate({
+                    type: ContactsFormUpdateType.UPDATE_SUBJECT,
+                    payload: {
+                      subject: event.target.value
+                    }
+                })}
+              />
+              <Subject className="subject" />
+            </div>
+            <div className="form-field" >
+              <textarea 
+                className={`form-field-input ${ContactsFormState.invalidMessage ? "invalid" : ""}`} 
+                placeholder={""}
+                rows={3}
+                value={ContactsFormState.message}
+                onChange={(event) => dispatchContactsFormUpdate({
+                    type: ContactsFormUpdateType.UPDATE_MESSAGE,
+                    payload: {
+                    message: event.target.value
+                    }
+                })}
+              />
+              <Message className="message" />
+            </div>
+            <button 
+              className="send-form"
+              disabled={!ContactsFormState.enableSumbit} 
+              onClick={() => submitContactForm({
+                name: ContactsFormState.name,
+                email: ContactsFormState.email,
+                subject: ContactsFormState.subject,
+                message: ContactsFormState.message
+              })}
+            >
+              { TranslationsHelper.all.contacts.form.send }
+            </button>
           </div>
         </div>
-        <div className="form" data-aos="fade-up" data-aos-duration="1500" >
-          <Label text={TranslationsHelper.all.contacts.form.label} />
-          <Title text={TranslationsHelper.all.contacts.form.title} />
-          <div className="form-field" >
-            <input 
-              className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`} 
-              type="text" 
-              placeholder={TranslationsHelper.all.contacts.form.fields.name}
-              value={ContactsFormState.name}
-              onChange={(event) => dispatchContactsFormUpdate({
-                  type: ContactsFormUpdateType.UPDATE_NAME,
-                  payload: {
-                    name: event.target.value
-                  }
-              })}
-            />
-            <Name className="name" />
-          </div>
-          <div className="form-field" >
-            <input 
-              className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`} 
-              type="email" 
-              placeholder={TranslationsHelper.all.contacts.form.fields.email}
-              value={ContactsFormState.email}
-              onChange={(event) => dispatchContactsFormUpdate({
-                  type: ContactsFormUpdateType.UPDATE_EMAIL,
-                  payload: {
-                  email: event.target.value
-                  }
-              })}
-            />
-            <Email className="email" />
-          </div>
-          <div className="form-field" >
-            <input 
-              className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`} 
-              type="text" 
-              placeholder={TranslationsHelper.all.contacts.form.fields.subject}
-              value={ContactsFormState.subject}
-              onChange={(event) => dispatchContactsFormUpdate({
-                  type: ContactsFormUpdateType.UPDATE_SUBJECT,
-                  payload: {
-                    subject: event.target.value
-                  }
-              })}
-            />
-            <Subject className="subject" />
-          </div>
-          <div className="form-field" >
-            <textarea 
-              className={`form-field-input ${ContactsFormState.invalidMessage ? "invalid" : ""}`} 
-              placeholder={""}
-              rows={3}
-              value={ContactsFormState.message}
-              onChange={(event) => dispatchContactsFormUpdate({
-                  type: ContactsFormUpdateType.UPDATE_MESSAGE,
-                  payload: {
-                  message: event.target.value
-                  }
-              })}
-            />
-            <Message className="message" />
-          </div>
-          <button 
-            className="send-form"
-            disabled={!ContactsFormState.enableSumbit} 
-            onClick={() => submitContactForm({
-              name: ContactsFormState.name,
-              email: ContactsFormState.email,
-              subject: ContactsFormState.subject,
-              message: ContactsFormState.message
-            })}
-          >
-            { TranslationsHelper.all.contacts.form.send }
-          </button>
+        <div className="contacts-row">
+          {contactsInfo.map((contactInfo, index) => 
+            <React.Fragment key={contactInfo.name} >
+              <Contact {...contactInfo} />
+              { index !== contactsInfo.length - 1 && <hr />}
+            </React.Fragment>
+          )}
         </div>
       </div>
-      <div className="contacts-row">
-        {contactsInfo.map((contactInfo, index) => 
-          <React.Fragment>
-            <Contact key={contactInfo.name} {...contactInfo} />
-            { index !== contactsInfo.length - 1 && <hr />}
-          </React.Fragment>
-        )}
-      </div>
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -20,7 +20,24 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
         </span>
         <div className="menu-options">
             {options.map(({ name, link, newTab }) => 
-                <button key={name} className="menu-option" onClick={() => newTab ? window.open(link) : navigate(link)} data-aos="fade-up" data-delay="500" data-aos-duration="1500" >
+                <button 
+                    key={name}
+                    className="menu-option"
+                    onClick={() => {
+                        if (newTab) {
+                            window.open(link);
+                        }
+                        else if (location.pathname !== link) { 
+                            navigate(link) 
+                        }
+                        else { 
+                            window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) 
+                        }
+                    }}
+                    data-aos="fade-up"
+                    data-delay="500"
+                    data-aos-duration="1500"
+                >
                     {name}
                 </button>
             )}

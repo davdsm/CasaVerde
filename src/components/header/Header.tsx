@@ -49,7 +49,10 @@ const Header: React.FunctionComponent = () => {
       }
       <div id="header" className="header" style={{ top: 0 }}>
         <div className="container">
-          <button className="logo" onClick={() => navigate("/")}>
+          <button className="logo" onClick={() => {
+            if (location.pathname !== "/") { navigate("/") }
+            else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
+          }}>
             <GreenLogo />
           </button>
           <div className="navigation-links">

@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import GallerySection from "../../../components/gallery-section/GallerySection";
 import OurSpacesSection from "../../../components/our-spaces-section/OurSpacesSection";
 import IndividualOfficeInfo from "./IndividualOfficeInfo";
 import OfficeSlider from "./OfficeSlider";
+import { Helmet } from "react-helmet-async";
 
 import offices from "./offices";
 
@@ -31,12 +32,17 @@ const IndividualOffice: React.FunctionComponent = () => {
   }, [location.pathname]);
 
   return (
-    <div className="individual-office container">
-      <OfficeSlider images={office.images} />
-      <GallerySection hideHeader={true} exclude={office.id} />
-      <IndividualOfficeInfo {...office} />
-      <OurSpacesSection exclude={office.id} />
-    </div>
+    <React.Fragment>
+      <Helmet>
+        <title>Casa Verde | { office.name }</title>
+      </Helmet>
+      <div className="individual-office container">
+        <OfficeSlider images={office.images} />
+        <GallerySection hideHeader={true} exclude={office.id} />
+        <IndividualOfficeInfo {...office} />
+        <OurSpacesSection exclude={office.id} />
+      </div>
+    </React.Fragment>
   )
 }
 
