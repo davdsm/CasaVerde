@@ -262,49 +262,56 @@
             }
         }
     }
+}
 
-    .image-full-width {
+#image-full-width {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    z-index: 30;
+    background-color: rgba(#000000, 0.85);
+    padding: 1.85rem 2.85rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+
+    .close-mobile-menu {
+        background-color: transparent;
+        border: none;
+
+        color: $header-gray-text;
+        font-size: 1.25rem;
+        font-weight: 400;
+        padding: 0 0 1rem 0;
+
+        svg path {
+            fill: $white;
+        }
+    }
+
+    img {
         position: absolute;
-        z-index: 30;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(#000000, 0.85);
-        padding: 1.85rem 2.85rem;
-        display: none;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        height: 60%;
+        width: auto;
 
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-        animation-duration: 1s;
-
-        .close-mobile-menu {
-            background-color: transparent;
-            border: none;
-    
-            color: $header-gray-text;
-            font-size: 1.25rem;
-            font-weight: 400;
-            padding: 0 0 1rem 0;
-    
-            svg path {
-                fill: $white;
-            }
+        @media (width < 500px) {
+            width: 60%;
+            height: auto;
         }
 
-        img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            height: 60%;
-            width: auto;
-
-            &.horizontal {
-                width: 60%;
-                height: auto;
-            }
+        &.horizontal {
+            width: 60%;
+            height: auto;
         }
     }
 }

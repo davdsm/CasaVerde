@@ -13,11 +13,11 @@ export const subscribeNewsletter = (email: string) => {
       body: JSON.stringify({
         sender: "Casa Verde",
         receiver: {
-          email: "ana28.98@hotmail.com",
-          name: "Ana"
+          email: "geral@davdsm.pt",
+          name: "Casa Verde"
         },
         subject: "[Casa Verde] Subscrição Newsletter",
-        message: `<h3>Olá!</h3><br><p>Foi efetuada uma nova subscrição à newsletter:</p><p><b>Email: </b>${email}</p><br><p>Casa verde</p>`
+        message: `<h3>Olá!</h3><p>Foi efetuada uma nova subscrição à newsletter:</p><p><b>Email: </b>${email}</p><br><p>Casa verde</p>`
       })
     }
   ).then((response) => {
@@ -53,11 +53,11 @@ export const submitContactForm = ({
       body: JSON.stringify({
         sender: "Casa Verde",
         receiver: {
-          email: "ana28.98@hotmail.com",
-          name: "Ana"
+          email: "geral@davdsm.pt",
+          name: "Casa Verde"
         },
         subject: `[Casa Verde] Nova Mensagem: ${subject}`,
-        message: `<h3>Olá!</h3><br><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
+        message: `<h3>Olá!</h3><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
       })
     }
   ).then((response) => {

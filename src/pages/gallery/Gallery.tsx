@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import SectionNavButton from "../../components/section-nav-button/SectionNavButton";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import GridTemplate from "./GridTemplate";
@@ -10,6 +10,7 @@ import filters from "./filters";
 import "../../styles/pages/Gallery.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../../Modal";
 
 const Gallery: React.FunctionComponent = () => {
 
@@ -25,21 +26,6 @@ const Gallery: React.FunctionComponent = () => {
   const [imageFullWidth, setImageFullWidth] = useState<string>();
 
   const imageFullWidthRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-
-    const body = document.getElementsByTagName("body")[0];
-    const header = document.getElementById("header");
-
-    showImageFullWidth && (body.style.overflow = "hidden");
-    !showImageFullWidth && (body.style.overflow = "scroll");
-    imageFullWidthRef.current && header && (imageFullWidthRef.current.style.top = `${ window.scrollY - header.clientHeight - 1 }px`);
-    imageFullWidthRef.current && showImageFullWidth && (imageFullWidthRef.current.style.display = "flex");
-    imageFullWidthRef.current && showImageFullWidth && (imageFullWidthRef.current.style.animationName = "fade-in-left-100");
-    imageFullWidthRef.current && !showImageFullWidth && (imageFullWidthRef.current.style.animationName = "fade-out-left-100");
-
-  }, [showImageFullWidth]);
-
 
   const onFilter = (filter?: SpaceType) => {
 
@@ -117,22 +103,27 @@ const Gallery: React.FunctionComponent = () => {
       { showLoadMoreButton && 
         <SectionNavButton text={TranslationsHelper.all.gallery["load-more"]} onClick={onLoadMore} />
       }
-      <div ref={imageFullWidthRef} className="image-full-width">
-        <button className="close-mobile-menu" onClick={() => {
-            setShowImageFullWidth(false);
-          }} >
-          <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
-        </button>
-        <img 
-          src={imageFullWidth}
-          alt="image-full-width"
-          onLoad={(element) => {
-            if (element.currentTarget.width > element.currentTarget.height) {
-              element.currentTarget.className = "horizontal";
-            }
-          }}
-        />
-      </div>
+      {showImageFullWidth && 
+        <Modal childrenRef={imageFullWidthRef}>
+          <div ref={imageFullWidthRef} id="image-full-width">
+            <button className="close-mobile-menu" onClick={() => {
+                imageFullWidthRef.current && (imageFullWidthRef.current.style.animationName = "fade-out-left-100");
+                setShowImageFullWidth(!showImageFullWidth);
+              }} >
+              <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
+            </button>
+            <img 
+              src={imageFullWidth}
+              alt="image-full-width"
+              onLoad={(element) => {
+                if (element.currentTarget.width > element.currentTarget.height) {
+                  element.currentTarget.className = "horizontal";
+                }
+              }}
+            />
+          </div>
+        </Modal>
+      }
     </div>
   )
 }

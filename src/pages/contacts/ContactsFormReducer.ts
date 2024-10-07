@@ -27,10 +27,6 @@ type ContactsFormActionType = {
     }
 };
 
-const isEmailValid = (email: string) => {
-    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
-}
-
 const ContactsFormReducer  = (state: ContactsFormState, action: ContactsFormActionType) => {
     switch (action.type) {
 
@@ -50,9 +46,9 @@ const ContactsFormReducer  = (state: ContactsFormState, action: ContactsFormActi
                 return {
                     ...state,
                     email: action.payload.email || "",
-                    invalidEmail: action.payload.email ? ( !isEmailValid(action.payload.email) || action.payload.email?.length === 0 ) : true,
+                    invalidEmail: action.payload.email?.length === 0,
                     enableSumbit: 
-                    ( action.payload.email ? !(action.payload.email.length === 0) && isEmailValid(action.payload.email) : false ) && !state.invalidName && !state.invalidSubject && !state.invalidMessage,
+                    !(action.payload.email?.length === 0) && !state.invalidName && !state.invalidSubject && !state.invalidMessage,
                 }
             };
 

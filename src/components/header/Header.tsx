@@ -7,6 +7,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { navigationLinks } from "./navigation-links";
 import Aos from "aos";
+import Modal from "../../Modal";
 
 import "../../styles/components/Header.scss";
 
@@ -22,49 +23,43 @@ const Header: React.FunctionComponent = () => {
     Aos.refresh();
   }, [location.pathname]);
 
-  useEffect(() => {
-    const body = document.getElementsByTagName("body")[0];
-    const mobileHeader = document.getElementById("mobile-header");
-
-    openMobileMenu && (body.style.overflow = "hidden");
-    !openMobileMenu && (body.style.overflow = "scroll");
-
-    mobileHeader && openMobileMenu && (mobileHeader.style.top = `${window.scrollY}px`);
-    mobileHeader && !openMobileMenu && (mobileHeader.style.top = "0px");
-    mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.top = `${window.scrollY}px`);
-    mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.display = "flex");
-    mobileHeaderRef.current && openMobileMenu && (mobileHeaderRef.current.style.animationName = "fade-in-left-100");
-    mobileHeaderRef.current && !openMobileMenu && (mobileHeaderRef.current.style.animationName = "fade-out-left-100");
-  }, [openMobileMenu]);
-
   return (
     <React.Fragment>
-        <div id="mobile-header"  ref={mobileHeaderRef} >
-          <button className="close-mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu)} >
-            <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
-          </button>
-          { navigationLinks.map((navigationLink) => 
-            <NavigationLink 
-              key={navigationLink.id} 
-              onClickCallback={() => setOpenMobileMenu(!openMobileMenu) } 
-              {...navigationLink}
-            />
-          )}
-        </div>
-        <div id="header" className="header" style={{ top: 0 }}>
-          <div className="container">
-            <button className="logo" onClick={() => navigate("/")}>
-              <GreenLogo />
+      {openMobileMenu && 
+        <Modal childrenRef={mobileHeaderRef} >
+          <div id="mobile-header" ref={mobileHeaderRef} >
+            <button className="close-mobile-menu" onClick={() => {
+              mobileHeaderRef.current && (mobileHeaderRef.current.style.animationName = "fade-out-left-100");
+              setTimeout(() => setOpenMobileMenu(!openMobileMenu), 1000);
+              }} >
+              <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
             </button>
-            <div className="navigation-links">
-              { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
-            </div>
-            <button className="mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu)} >
-              <FontAwesomeIcon icon={faBars} />
-            </button>
+            { navigationLinks.map((navigationLink) => 
+              <NavigationLink 
+                key={navigationLink.id} 
+                onClickCallback={() => {
+                  mobileHeaderRef.current && (mobileHeaderRef.current.style.animationName = "fade-out-left-100");
+                  setTimeout(() => setOpenMobileMenu(!openMobileMenu), 1000);
+                }} 
+                {...navigationLink}
+              />
+            )}
           </div>
+        </Modal>
+      }
+      <div id="header" className="header" style={{ top: 0 }}>
+        <div className="container">
+          <button className="logo" onClick={() => navigate("/")}>
+            <GreenLogo />
+          </button>
+          <div className="navigation-links">
+            { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
+          </div>
+          <button className="mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu)} >
+            <FontAwesomeIcon icon={faBars} />
+          </button>
         </div>
-      {/* } */}
+      </div>
     </React.Fragment>
   )
 }

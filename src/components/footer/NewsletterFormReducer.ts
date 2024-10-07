@@ -1,7 +1,6 @@
 export enum NewsletterFormUpdateType {
     UPDATE_EMAIL = 'update-email',
     UPDATE_AGREEMENT = 'update-agreement',
-    VALIDATE_FORM = 'validate-form',
 };
 
 interface NewsletterFormState {
@@ -18,10 +17,6 @@ type NewsletterFormActionType = {
     }
 };
 
-const isEmailValid = (email: string) => {
-    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
-}
-
 const NewsletterFormReducer  = (state: NewsletterFormState, action: NewsletterFormActionType) => {
     switch (action.type) {
 
@@ -30,7 +25,8 @@ const NewsletterFormReducer  = (state: NewsletterFormState, action: NewsletterFo
                 return {
                     ...state,
                     email: action.payload.email || "",
-                    enableSumbit: action.payload.email ? isEmailValid(action.payload.email) && state.agreement : false,
+                    invalidEmail: action.payload.email?.length === 0,
+                    enableSumbit: !(action.payload.email?.length === 0) && state.agreement,
                 }
             };
 
@@ -40,14 +36,6 @@ const NewsletterFormReducer  = (state: NewsletterFormState, action: NewsletterFo
                     ...state,
                     agreement: !state.agreement,
                     enableSumbit: !state.agreement && !state.invalidEmail,
-                }
-            };
-
-        case NewsletterFormUpdateType.VALIDATE_FORM:
-            { 
-                return {
-                    ...state,
-                    invalidEmail: !isEmailValid(state.email) || false,
                 }
             };
         }

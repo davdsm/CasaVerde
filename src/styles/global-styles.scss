@@ -16,6 +16,10 @@ body {
     margin: 0;
 }
 
+body[aria-hidden] {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1440px;
     margin-right: auto;
