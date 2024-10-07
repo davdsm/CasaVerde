@@ -26,65 +26,65 @@ const offices = {
         images: meetingRoomImages
     },
     gabinete1: {
-        id: "Gabinete 1",
+        id: "Escritório 1",
         area: 27.25,
-        name: "Gabinete 1",
+        name: "Escritório 1",
         price: 650,
         images: gabinete1Images
     },
     gabinete2: {
-        id: "Gabinete 2",
+        id: "Escritório 2",
         area: 20.2,
-        name: "Gabinete 2",
+        name: "Escritório 2",
         price: 500,
         images: gabinete2Images
     },
     gabinete3: {
-        id: "Gabinete 3",
+        id: "Escritório 3",
         area: 30.75,
-        name: "Gabinete 3",
+        name: "Escritório 3",
         price: 650,
         images: gabinete3Images
     },
     gabinete4: {
-        id: "Gabinete 4",
+        id: "Escritório 4",
         area: 22.15,
-        name: "Gabinete 4",
+        name: "Escritório 4",
         price: 500,
         images: gabinete4Images
     },
     gabinete5: {
-        id: "Gabinete 5",
+        id: "Escritório 5",
         area: 22.2,
-        name: "Gabinete 5",
+        name: "Escritório 5",
         price: 500,
         images: gabinete5Images
     },
     gabinete6: {
-        id: "Gabinete 6",
+        id: "Escritório 6",
         area: 23.25,
-        name: "Gabinete 6",
+        name: "Escritório 6",
         price: 450,
         images: gabinete6Images
     },
     gabinete7: {
-        id: "Gabinete 7",
+        id: "Escritório 7",
         area: 24.8,
-        name: "Gabinete 7",
+        name: "Escritório 7",
         price: 500,
         images: gabinete7Images
     },
     gabinete8: {
-        id: "Gabinete 8",
+        id: "Escritório 8",
         area: 20.2,
-        name: "Gabinete 8",
+        name: "Escritório 8",
         price: 500,
         images: gabinete8Images
     },
     gabinete9: {
-        id: "Gabinete 9",
+        id: "Escritório 9",
         area: 8.4,
-        name: "Gabinete 9",
+        name: "Escritório 9",
         price: 250,
         images: gabinete9Images
     }

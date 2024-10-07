@@ -89,7 +89,7 @@ const Gallery: React.FunctionComponent = () => {
 
   return (
     <div className="gallery container">
-      <div className="filters" data-aos="fade-right" data-aos-duration="1500">
+      <div className="filters" data-aos="fade-up" data-aos-duration="1500">
         {filters.map(({ type, name }) => 
           <button
             key={name}

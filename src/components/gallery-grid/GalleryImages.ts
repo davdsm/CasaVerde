@@ -33,111 +33,111 @@ const galleryImages = [
         link: "/offices/store"
     },
     {
-        id: "Gabinete 1",
+        id: "Escritório 1",
         imageSrc: OfficeG1_1,
-        office: "G1",
+        office: "E1",
         link: "/offices/office1"
     },
     {
-        id: "Gabinete 1",
+        id: "Escritório 1",
         imageSrc: OfficeG1_2,
-        office: "G1",
+        office: "E1",
         link: "/offices/office1"
     },
     {
-        id: "Gabinete 2",
+        id: "Escritório 2",
         imageSrc: OfficeG2_1,
-        office: "G2",
+        office: "E2",
         link: "/offices/office2"
     },
     {
-        id: "Gabinete 2",
+        id: "Escritório 2",
         imageSrc: OfficeG2_2,
-        office: "G2",
+        office: "E2",
         link: "/offices/office2"
     },
     {
-        id: "Gabinete 3",
+        id: "Escritório 3",
         imageSrc: OfficeG3_1,
-        office: "G3",
+        office: "E3",
         link: "/offices/office3"
     },
     {
-        id: "Gabinete 3",
+        id: "Escritório 3",
         imageSrc: OfficeG3_2,
-        office: "G3",
+        office: "E3",
         link: "/offices/office3"
     },
     {
-        id: "Gabinete 4",
+        id: "Escritório 4",
         imageSrc: OfficeG4_1,
-        office: "G4",
+        office: "E4",
         link: "/offices/office4"
     },
     {
-        id: "Gabinete 4",
+        id: "Escritório 4",
         imageSrc: OfficeG4_2,
-        office: "G4",
+        office: "E4",
         link: "/offices/office4"
     },
     {
-        id: "Gabinete 5",
+        id: "Escritório 5",
         imageSrc: OfficeG5_1,
-        office: "G5",
+        office: "E5",
         link: "/offices/office5"
     },
     {
-        id: "Gabinete 5",
+        id: "Escritório 5",
         imageSrc: OfficeG5_2,
-        office: "G5",
+        office: "E5",
         link: "/offices/office5"
     },
     {
-        id: "Gabinete 6",
+        id: "Escritório 6",
         imageSrc: OfficeG6_1,
-        office: "G6",
+        office: "E6",
         link: "/offices/office6"
     },
     {
-        id: "Gabinete 6",
+        id: "Escritório 6",
         imageSrc: OfficeG6_2,
-        office: "G6",
+        office: "E6",
         link: "/offices/office6"
     },
     {
-        id: "Gabinete 7",
+        id: "Escritório 7",
         imageSrc: OfficeG7_1,
-        office: "G7",
+        office: "E7",
         link: "/offices/office7"
     },
     {
-        id: "Gabinete 7",
+        id: "Escritório 7",
         imageSrc: OfficeG7_2,
-        office: "G7",
+        office: "E7",
         link: "/offices/office7"
     },
     {
-        id: "Gabinete 8",
+        id: "Escritório 8",
         imageSrc: OfficeG8_1,
-        office: "G8",
+        office: "E8",
         link: "/offices/office8"
     },
     {
-        id: "Gabinete 8",
+        id: "Escritório 8",
         imageSrc: OfficeG8_2,
-        office: "G8",
+        office: "E8",
         link: "/offices/office8"
     },
     {
-        id: "Gabinete 9",
+        id: "Escritório 9",
         imageSrc: OfficeG9_1,
-        office: "G9",
+        office: "E9",
         link: "/offices/office9"
     },
     {
-        id: "Gabinete 9",
+        id: "Escritório 9",
         imageSrc: OfficeG9_2,
-        office: "G9",
+        office: "E9",
         link: "/offices/office9"
     },
 ];

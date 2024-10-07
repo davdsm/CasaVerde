@@ -8,7 +8,7 @@ const HelpBox: React.FunctionComponent = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="contacts-box" data-aos="fade-down" data-delay="200" data-aos-duration="2000">
+    <div className="contacts-box" data-aos="fade-up" data-delay="200" data-aos-duration="2000">
         <div className="left-column">
             <span className="title">
               {TranslationsHelper.all.footer.help.title}
@@ -19,7 +19,7 @@ const HelpBox: React.FunctionComponent = () => {
         </div>
         <div className="right-column" >
           <div className="bg-circle"></div>
-          <button onClick={() => navigate("/contact")}>
+          <button onClick={() => navigate("/contacts")}>
             {TranslationsHelper.all.footer.help.button}
             <FontAwesomeIcon icon={faArrowRight} fontSize={"15px"} />
           </button>

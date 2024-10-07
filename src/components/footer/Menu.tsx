@@ -14,12 +14,12 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
 
   return (
     <div className="menu">
-        <span className="menu-title" data-aos="fade-right" data-delay="200" data-aos-duration="2000">
+        <span className="menu-title" data-aos="fade-up" data-delay="200" data-aos-duration="2000">
             {title}
         </span>
         <div className="menu-options">
             {options.map(({ name, link }) => 
-                <button key={name} className="menu-option" onClick={() => navigate(link)} data-aos="fade-right" data-delay="500" data-aos-duration="1500" >
+                <button key={name} className="menu-option" onClick={() => link.includes("https://") ? window.open(link) : navigate(link)} data-aos="fade-up" data-delay="500" data-aos-duration="1500" >
                     {name}
                 </button>
             )}

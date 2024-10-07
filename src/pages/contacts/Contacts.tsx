@@ -53,7 +53,7 @@ const Contacts: React.FunctionComponent = () => {
             </a>
           </div>
         </div>
-        <div className="form" data-aos="fade-right" data-aos-duration="1500" >
+        <div className="form" data-aos="fade-up" data-aos-duration="1500" >
           <Label text={TranslationsHelper.all.contacts.form.label} />
           <Title text={TranslationsHelper.all.contacts.form.title} />
           <div className="form-field" >

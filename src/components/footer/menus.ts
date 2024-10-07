@@ -48,7 +48,7 @@ const menus = [
             },
             {
                 name: TranslationsHelper.all.footer.menus["menu-3"]["option-3"],
-                link: "",
+                link: "https://www.livroreclamacoes.pt/Inicio/",
             }
         ]
     }

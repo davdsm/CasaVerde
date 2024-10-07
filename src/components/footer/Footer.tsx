@@ -23,7 +23,7 @@ const Footer: React.FunctionComponent = () => {
             <div className="menus">
               { menus.map(({ title, options }) => <Menu key={title} title={title} options={options}/>) }
             </div>
-            <div className="logo" data-aos="fade-left" data-delay="200" data-aos-duration="2000">
+            <div className="logo" data-aos="fade-up" data-delay="200" data-aos-duration="2000">
               <WhiteLogo />
             </div>
           </div>

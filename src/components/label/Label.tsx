@@ -8,7 +8,7 @@ interface ILabel {
 const Label: React.FunctionComponent<ILabel> = ({ text }: ILabel) => {
 
   return (
-    <div className="label" data-aos="fade-right" data-aos-duration="1500">
+    <div className="label" data-aos="fade-up" data-aos-duration="1500">
       { text }
     </div>
   )

@@ -25,3 +25,7 @@ body {
 button:not([disabled]) {
     cursor: pointer;
 }
+
+.swiper-pagination .swiper-pagination-bullet {
+    transition: all ease 1s;
+}

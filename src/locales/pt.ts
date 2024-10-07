@@ -21,7 +21,7 @@ const pt = {
             },
             "menu-2": {
                 title: "Escritórios",
-                "option-1": "Gabinetes",
+                "option-1": "Escritórios",
                 "option-2": "Loja",
                 "option-3": "Sala Reuniões",
             },
@@ -55,7 +55,7 @@ const pt = {
             "rotating-text": "we achieve the pinnacle of success together.",
             products: {
                 office: "Escritório",
-                offices: "Gabinetes",
+                offices: "Escritórios",
                 "meeting-room": "Sala Reuniões",
                 store: "Loja"
             }
@@ -144,7 +144,7 @@ const pt = {
     },
     offices: {
         label: "Escritórios",
-        title: "Escritórios que respiram Identidade"
+        title: "No Interior da Exclusividade"
     },
     gallery: {
         "load-more": "Carregar mais",
