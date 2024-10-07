@@ -3,7 +3,7 @@ import Label from "../../components/label/Label";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import Title from "../../components/title/Title";
 import ContactsFormReducer, { ContactsFormUpdateType } from "./ContactsFormReducer";
-import Contact, { ContactType } from "./Contact";
+import Contact from "./Contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { submitContactForm } from "../../services/services";
@@ -15,6 +15,8 @@ import Message from "../../assets/contacts/message.svg?react";
 import Location from "../../assets/contacts/location.svg?react";
 
 import contactsInfo from "./contactsInfo";
+
+const ADDRESS: string = import.meta.env.VITE_ADDRESS;
 
 import "../../styles/pages/Contacts.scss";
 
@@ -42,7 +44,7 @@ const Contacts: React.FunctionComponent = () => {
               { TranslationsHelper.all.homepage.intro.label }
             </span>
             <span>
-              { contactsInfo.find(({ type }) => ContactType.MORADA === type )?.value }
+              { ADDRESS }
             </span>
             <a className="google-maps" href="https://maps.app.goo.gl/WMVK4Dek57yxhW6X8" target="_blank">
               <div className="link-arrow">

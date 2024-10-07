@@ -5,6 +5,7 @@ interface IMenu {
     options: {
         name: string;
         link: string;
+        newTab?: boolean;
     }[];
 }
 
@@ -18,8 +19,8 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
             {title}
         </span>
         <div className="menu-options">
-            {options.map(({ name, link }) => 
-                <button key={name} className="menu-option" onClick={() => link.includes("https://") ? window.open(link) : navigate(link)} data-aos="fade-up" data-delay="500" data-aos-duration="1500" >
+            {options.map(({ name, link, newTab }) => 
+                <button key={name} className="menu-option" onClick={() => newTab ? window.open(link) : navigate(link)} data-aos="fade-up" data-delay="500" data-aos-duration="1500" >
                     {name}
                 </button>
             )}

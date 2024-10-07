@@ -51,7 +51,7 @@ const pt = {
             label: "Casa Verde",
             title: "O seu Escritório Naturalmente Único",
             "message-1": "Feita de pedra e cal, de muita história e construída com encanto, a Casa Verde é o local que procura para trabalhar e suceder profissionalmente.",
-            "message-2": "Apresentamos 8 espaços individuais de trabalho, com algumas condições incluídas que tornam este espaço único.",
+            "message-2": "Apresentamos 9 espaços individuais de trabalho, uma sala de reuniões e uma loja, com algumas condições incluídas que tornam este espaço único.",
             "rotating-text": "we achieve the pinnacle of success together.",
             products: {
                 office: "Escritório",
