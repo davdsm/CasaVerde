@@ -1,3 +1,5 @@
+const EMAIL: string = import.meta.env.VITE_EMAIL;
+
 export const subscribeNewsletter = (email: string) => {
   console.log("");
   console.log("Nova subscrição de Newsletter", new Date());
@@ -13,7 +15,7 @@ export const subscribeNewsletter = (email: string) => {
       body: JSON.stringify({
         sender: "Casa Verde",
         receiver: {
-          email: "geral@davdsm.pt",
+          email: EMAIL,
           name: "Casa Verde"
         },
         subject: "[Casa Verde] Subscrição Newsletter",
@@ -53,7 +55,7 @@ export const submitContactForm = ({
       body: JSON.stringify({
         sender: "Casa Verde",
         receiver: {
-          email: "geral@davdsm.pt",
+          email: EMAIL,
           name: "Casa Verde"
         },
         subject: `[Casa Verde] Nova Mensagem: ${subject}`,

@@ -168,6 +168,7 @@ const pt = {
                 subject: "Assunto",
             },
             send: "Enviar",
+            sent: "Enviado!",
         },
         phone: "Telefone",
         email: "Email",

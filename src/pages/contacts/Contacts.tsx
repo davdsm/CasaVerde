@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import Label from "../../components/label/Label";
 import TranslationsHelper from "../../utils/TranslationsHelper";
 import Title from "../../components/title/Title";
@@ -34,6 +34,8 @@ const Contacts: React.FunctionComponent = () => {
     invalidMessage: false,
     enableSumbit: false,
   });
+
+  const [submitButtonText, setSubmitButtonText] = useState<string>(TranslationsHelper.all.contacts.form.send);
 
   return (
     <React.Fragment>
@@ -124,16 +126,29 @@ const Contacts: React.FunctionComponent = () => {
               <Message className="message" />
             </div>
             <button 
-              className="send-form"
+              className={`send-form ${submitButtonText.includes("Enviado") ? "sent" : ""}`}
               disabled={!ContactsFormState.enableSumbit} 
-              onClick={() => submitContactForm({
-                name: ContactsFormState.name,
-                email: ContactsFormState.email,
-                subject: ContactsFormState.subject,
-                message: ContactsFormState.message
-              })}
+              onClick={() => {
+                submitContactForm({
+                  name: ContactsFormState.name,
+                  email: ContactsFormState.email,
+                  subject: ContactsFormState.subject,
+                  message: ContactsFormState.message
+                });
+
+                setSubmitButtonText(() => TranslationsHelper.all.contacts.form.sent);
+
+                setTimeout(() => {
+                  setSubmitButtonText(() => TranslationsHelper.all.contacts.form.send)
+                }, 5000);
+
+                dispatchContactsFormUpdate({
+                  type: ContactsFormUpdateType.RESET,
+                  payload: {}
+                })
+              }}
             >
-              { TranslationsHelper.all.contacts.form.send }
+              { submitButtonText }
             </button>
           </div>
         </div>

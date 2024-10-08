@@ -250,6 +250,10 @@
                             }
                         }
 
+                        &.sent svg path {
+                            fill: rgba($dark-green, 0.8);
+                        }
+
                         svg path {
                             fill: rgba($white, 0.5);
                         }

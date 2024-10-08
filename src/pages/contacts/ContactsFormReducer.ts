@@ -3,6 +3,7 @@ export enum ContactsFormUpdateType {
     UPDATE_EMAIL = 'update-email',
     UPDATE_SUBJECT = 'update-subject',
     UPDATE_MESSAGE = 'update-message',
+    RESET = 'reset',
 };
 
 interface ContactsFormState {
@@ -73,6 +74,22 @@ const ContactsFormReducer  = (state: ContactsFormState, action: ContactsFormActi
                     enableSumbit: 
                         !(action.payload.message?.length === 0) && !state.invalidName && !state.invalidSubject && !state.invalidEmail,
 
+                }
+            };
+
+        case ContactsFormUpdateType.RESET: 
+            { 
+                return {
+                    ...state,
+                    name: "",
+                    invalidName: false,
+                    email: "",
+                    invalidEmail: false,
+                    subject: "",
+                    invalidSubject: false,
+                    message: "",
+                    invalidMessage: false,
+                    enableSumbit: false,
                 }
             };
         }

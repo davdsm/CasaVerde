@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TranslationsHelper from "../../utils/TranslationsHelper";
-import { faPaperPlane, faSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane, faSquare, faCheck, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import NewsletterFormReducer, { NewsletterFormUpdateType } from "./NewsletterFormReducer";
 import { subscribeNewsletter } from "../../services/services";
 
@@ -14,6 +14,8 @@ const Newsletter: React.FunctionComponent = () => {
     agreement: false,
     enableSumbit: false,
   });
+
+  const [submitButtonIcon, setSubmitButtonIcon] = useState<IconDefinition>(faPaperPlane);
 
   return (
     <div className="newsletter-input-and-checkbox" data-aos="fade-up" data-delay="200" data-aos-duration="2000" >
@@ -31,10 +33,23 @@ const Newsletter: React.FunctionComponent = () => {
             })}
             />
             <button
+                className={submitButtonIcon === faCheck ? "sent" : ""}
                 disabled={!newsletterFormState.enableSumbit}
-                onClick={() => subscribeNewsletter(newsletterFormState.email)}
+                onClick={() => {
+                    subscribeNewsletter(newsletterFormState.email);
+                    setSubmitButtonIcon(() => faCheck);
+
+                    setTimeout(() => {
+                        setSubmitButtonIcon(() => faPaperPlane);
+                    }, 5000);
+
+                    dispatchNewsletterFormUpdate({
+                        type: NewsletterFormUpdateType.RESET,
+                        payload: {}
+                    })
+                }}
             >
-            <FontAwesomeIcon icon={faPaperPlane} fontSize={"15px"} />
+            <FontAwesomeIcon icon={submitButtonIcon} fontSize={"15px"} />
             </button>
         </div>
         <div className="checkbox-and-terms">

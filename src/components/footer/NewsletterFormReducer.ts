@@ -1,6 +1,7 @@
 export enum NewsletterFormUpdateType {
     UPDATE_EMAIL = 'update-email',
     UPDATE_AGREEMENT = 'update-agreement',
+    RESET = 'reset'
 };
 
 interface NewsletterFormState {
@@ -36,6 +37,17 @@ const NewsletterFormReducer  = (state: NewsletterFormState, action: NewsletterFo
                     ...state,
                     agreement: !state.agreement,
                     enableSumbit: !state.agreement && !state.invalidEmail,
+                }
+            };
+        
+        case NewsletterFormUpdateType.RESET:
+            { 
+                return {
+                    ...state,
+                    email: "",
+                    invalidEmail: false,
+                    agreement: false,
+                    enableSumbit: false,
                 }
             };
         }
