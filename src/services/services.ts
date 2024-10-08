@@ -13,12 +13,12 @@ export const subscribeNewsletter = (email: string) => {
         "davdsmKey": 'd41d8cd98f00b204e9800998ecf8427e'
       },
       body: JSON.stringify({
-        sender: "Casa Verde",
+        sender: "🏠Casa Verde",
         receiver: {
           email: EMAIL,
           name: "Casa Verde"
         },
-        subject: "[Casa Verde] Subscrição Newsletter",
+        subject: "🔔 Subscrição Newsletter",
         message: `<h3>Olá!</h3><p>Foi efetuada uma nova subscrição à newsletter:</p><p><b>Email: </b>${email}</p><br><p>Casa verde</p>`
       })
     }
@@ -53,12 +53,12 @@ export const submitContactForm = ({
         "davdsmKey": 'd41d8cd98f00b204e9800998ecf8427e'
       },
       body: JSON.stringify({
-        sender: "Casa Verde",
+        sender: "🏠 Casa Verde",
         receiver: {
           email: EMAIL,
-          name: "Casa Verde"
+          name: "Administrador"
         },
-        subject: `[Casa Verde] Nova Mensagem: ${subject}`,
+        subject: `🔔 Nova Mensagem: ${subject}`,
         message: `<h3>Olá!</h3><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
       })
     }
