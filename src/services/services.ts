@@ -34,10 +34,11 @@ export const subscribeNewsletter = (email: string) => {
 }
 
 export const submitContactForm = ({
-  name, email, subject, message
+  name, email, contact, subject, message
 }: {
   name: string,
   email: string,
+  contact: string,
   subject: string,
   message: string,
 }) => {
@@ -59,7 +60,7 @@ export const submitContactForm = ({
           name: "Administrador"
         },
         subject: `🔔 Nova Mensagem: ${subject}`,
-        message: `<h3>Olá!</h3><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
+        message: `<h3>Olá!</h3><p>Foi enviada uma nova mensagem:</p><p><b>Name: </b>${name}</p><p><b>Email: </b>${email}</p><p><b>Contacto: </b>${contact}</p><p><b>Message: </b>${message}</p><br><p>Casa verde</p>`
       })
     }
   ).then((response) => {

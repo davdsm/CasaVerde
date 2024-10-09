@@ -165,6 +165,7 @@ const pt = {
             fields: {
                 name: "Nome",
                 email: "Email",
+                contact: "Contacto",
                 subject: "Assunto",
             },
             send: "Enviar",

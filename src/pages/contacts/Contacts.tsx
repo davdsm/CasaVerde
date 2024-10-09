@@ -13,6 +13,7 @@ import Name from "../../assets/contacts/name.svg?react";
 import Email from "../../assets/contacts/email-field.svg?react";
 import Subject from "../../assets/contacts/subject.svg?react";
 import Message from "../../assets/contacts/message.svg?react";
+import ContactIcon from "../../assets/contacts/telefone.svg?react";
 import Location from "../../assets/contacts/location.svg?react";
 
 import contactsInfo from "./contactsInfo";
@@ -28,6 +29,8 @@ const Contacts: React.FunctionComponent = () => {
     invalidName: false,
     email: "",
     invalidEmail: false,
+    contact: "",
+    invalidContact: false,
     subject: "",
     invalidSubject: false,
     message: "",
@@ -48,17 +51,17 @@ const Contacts: React.FunctionComponent = () => {
             <div className="adress" >
               <div className="icon" ><Location /></div>
               <span className="name">
-                { TranslationsHelper.all.homepage.intro.label }
+                {TranslationsHelper.all.homepage.intro.label}
               </span>
               <span>
-                { ADDRESS }
+                {ADDRESS}
               </span>
               <a className="google-maps" href="https://maps.app.goo.gl/WMVK4Dek57yxhW6X8" target="_blank">
                 <div className="link-arrow">
                   <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
                   <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
                 </div>
-                <span>{ TranslationsHelper.all.contacts.maps }</span>
+                <span>{TranslationsHelper.all.contacts.maps}</span>
               </a>
             </div>
           </div>
@@ -66,72 +69,88 @@ const Contacts: React.FunctionComponent = () => {
             <Label text={TranslationsHelper.all.contacts.form.label} />
             <Title text={TranslationsHelper.all.contacts.form.title} />
             <div className="form-field" >
-              <input 
-                className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`} 
-                type="text" 
+              <input
+                className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`}
+                type="text"
                 placeholder={TranslationsHelper.all.contacts.form.fields.name}
                 value={ContactsFormState.name}
                 onChange={(event) => dispatchContactsFormUpdate({
-                    type: ContactsFormUpdateType.UPDATE_NAME,
-                    payload: {
-                      name: event.target.value
-                    }
+                  type: ContactsFormUpdateType.UPDATE_NAME,
+                  payload: {
+                    name: event.target.value
+                  }
                 })}
               />
               <Name className="name" />
             </div>
             <div className="form-field" >
-              <input 
-                className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`} 
-                type="email" 
+              <input
+                className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`}
+                type="email"
                 placeholder={TranslationsHelper.all.contacts.form.fields.email}
                 value={ContactsFormState.email}
                 onChange={(event) => dispatchContactsFormUpdate({
-                    type: ContactsFormUpdateType.UPDATE_EMAIL,
-                    payload: {
+                  type: ContactsFormUpdateType.UPDATE_EMAIL,
+                  payload: {
                     email: event.target.value
-                    }
+                  }
                 })}
               />
               <Email className="email" />
             </div>
             <div className="form-field" >
-              <input 
-                className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`} 
-                type="text" 
+              <input
+                className={`form-field-input ${ContactsFormState.invalidContact ? "invalid" : ""}`}
+                type="text"
+                placeholder={TranslationsHelper.all.contacts.form.fields.contact}
+                value={ContactsFormState.contact}
+                onChange={(event) => dispatchContactsFormUpdate({
+                  type: ContactsFormUpdateType.UPDATE_CONTACT,
+                  payload: {
+                    contact: event.target.value
+                  }
+                })}
+              />
+              <ContactIcon className="subject" style={{width: "17px"}} />
+            </div>
+            <div className="form-field" >
+              <input
+                className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`}
+                type="text"
                 placeholder={TranslationsHelper.all.contacts.form.fields.subject}
                 value={ContactsFormState.subject}
                 onChange={(event) => dispatchContactsFormUpdate({
-                    type: ContactsFormUpdateType.UPDATE_SUBJECT,
-                    payload: {
-                      subject: event.target.value
-                    }
+                  type: ContactsFormUpdateType.UPDATE_SUBJECT,
+                  payload: {
+                    subject: event.target.value
+                  }
                 })}
               />
               <Subject className="subject" />
             </div>
             <div className="form-field" >
-              <textarea 
-                className={`form-field-input ${ContactsFormState.invalidMessage ? "invalid" : ""}`} 
+              <textarea
+                className={`form-field-input ${ContactsFormState.invalidMessage ? "invalid" : ""}`}
                 placeholder={""}
                 rows={3}
                 value={ContactsFormState.message}
                 onChange={(event) => dispatchContactsFormUpdate({
-                    type: ContactsFormUpdateType.UPDATE_MESSAGE,
-                    payload: {
+                  type: ContactsFormUpdateType.UPDATE_MESSAGE,
+                  payload: {
                     message: event.target.value
-                    }
+                  }
                 })}
               />
               <Message className="message" />
             </div>
-            <button 
+            <button
               className={`send-form ${submitButtonText.includes("Enviado") ? "sent" : ""}`}
-              disabled={!ContactsFormState.enableSumbit} 
+              disabled={!ContactsFormState.enableSumbit}
               onClick={() => {
                 submitContactForm({
                   name: ContactsFormState.name,
                   email: ContactsFormState.email,
+                  contact: ContactsFormState.contact,
                   subject: ContactsFormState.subject,
                   message: ContactsFormState.message
                 });
@@ -148,15 +167,15 @@ const Contacts: React.FunctionComponent = () => {
                 })
               }}
             >
-              { submitButtonText }
+              {submitButtonText}
             </button>
           </div>
         </div>
         <div className="contacts-row">
-          {contactsInfo.map((contactInfo, index) => 
+          {contactsInfo.map((contactInfo, index) =>
             <React.Fragment key={contactInfo.name} >
               <Contact {...contactInfo} />
-              { index !== contactsInfo.length - 1 && <hr />}
+              {index !== contactsInfo.length - 1 && <hr />}
             </React.Fragment>
           )}
         </div>
