@@ -55,7 +55,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     name: action.payload.name || "",
                     invalidName: action.payload.name?.length === 0,
-                    enableSumbit: action.payload.name && isSubmitEnabled(state, action.payload.name, "name"),
+                    enableSumbit: action.payload.name ? isSubmitEnabled(state, action.payload.name, "name") : false,
                 }
             };
 
@@ -65,7 +65,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     email: action.payload.email || "",
                     invalidEmail: action.payload.email?.length === 0,
-                    enableSumbit: action.payload.email && isSubmitEnabled(state, action.payload.email, "email"),
+                    enableSumbit: action.payload.email ? isSubmitEnabled(state, action.payload.email, "email") : false,
                 }
             };
 
@@ -75,7 +75,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     contact: action.payload.contact || "",
                     invalidContact: action.payload.contact?.length === 0,
-                    enableSumbit: action.payload.contact && isSubmitEnabled(state, action.payload.contact, "contact"),
+                    enableSumbit: action.payload.contact ? isSubmitEnabled(state, action.payload.contact, "contact") : false,
 
                 }
             };
@@ -86,7 +86,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     subject: action.payload.subject || "",
                     invalidSubject: action.payload.subject?.length === 0,
-                    enableSumbit: action.payload.subject && isSubmitEnabled(state, action.payload.subject, "subject"),
+                    enableSumbit: action.payload.subject ? isSubmitEnabled(state, action.payload.subject, "subject") : false,
 
                 }
             };
@@ -97,7 +97,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     message: action.payload.message || "",
                     invalidMessage: action.payload.message?.length === 0,
-                    enableSumbit: action.payload.message && isSubmitEnabled(state, action.payload.message, "message"),
+                    enableSumbit: action.payload.message ? isSubmitEnabled(state, action.payload.message, "message") : false,
 
                 }
             };
