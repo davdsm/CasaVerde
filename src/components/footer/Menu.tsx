@@ -27,8 +27,9 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
                         if (newTab) {
                             window.open(link);
                         }
-                        else if (location.pathname !== link) { 
-                            navigate(link) 
+                        else if (location.pathname !== link) {
+                            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                            navigate(link);
                         }
                         else { 
                             window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) 

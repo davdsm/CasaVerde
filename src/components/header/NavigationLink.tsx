@@ -32,7 +32,10 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
     const onNavigate = () => {
         onClickCallback && onClickCallback();
         if ( location.pathname === href ) { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }
-        else { navigate(href); }
+        else {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            navigate(href);
+        }
     }
 
     return (

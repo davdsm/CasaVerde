@@ -32,6 +32,20 @@ type ContactsFormActionType = {
     }
 };
 
+const isSubmitEnabled = (
+    state: ContactsFormState,
+    newValue: string,
+    type: "name" | "email" | "contact" | "subject" | "message",
+) => {
+    const validName = !(type === "name" ? newValue.length === 0 : state.name.length === 0);
+    const validEmail = !(type === "email" ? newValue.length === 0 : state.email.length === 0);
+    const validContact = !(type === "contact" ? newValue.length === 0 : state.contact.length === 0);
+    const validSubject = !(type === "subject" ? newValue.length === 0 : state.subject.length === 0);
+    const validMessage = !(type === "message" ? newValue.length === 0 : state.message.length === 0);
+
+    return validName && validEmail && validContact && validSubject && validMessage
+}
+
 const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActionType) => {
     switch (action.type) {
 
@@ -41,8 +55,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     name: action.payload.name || "",
                     invalidName: action.payload.name?.length === 0,
-                    enableSumbit:
-                        !(action.payload.name?.length === 0) && !state.invalidEmail && !state.invalidSubject && !state.invalidMessage,
+                    enableSumbit: action.payload.name && isSubmitEnabled(state, action.payload.name, "name"),
                 }
             };
 
@@ -52,8 +65,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     email: action.payload.email || "",
                     invalidEmail: action.payload.email?.length === 0,
-                    enableSumbit:
-                        !(action.payload.email?.length === 0) && !state.invalidName && !state.invalidSubject && !state.invalidMessage,
+                    enableSumbit: action.payload.email && isSubmitEnabled(state, action.payload.email, "email"),
                 }
             };
 
@@ -63,8 +75,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     contact: action.payload.contact || "",
                     invalidContact: action.payload.contact?.length === 0,
-                    enableSumbit:
-                        !(action.payload.contact?.length === 0) && !state.invalidName && !state.invalidEmail && !state.invalidMessage,
+                    enableSumbit: action.payload.contact && isSubmitEnabled(state, action.payload.contact, "contact"),
 
                 }
             };
@@ -75,8 +86,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     subject: action.payload.subject || "",
                     invalidSubject: action.payload.subject?.length === 0,
-                    enableSumbit:
-                        !(action.payload.subject?.length === 0) && !state.invalidName && !state.invalidEmail && !state.invalidMessage,
+                    enableSumbit: action.payload.subject && isSubmitEnabled(state, action.payload.subject, "subject"),
 
                 }
             };
@@ -87,8 +97,7 @@ const ContactsFormReducer = (state: ContactsFormState, action: ContactsFormActio
                     ...state,
                     message: action.payload.message || "",
                     invalidMessage: action.payload.message?.length === 0,
-                    enableSumbit:
-                        !(action.payload.message?.length === 0) && !state.invalidName && !state.invalidSubject && !state.invalidEmail,
+                    enableSumbit: action.payload.message && isSubmitEnabled(state, action.payload.message, "message"),
 
                 }
             };

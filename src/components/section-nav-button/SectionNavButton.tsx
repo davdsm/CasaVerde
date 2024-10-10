@@ -16,7 +16,10 @@ const SectionNavButton: React.FunctionComponent<ISectionNavButton> = ({ text, li
   const navigate = useNavigate();
 
   const onButtonClick = () => {
-    if ( link ) { navigate(link) }
+    if ( link ) {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      navigate(link);
+    }
     if ( onClick ) { onClick() } 
   };
 

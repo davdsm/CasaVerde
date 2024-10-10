@@ -16,7 +16,10 @@ const HomeNavButton: React.FunctionComponent<IHomeNavButton> = ({ icon, text, li
   const navigate = useNavigate();
 
   return (
-    <button className="link" onClick={() => navigate(link)}>
+    <button className="link" onClick={() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      navigate(link);
+    }}>
         <div className="link-name">
             <span className="link-icon" ><FontAwesomeIcon icon={icon} fontSize={"11px"} /></span>
             { text }

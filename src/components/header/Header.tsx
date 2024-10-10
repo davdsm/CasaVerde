@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import GreenLogo from "../../assets/logo/logo-green.svg?react";
+import GreenLogo from "../../assets/logo/logo-green.png";
 import NavigationLink from "./NavigationLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -50,10 +50,13 @@ const Header: React.FunctionComponent = () => {
       <div id="header" className="header" style={{ top: 0 }}>
         <div className="container">
           <button className="logo" onClick={() => {
-            if (location.pathname !== "/") { navigate("/") }
+            if (location.pathname !== "/") {
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              navigate("/");
+            }
             else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
           }}>
-            <GreenLogo />
+            <img src={GreenLogo} alt="logo" />
           </button>
           <div className="navigation-links">
             { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }

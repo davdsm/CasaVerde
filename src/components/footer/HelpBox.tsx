@@ -20,7 +20,10 @@ const HelpBox: React.FunctionComponent = () => {
         <div className="right-column" >
           <div className="bg-circle"></div>
           <button onClick={() => {
-            if (location.pathname !== "/contacts") { navigate("/contacts") }
+            if (location.pathname !== "/contacts") {
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              navigate("/contacts");
+            }
             else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
             }}>
             {TranslationsHelper.all.footer.help.button}

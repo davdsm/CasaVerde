@@ -50,7 +50,7 @@ const benefits = [
     },
     {
         icon: MeetingRoom,
-        included: false,
+        included: true,
         title: TranslationsHelper.all.homepage.benefits["meeting-room"].title,
         description: TranslationsHelper.all.homepage.benefits["meeting-room"].description,
     },

@@ -15,7 +15,10 @@ const GalleryGridItem: React.FunctionComponent<IGalleryGridItem> = ({ imageSrc, 
       className="gallery-grid-item"
       style={{ backgroundImage: `url(${imageSrc})` }}
       onClick={() => { 
-        if (location.pathname !== link) { navigate(link) }
+        if (location.pathname !== link) {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          navigate(link);
+        }
         else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
       }}
     >

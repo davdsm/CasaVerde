@@ -13,14 +13,6 @@ import Store from "../../assets/images/loja/895A9699.png";
 import MeetingRoom from "../../assets/images/meeting-room/895A9690.png";
 
 const spaces = [
-    {   
-        id: "Sala Reuniões",
-        imageSrc: MeetingRoom,
-        label: SpaceType.MEETING_ROOM,
-        area: 10.12,
-        name: "Sala Reuniões",
-        link: "/offices/meeting-room",
-    },
     {
         id: "Loja",
         imageSrc: Store,
@@ -100,6 +92,14 @@ const spaces = [
         area: 8.4,
         name: "Escritório 9",
         link: "/offices/office9",
+    },
+    {   
+        id: "Sala Reuniões",
+        imageSrc: MeetingRoom,
+        label: SpaceType.MEETING_ROOM,
+        area: 10.12,
+        name: "Sala Reuniões",
+        link: "/offices/meeting-room",
     },
 ];
 

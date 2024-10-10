@@ -50,8 +50,8 @@ const pt = {
         intro: {
             label: "Casa Verde",
             title: "O seu Escritório Naturalmente Único",
-            "message-1": "Feita de pedra e cal, de muita história e construída com encanto, a Casa Verde é o local que procura para trabalhar e suceder profissionalmente.",
-            "message-2": "Apresentamos 9 espaços individuais de trabalho, uma sala de reuniões e uma loja, com algumas condições incluídas que tornam este espaço único.",
+            "message-1": "A Casa é Verde e de trabalho. Verde de esperança. E esperança de sucesso. Do seu trabalho... na Casa Verde! A Casa Verde é feita de pedra e cal, de história e encanto, de espaços para trabalhar e partilhar. E ser feliz!",
+            "message-2": "Apresentamos 9 espaços individuais de trabalho, serviços partilhados de recepção e reunião, estacionamento automóvel privado e proximidade do centro da vila e vias de ligação a Guimarães, Braga, Póvoa de Lanhoso e Porto. A casa verde é assim... o seu refúgio de trabalho, o seu local de sucesso!",
             "rotating-text": "we achieve the pinnacle of success together.",
             products: {
                 office: "Escritório",
@@ -93,7 +93,7 @@ const pt = {
             },
             "meeting-room": {
                 title: "Sala Reuniões",
-                description: "Disponibilizamos de uma sala de reuniões com uma tarifa/hora para empresas externas"
+                description: "Incluído para quem aluga um escritório, tarifa a hora para reservas exteriores"
             },
             reception: {
                 title: "Serviço de recepção",

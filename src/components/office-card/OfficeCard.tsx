@@ -29,7 +29,10 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
 
     return (
         <button className="office-card" onClick={() => {
-            if (location.pathname !== link) { navigate(link) }
+            if (location.pathname !== link) {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                navigate(link);
+            }
             else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
         }} data-aos="fade-up" data-aos-duration="2000" >
             <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>

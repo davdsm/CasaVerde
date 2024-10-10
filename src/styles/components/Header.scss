@@ -26,7 +26,11 @@
     .logo {
         border: none;
         background-color: $white;
-        height: auto;
+        height: 4.25rem;
+
+        img {
+            height: 80%;
+        }
 
         @media (width < 800px) {
             width: 2.5rem;
