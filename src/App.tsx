@@ -8,10 +8,11 @@ import Gallery from "./pages/gallery/Gallery"
 import ContactForm from "./pages/contacts/Contacts"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
-import PrivacyPolicy from "./components/footer/PrivacyPolicy"
-import TermsAndConditions from "./components/footer/TermsAndConditions"
 import Aos from "aos"
 import { IntlProvider } from "react-intl"
+import PrivacyPolicy from "./pages/privacy-policy/PrivacyPolicy"
+import TermsAndConditions from "./pages/terms-and-conditions/TermsAndConditions"
+
 import LocaleEN from "./locales/en.json";
 import LocalePT from "./locales/pt.json";
 
@@ -65,8 +66,8 @@ const App: React.FunctionComponent = () => {
           <Route path="offices/:id" element={<IndividualOffice />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="contacts" element={<ContactForm />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="terms-conditions" element={<TermsAndConditions />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy locale={locale} />} />
+          <Route path="terms-conditions" element={<TermsAndConditions locale={locale} />} />
         </Route>
       )
     );

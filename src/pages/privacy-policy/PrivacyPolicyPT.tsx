@@ -1,18 +1,9 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
-import { useIntl } from "react-intl";
 
-import "../../styles/pages/PrivacyPolicy.scss";
-
-const PrivacyPolicy: React.FunctionComponent = () => {
-
-    const intl = useIntl();
+const PrivacyPolicyPT: React.FunctionComponent = () => {
 
     return (
         <React.Fragment>
-            <Helmet>
-                <title>Casa Verde | {intl.formatMessage({ id: "footer.menus.menu-3.option-2" })}</title>
-            </Helmet>
             <div id="privacy-policy">
                 <h2>
                     <span style={{ color: "rgb(68, 68, 68)"}}>
@@ -145,4 +136,4 @@ const PrivacyPolicy: React.FunctionComponent = () => {
     )
 }
 
-export default PrivacyPolicy;
+export default PrivacyPolicyPT;
