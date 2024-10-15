@@ -1,27 +1,42 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import GreenLogo from "../../assets/logo/logo-green.png";
 import NavigationLink from "./NavigationLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { navigationLinks } from "./navigation-links";
-import Aos from "aos";
 import Modal from "../../Modal";
+import { Locale } from "../../App";
 
 import "../../styles/components/Header.scss";
 
-const Header: React.FunctionComponent = () => {
+interface IHeader {
+  locale: Locale;
+}
+
+const Header: React.FunctionComponent<IHeader> = ({ locale }: IHeader) => {
 
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
   const navigate = useNavigate();
   const mobileHeaderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    Aos.refresh();
-  }, [location.pathname]);
+  const languageButtons = (
+     locale === Locale.EN ?
+      <button className="language-button" onClick={() => {
+        localStorage.setItem("locale", "PT");
+        location.reload();
+      }}>
+          PT
+      </button> :
+      <button className="language-button" onClick={() => {
+        localStorage.setItem("locale", "EN");
+        location.reload();
+      }}>
+          EN
+      </button>
+    );
 
   return (
     <React.Fragment>
@@ -44,6 +59,9 @@ const Header: React.FunctionComponent = () => {
                 {...navigationLink}
               />
             )}
+            <div className="mobile-locale">
+              {languageButtons}
+            </div>
           </div>
         </Modal>
       }
@@ -51,7 +69,6 @@ const Header: React.FunctionComponent = () => {
         <div className="container">
           <button className="logo" onClick={() => {
             if (location.pathname !== "/") {
-              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
               navigate("/");
             }
             else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
@@ -61,6 +78,7 @@ const Header: React.FunctionComponent = () => {
           <div className="navigation-links">
             { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
           </div>
+          {languageButtons}
           <button className="mobile-menu" onClick={() => setOpenMobileMenu(!openMobileMenu)} >
             <FontAwesomeIcon icon={faBars} />
           </button>

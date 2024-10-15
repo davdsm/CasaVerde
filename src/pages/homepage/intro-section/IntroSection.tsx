@@ -1,4 +1,3 @@
-import TranslationsHelper from "../../../utils/TranslationsHelper";
 import Label from "../../../components/label/Label";
 import Title from "../../../components/title/Title";
 import Description from "../../../components/description/Description";
@@ -23,12 +22,12 @@ const IntroSection: React.FunctionComponent = () => {
             </div>
             <div className="right-section" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
                 <div className="label-and-title">
-                    <Label text={TranslationsHelper.all.homepage.intro.label} />
-                    <Title text={TranslationsHelper.all.homepage.intro.title} />
+                    <Label text={"homepage.intro.label"} />
+                    <Title text={"homepage.intro.title"} />
                 </div>
                 <div className="description-text" >
-                    <Description text={TranslationsHelper.all.homepage.intro["message-1"]} />
-                    <Description text={TranslationsHelper.all.homepage.intro["message-2"]} />
+                    <Description text={"homepage.intro.message-1"} />
+                    <Description text={"homepage.intro.message-2"} />
                 </div>
                 <div className="links" >
                     { navButtons.map((button) => <HomeNavButton key={button.text} {...button} />) }

@@ -1,6 +1,6 @@
-
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useIntl } from "react-intl";
 
 import "../../styles/components/Header.scss";
 
@@ -16,6 +16,7 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
     const [isActive, setIsActive] = useState<boolean>(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const intl = useIntl();
 
     useEffect(() => {
         setIsActive(isNavigationLinkEqualToCurrentPage());
@@ -31,16 +32,12 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
 
     const onNavigate = () => {
         onClickCallback && onClickCallback();
-        if ( location.pathname === href ) { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); }
-        else {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            navigate(href);
-        }
+        navigate(href);
     }
 
     return (
         <button id={id} className="navigation-link" style={isActive ? { color: "#008D36" } : undefined} onClick={() => onNavigate()} >
-            {text}
+            {intl.formatMessage({ id: text })}
         </button>
     )
 }

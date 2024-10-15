@@ -30,7 +30,6 @@ const OfficeSlider: React.FunctionComponent<IOfficeSlider> = ({ images }: IOffic
       >
         {images.map(({ src, alt }) => 
           <SwiperSlide key={alt} style={{ backgroundImage: `url(${src})` }} > 
-          {/* backgroundSize: horizontal ? "cover" : "contain" */}
           </SwiperSlide>
         )}
         <SliderNavigation />

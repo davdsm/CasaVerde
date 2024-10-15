@@ -1,0 +1,135 @@
+{
+  "header.homepage": "Home",
+  "header.about": "About",
+  "header.offices": "Offices",
+  "header.gallery": "Gallery",
+  "header.contacts": "Contacts",
+
+  "footer.help.title": "Need Help?",
+  "footer.help.description": "Found the space you're looking for? Come check out the Casa Verde story!",
+  "footer.help.button": "Contacts",
+
+  "footer.menus.menu-1.title": "Casa Verde",
+  "footer.menus.menu-1.option-1": "About Us",
+  "footer.menus.menu-1.option-2": "Offices",
+  "footer.menus.menu-1.option-3": "Contacts",
+
+  "footer.menus.menu-2.title": "Offices",
+  "footer.menus.menu-2.option-1": "Offices",
+  "footer.menus.menu-2.option-2": "Shop",
+  "footer.menus.menu-2.option-3": "Meeting Room",
+
+  "footer.menus.menu-3.title": "Support",
+  "footer.menus.menu-3.option-1": "Terms and Conditions",
+  "footer.menus.menu-3.option-2": "Privacy Policy",
+  "footer.menus.menu-3.option-3": "Complaint Book",
+
+  "footer.newsletter.placeholder": "Become a Casa Verde member...",
+  "footer.newsletter.checkbox": "I've read and agree to the terms and privacy policy",
+
+  "footer.contacts.call-info": "(call to national mobile network)",
+
+  "footer.social.instagram": "Instagram",
+  "footer.social.linkedin": "LinkedIn",
+  "footer.social.facebook": "Facebook",
+
+  "footer.rights": " — Casa Verde. All rights reserved.",
+
+  "homepage.intro.label": "Casa Verde",
+  "homepage.intro.title": "Your Naturally Unique Office",
+  "homepage.intro.message-1": "The house is green and buzzing with work. Green with hope. And full of hope for success, from your work… at Casa Verde! Casa Verde is built from stone and lime, filled with history, charm, workspaces, and the happiness of those who work there!",
+  "homepage.intro.message-2": "We offer 9 individual offices, shared reception and meeting services, private parking, and close access to the town center and major roads leading to Guimarães, Braga, Póvoa de Lanhoso, and Porto. Casa Verde really is your work haven and a place for success!",
+
+  "homepage.intro.products.office": "Office",
+  "homepage.intro.products.offices": "Offices",
+  "homepage.intro.products.meeting-room": "Meeting Room",
+  "homepage.intro.products.store": "Shop",
+
+  "homepage.spaces.label": "Featured Spaces",
+  "homepage.spaces.title": "Our Spaces",
+  "homepage.spaces.button": "All Spaces",
+
+  "homepage.benefits.non-included-label": "Not included",
+
+  "homepage.benefits.internet.title": "Fast Internet",
+  "homepage.benefits.internet.description": "Casa Verde has high-speed fiber optic internet and phone services.",
+
+  "homepage.benefits.parking.title": "Parking",
+  "homepage.benefits.parking.description": "Private parking available for tenants and visitors.",
+
+  "homepage.benefits.green-spaces.title": "Green Spaces",
+  "homepage.benefits.green-spaces.description": "Enjoy our wide range of outdoor common areas.",
+
+  "homepage.benefits.cleaning.title": "Cleaning service",
+  "homepage.benefits.cleaning.description": "We keep the spaces clean and tidy for you.",
+
+  "homepage.benefits.ac.title": "Air conditioning",
+  "homepage.benefits.ac.description": "Every office is air-conditioned for your comfort.",
+
+  "homepage.benefits.electricity.title": "Electricity",
+  "homepage.benefits.electricity.description": "Each office has its own electric meter.",
+
+  "homepage.benefits.meeting-room.title": "Meeting Room",
+  "homepage.benefits.meeting-room.description": "Free for tenants, hourly rates for external bookings.",
+
+  "homepage.benefits.reception.title": "Reception service",
+  "homepage.benefits.reception.description": "A reception service to welcome your visitors.",
+
+  "homepage.gallery.label": "Gallery",
+  "homepage.gallery.title": "Spaces that Inspire!",
+  "homepage.gallery.button": "Visit Gallery",
+
+  "about.intro.title": "About Casa Verde",
+  "about.intro.from": "Home",
+  "about.intro.to": "About",
+
+  "about.props.label": "Vision",
+  "about.props.title": "About",
+  "about.props.casa-verde": "Casa Verde",
+
+  "about.props.nature.title": "Contact with Nature",
+  "about.props.nature.description": "Feel inspired to reach your professional goals.",
+
+  "about.props.privacy.title": "Privacy",
+  "about.props.privacy.description": "A peaceful environment that helps you stay productive.",
+
+  "about.props.exclusivity.title": "Exclusivity",
+  "about.props.exclusivity.description": "Services tailored just for you.",
+
+  "about.props.location.title": "Perfect Location",
+  "about.props.location.description": "Close to the town center and major roads.",
+
+  "about.props.productivity.title": "Productivity",
+  "about.props.productivity.description": "Focus on your work while we take care of the rest.",
+
+  "about.props.refinement.title": "Refinement",
+  "about.props.refinement.description": "Attention to detail, just for you.",
+
+  "offices.label": "Offices",
+  "offices.title": "Inside Exclusivity",
+  "offices.price": "Price on request",
+
+  "gallery.load-more": "Load More",
+  "gallery.filters.all": "All",
+  "gallery.filters.store": "Shop",
+  "gallery.filters.offices": "Offices",
+  "gallery.filters.meetingRoom": "Meeting Space",
+  "gallery.filters.reception": "Reception",
+  "gallery.filters.exterior": "Outdoor",
+  "gallery.filters.details": "Details",
+
+  "contacts.form.label": "Send Message",
+  "contacts.form.title": "Leave a message for our experts",
+  "contacts.form.fields.name": "Name",
+  "contacts.form.fields.email": "Email",
+  "contacts.form.fields.contact": "Contact",
+  "contacts.form.fields.subject": "Subject",
+  "contacts.form.send": "Send",
+  "contacts.form.sent": "Sent!",
+
+  "contacts.phone": "Phone",
+  "contacts.email": "Email",
+  "contacts.adress": "Address",
+  "contacts.maps": "Google Maps"
+  
+}

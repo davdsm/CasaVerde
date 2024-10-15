@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 
 interface IMenu {
@@ -12,11 +13,12 @@ interface IMenu {
 const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
 
   const navigate = useNavigate();
+  const intl = useIntl();
 
   return (
     <div className="menu">
         <span className="menu-title" data-aos="fade-up" data-delay="200" data-aos-duration="2000">
-            {title}
+            {intl.formatMessage({ id: title })}
         </span>
         <div className="menu-options">
             {options.map(({ name, link, newTab }) => 
@@ -28,7 +30,6 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
                             window.open(link);
                         }
                         else if (location.pathname !== link) {
-                            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                             navigate(link);
                         }
                         else { 
@@ -39,7 +40,7 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
                     data-delay="500"
                     data-aos-duration="1500"
                 >
-                    {name}
+                    {intl.formatMessage({ id: name })}
                 </button>
             )}
         </div>

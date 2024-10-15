@@ -1,0 +1,136 @@
+{
+  "header.homepage": "Início",
+  "header.about": "Porquê",
+  "header.offices": "Escritórios",
+  "header.gallery": "Galeria",
+  "header.contacts": "Contactos",
+
+  "footer.help.title": "Precisa de Ajuda?",
+  "footer.help.description": "Encontrou o espaço que procura? Venha conhecer a história da Casa Verde !",
+  "footer.help.button": "Contactos",
+
+  "footer.menus.menu-1.title": "Casa Verde",
+  "footer.menus.menu-1.option-1": "Sobre Nós",
+  "footer.menus.menu-1.option-2": "Escritórios",
+  "footer.menus.menu-1.option-3": "Contactos",
+
+  "footer.menus.menu-2.title": "Escritórios",
+  "footer.menus.menu-2.option-1": "Escritórios",
+  "footer.menus.menu-2.option-2": "Loja",
+  "footer.menus.menu-2.option-3": "Sala Reuniões",
+
+
+  "footer.menus.menu-3.title": "Apoio",
+  "footer.menus.menu-3.option-1": "Termos e Condições",
+  "footer.menus.menu-3.option-2": "Política de Privacidade",
+  "footer.menus.menu-3.option-3": "Livro de Reclamações",
+
+  "footer.newsletter.placeholder": "Tornar-me membro Casa Verde...",
+  "footer.newsletter.checkbox": "Li e concordo com os termos e condições e a política de privacidade",
+
+  "footer.contacts.call-info": "(chamada para rede móvel nacional)",
+
+  "footer.social.instagram": "Instagram",
+  "footer.social.linkedin": "LinkedIn",
+  "footer.social.facebook": "Facebook",
+
+  "footer.rights": " — Casa Verde. Todos os dieiros reservados.",
+
+  "homepage.intro.label": "Casa Verde",
+  "homepage.intro.title": "O seu Escritório Naturalmente Único",
+  "homepage.intro.message-1": "A Casa é Verde e de trabalho. Verde de esperança. E esperança de sucesso. Do seu trabalho... na Casa Verde! A Casa Verde é feita de pedra e cal, de história e encanto, de espaços para trabalhar e partilhar. E ser feliz!",
+  "homepage.intro.message-2": "Apresentamos 9 espaços individuais de trabalho, serviços partilhados de recepção e reunião, estacionamento automóvel privado e proximidade do centro da vila e vias de ligação a Guimarães, Braga, Póvoa de Lanhoso e Porto. A casa verde é assim... o seu refúgio de trabalho, o seu local de sucesso!",
+
+  "homepage.intro.products.office": "Escritório",
+  "homepage.intro.products.offices": "Escritórios",
+  "homepage.intro.products.meeting-room": "Sala Reuniões",
+  "homepage.intro.products.store": "Loja",
+
+  "homepage.spaces.label": "Espaços em Destaque",
+  "homepage.spaces.title": "Os nossos espaços",
+  "homepage.spaces.button": "Todos os Espaços",
+
+  "homepage.benefits.non-included-label": "Não Incluído",
+
+  "homepage.benefits.internet.title": "Internet Rápida",
+  "homepage.benefits.internet.description": "A Casa Verde oferece internet de fibra óptica de alta velocidade e serviço telefónico",
+
+  "homepage.benefits.parking.title": "Estacionamento",
+  "homepage.benefits.parking.description": "Disponibilizamos estacionamento privativo para os inquilinos e visitantes",
+
+  "homepage.benefits.green-spaces.title": "Espaços Verdes",
+  "homepage.benefits.green-spaces.description": "A Casa Verde oferece uma vaste de espaços comuns exteriores como a sua manutenção",
+
+  "homepage.benefits.cleaning.title": "Serviço de limpeza",
+  "homepage.benefits.cleaning.description": "Na Casa Verde, o serviço de limpeza está incluído, garantindo a sua limpeza.",
+
+  "homepage.benefits.ac.title": "Ar Condicionado",
+  "homepage.benefits.ac.description": "Todos os escritórios e espaços têm ar condicionado para o seu conforto.",
+
+  "homepage.benefits.electricity.title": "Eletricidade",
+  "homepage.benefits.electricity.description": "Cada escritório conta com um contador individual",
+
+  "homepage.benefits.meeting-room.title": "Sala Reuniões",
+  "homepage.benefits.meeting-room.description": "Incluído para quem aluga um escritório, tarifa a hora para reservas exteriores",
+
+  "homepage.benefits.reception.title": "Serviço de recepção",
+  "homepage.benefits.reception.description": "A sua empresa terá à disposição um serviço de recepção para receber visitantes",
+
+  "homepage.gallery.label": "Galeria",
+  "homepage.gallery.title": "Espaços que Inspiram!",
+  "homepage.gallery.button": "Visitar Galeria",
+
+  "about.intro.title": "Porquê Casa Verde",
+  "about.intro.from": "Início",
+  "about.intro.to": "Sobre",
+
+  "about.props.label": "Visão",
+  "about.props.title": "O porquê",
+  "about.props.casa-verde": "Casa Verde",
+
+  "about.props.nature.title": "Contacto com a Natureza",
+  "about.props.nature.description": "Para que se sintam inspirados a alcançar o sucesso profissional",
+
+  "about.props.privacy.title": "Privacidade",
+  "about.props.privacy.description": "O ambiente necessário para ser produtivo",
+
+  "about.props.exclusivity.title": "Exclusividade",
+  "about.props.exclusivity.description": "Serviços altamente personalizados e a pensar nos clientes",
+
+  "about.props.location.title": "Perfeita localização",
+  "about.props.location.description": "Proximidade do centro da vila e vias de ligação a Guimarães, Braga, Póvoa de Lanhoso e Porto",
+
+  "about.props.productivity.title": "Produtividade",
+  "about.props.productivity.description": "Foque-se no seu trabalho e disfrute dos nossos serviços incluídos",
+
+  "about.props.refinement.title": "Requinte",
+  "about.props.refinement.description": "Detalhes e pormenores a pensar no cliente",
+
+  "offices.label": "Escritórios",
+  "offices.title": "No Interior da Exclusividade",
+  "offices.price": "Preço sob consulta",
+
+  "gallery.load-more": "Carregar mais",
+  "gallery.filters.all": "Todos",
+  "gallery.filters.store": "Loja",
+  "gallery.filters.offices": "Escritórios",
+  "gallery.filters.meetingRoom": "Sala Reuniões",
+  "gallery.filters.reception": "Receção",
+  "gallery.filters.exterior": "Espaço exterior",
+  "gallery.filters.details": "Detalhes",
+
+  "contacts.form.label": "Enviar Mensagem",
+  "contacts.form.title": "Deixa Uma Mensagem aos Nossos Especialistas",
+  "contacts.form.fields.name": "Nome",
+  "contacts.form.fields.email": "Email",
+  "contacts.form.fields.contact": "Contacto",
+  "contacts.form.fields.subject": "Assunto",
+  "contacts.form.send": "Enviar",
+  "contacts.form.sent": "Enviado!",
+
+  "contacts.phone": "Telefone",
+  "contacts.email": "Email",
+  "contacts.adress": "Morada",
+  "contacts.maps": "Google Maps"
+  
+}

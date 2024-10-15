@@ -23,13 +23,13 @@ const galleryImages = [
     {
         id: "Loja",
         imageSrc: Store1,
-        office: "Loja",
+        office: "homepage.intro.products.store",
         link: "/offices/store"
     },
     {
         id: "Loja",
         imageSrc: Store2,
-        office: "Loja",
+        office: "homepage.intro.products.store",
         link: "/offices/store"
     },
     {

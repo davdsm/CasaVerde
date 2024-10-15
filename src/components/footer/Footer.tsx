@@ -5,7 +5,7 @@ import menus from "./menus";
 import Menu from "./Menu";
 import socialMedia from "./social-media";
 import SocialMedia from "./SocialMedia";
-import TranslationsHelper from "../../utils/TranslationsHelper";
+import { useIntl } from "react-intl";
 
 import WhiteLogo from "../../assets/logo/logo-white.svg?react";
 import BackToTopArrow from "../../assets//footer/back-to-top-arrow.svg?react";
@@ -13,6 +13,8 @@ import BackToTopArrow from "../../assets//footer/back-to-top-arrow.svg?react";
 import "../../styles/components/Footer.scss";
 
 const Footer: React.FunctionComponent = () => {
+
+  const intl = useIntl();
 
   return (
     <div id="footer" className="footer">
@@ -38,7 +40,7 @@ const Footer: React.FunctionComponent = () => {
           </div>
           <div className="rights-and-back-to-top">
             <span className="rights" >
-              &#169; { new Date().getFullYear() }	{ TranslationsHelper.all.footer.rights }
+              &#169; { new Date().getFullYear() }	{intl.formatMessage({ id: "footer.rights" })}
             </span>
             <button className="back-to-top" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })} >
               <BackToTopArrow />

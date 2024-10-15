@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import TranslationsHelper from "../../utils/TranslationsHelper";
 import socialMedia from "./social-media";
 import { SocialMediaType } from "./SocialMedia";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useIntl } from "react-intl";
 
 import WhiteLogo from "../../assets/logo/logo-white.svg?react";
 
@@ -11,12 +11,16 @@ const EMAIL: string = import.meta.env.VITE_EMAIL;
 
 const Contacts: React.FunctionComponent = () => {
 
+  const intl = useIntl();
+
   return (
     <div className="contacts-section" data-aos="fade-up" data-delay="200" data-aos-duration="2000" >
         <hr/>
         <div className="contacts">
             <span>{PHONE_NUMBER}</span>
-            <span className="phone-info">{TranslationsHelper.all.footer.contacts["call-info"]}</span>
+            <span className="phone-info">
+              {intl.formatMessage({ id: "footer.contacts.call-info" })}
+            </span>
             <a href={`mailto:${EMAIL}`}>
               {EMAIL}
             </a>

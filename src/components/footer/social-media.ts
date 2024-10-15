@@ -1,4 +1,3 @@
-import TranslationsHelper from "../../utils/TranslationsHelper";
 import { SocialMediaType } from "./SocialMedia";
 
 const INSTAGRAM: string = import.meta.env.VITE_INSTAGRAM;
@@ -8,17 +7,17 @@ const FACEBOOK: string = import.meta.env.VITE_FACEBOOK;
 const socialMedia = [
     {
         type: SocialMediaType.INSTAGRAM,
-        name: TranslationsHelper.all.footer.social.instagram,
+        name: "footer.social.instagram",
         link: INSTAGRAM
     },
     {
         type: SocialMediaType.LINKEDIN,
-        name: TranslationsHelper.all.footer.social.linkedin,
+        name: "footer.social.linkedin",
         link: LINKEDIN
     },
     {
         type: SocialMediaType.FACEBOOK,
-        name: TranslationsHelper.all.footer.social.facebook,
+        name: "footer.social.facebook",
         link: FACEBOOK
     }
 ];

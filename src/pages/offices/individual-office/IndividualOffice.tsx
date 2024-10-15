@@ -5,6 +5,7 @@ import OurSpacesSection from "../../../components/our-spaces-section/OurSpacesSe
 import IndividualOfficeInfo from "./IndividualOfficeInfo";
 import OfficeSlider from "./OfficeSlider";
 import { Helmet } from "react-helmet-async";
+import { useIntl } from "react-intl";
 
 import offices from "./offices";
 
@@ -14,6 +15,7 @@ const IndividualOffice: React.FunctionComponent = () => {
 
   const { id } = useParams();
   const location = useLocation();
+  const intl = useIntl();
 
   const [office, setOffice] = useState(offices.loja);
 
@@ -34,7 +36,7 @@ const IndividualOffice: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Casa Verde | { office.name }</title>
+        <title>Casa Verde | {intl.formatMessage({ id: office.name })}</title>
       </Helmet>
       <div className="individual-office container">
         <OfficeSlider images={office.images} />

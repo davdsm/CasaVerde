@@ -1,15 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useIntl } from "react-intl";
 
 import "../../styles/pages/TermsAndConditions.scss";
 
 const TermsAndConditions: React.FunctionComponent = () => {
 
+    const intl = useIntl();
+
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Casa Verde | Termos e Condições</title>
-      </Helmet>
+        <Helmet>
+            <title>Casa Verde | {intl.formatMessage({ id: "footer.menus.menu-3.option-1" })}</title>
+        </Helmet>
         <div id="terms-and-conditions">
             <h2>
                 <span style={{ color: "rgb(68, 68, 68)"}}>

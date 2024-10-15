@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useIntl } from "react-intl";
 
 import "../../styles/components/SectionNavButton.scss";
 
@@ -14,10 +15,10 @@ interface ISectionNavButton {
 const SectionNavButton: React.FunctionComponent<ISectionNavButton> = ({ text, link, onClick }: ISectionNavButton) => {
 
   const navigate = useNavigate();
+  const intl = useIntl();
 
   const onButtonClick = () => {
     if ( link ) {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       navigate(link);
     }
     if ( onClick ) { onClick() } 
@@ -30,7 +31,7 @@ const SectionNavButton: React.FunctionComponent<ISectionNavButton> = ({ text, li
           <FontAwesomeIcon icon={faChevronRight} fontSize={"15px"} className="dark-green" />
         </div>
         <div className="link-name">
-          { text }
+          {intl.formatMessage({ id: text })}
         </div>
     </button>
   )

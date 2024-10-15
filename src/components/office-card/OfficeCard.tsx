@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import TranslationsHelper from "../../utils/TranslationsHelper";
+import { useIntl } from "react-intl";
 
 import Area from "../../assets/homepage/area.svg?react";
 
@@ -19,18 +19,18 @@ interface IOfficeCard {
     imageSrc: string;
     label: SpaceType;
     area: number;
-    name: string;
+    number?: number;
     link: string;
 }
 
-const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, area, name, link }: IOfficeCard) => {
+const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, area, number, link }: IOfficeCard) => {
 
     const navigate = useNavigate();
+    const intl = useIntl();
 
     return (
         <button className="office-card" onClick={() => {
             if (location.pathname !== link) {
-                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                 navigate(link);
             }
             else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
@@ -38,9 +38,9 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
             <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>
             <div className="card-inner-border">
                 <span className="card-label">
-                    {label === SpaceType.MEETING_ROOM && TranslationsHelper.all.homepage.intro.products["meeting-room"]}
-                    {label === SpaceType.STORE && TranslationsHelper.all.homepage.intro.products.store}
-                    {label === SpaceType.OFFICE && TranslationsHelper.all.homepage.intro.products.office}
+                    {label === SpaceType.MEETING_ROOM && intl.formatMessage({ id: "homepage.intro.products.meeting-room" })}
+                    {label === SpaceType.STORE && intl.formatMessage({ id: "homepage.intro.products.store" })}
+                    {label === SpaceType.OFFICE && intl.formatMessage({ id: "homepage.intro.products.office" })}
                 </span>
                 <div className="card-info">
                     <span className="card-info-area">
@@ -48,7 +48,9 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
                         {area}m&#178;
                     </span>
                     <span className="card-info-name">
-                        {name}
+                        {label === SpaceType.MEETING_ROOM && intl.formatMessage({ id: "homepage.intro.products.meeting-room" })}
+                        {label === SpaceType.STORE && intl.formatMessage({ id: "homepage.intro.products.store" })}
+                        {label === SpaceType.OFFICE && ( `${intl.formatMessage({ id: "homepage.intro.products.office" })} ${number ? number : ""}`)}
                     </span>
                     <hr />
                 </div>

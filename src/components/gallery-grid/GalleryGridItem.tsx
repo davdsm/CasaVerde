@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 
 interface IGalleryGridItem {
@@ -9,6 +10,7 @@ interface IGalleryGridItem {
 const GalleryGridItem: React.FunctionComponent<IGalleryGridItem> = ({ imageSrc, office, link }: IGalleryGridItem) => {
 
   const navigate = useNavigate();
+  const intl = useIntl();
 
   return (
     <button
@@ -16,14 +18,13 @@ const GalleryGridItem: React.FunctionComponent<IGalleryGridItem> = ({ imageSrc, 
       style={{ backgroundImage: `url(${imageSrc})` }}
       onClick={() => { 
         if (location.pathname !== link) {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           navigate(link);
         }
         else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
       }}
     >
       <div className="gallery-grid-item-hover">
-        <span>{ office }</span>
+        <span>{ /^E[1-9]$/.test(office) ? office : intl.formatMessage({ id: office }) }</span>
       </div>
     </button>
   )

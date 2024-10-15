@@ -1,5 +1,3 @@
-import TranslationsHelper from "../../../utils/TranslationsHelper";
-
 import FastInternet from "../../../assets/homepage/benefits/fast-internet.svg?react";
 import Parking from "../../../assets/homepage/benefits/parking.svg?react";
 import GreenSpaces from "../../../assets/homepage/benefits/green-spaces.svg?react";
@@ -13,52 +11,52 @@ const benefits = [
     {
         icon: FastInternet,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits.internet.title,
-        description: TranslationsHelper.all.homepage.benefits.internet.description,
+        title: "homepage.benefits.internet.title",
+        description: "homepage.benefits.internet.description",
     },
     {
         icon: Parking,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits.parking.title,
-        description: TranslationsHelper.all.homepage.benefits.parking.description,
+        title: "homepage.benefits.parking.title",
+        description: "homepage.benefits.parking.description",
     },
     {
         icon: GreenSpaces,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits["green-spaces"].title,
-        description: TranslationsHelper.all.homepage.benefits["green-spaces"].description,
+        title: "homepage.benefits.green-spaces.title",
+        description: "homepage.benefits.green-spaces.description",
     },
     {
         icon: CleaningService,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits.cleaning.title,
-        description: TranslationsHelper.all.homepage.benefits.cleaning.description,
+        title: "homepage.benefits.cleaning.title",
+        description: "homepage.benefits.cleaning.description",
         className: "bg-dark-green",
     },
     {
         icon: AC,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits.ac.title,
-        description: TranslationsHelper.all.homepage.benefits.ac.description,
+        title: "homepage.benefits.ac.title",
+        description: "homepage.benefits.ac.description",
         className: "bg-dark-gray",
     },
     {
         icon: Electricity,
         included: false,
-        title: TranslationsHelper.all.homepage.benefits.electricity.title,
-        description: TranslationsHelper.all.homepage.benefits.electricity.description,
+        title: "homepage.benefits.electricity.title",
+        description: "homepage.benefits.electricity.description",
     },
     {
         icon: MeetingRoom,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits["meeting-room"].title,
-        description: TranslationsHelper.all.homepage.benefits["meeting-room"].description,
+        title: "homepage.benefits.meeting-room.title",
+        description: "homepage.benefits.meeting-room.description",
     },
     {
         icon: Reception,
         included: true,
-        title: TranslationsHelper.all.homepage.benefits.reception.title,
-        description: TranslationsHelper.all.homepage.benefits.reception.description,
+        title: "homepage.benefits.reception.title",
+        description: "homepage.benefits.reception.description",
     }
 ];
 

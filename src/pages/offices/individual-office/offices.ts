@@ -14,79 +14,77 @@ const offices = {
     loja: {
         id: "Loja",
         area: 94.35,
-        name: "Loja",
-        price: 1500,
+        name: "homepage.intro.products.store",
         images: lojaImages,
     },
     meetingRoom: {
         id: "Sala Reuniões",
         area: 20.5,
-        name: "Sala Reuniões",
-        price: 0,
+        name: "homepage.intro.products.meeting-room",
         images: meetingRoomImages
     },
     gabinete1: {
         id: "Escritório 1",
         area: 27.25,
-        name: "Escritório 1",
-        price: 650,
-        images: gabinete1Images
+        name: "homepage.intro.products.office",
+        images: gabinete1Images,
+        number: 1,
     },
     gabinete2: {
         id: "Escritório 2",
         area: 20.2,
-        name: "Escritório 2",
-        price: 500,
-        images: gabinete2Images
+        name: "homepage.intro.products.office",
+        images: gabinete2Images,
+        number: 2,
     },
     gabinete3: {
         id: "Escritório 3",
         area: 30.75,
-        name: "Escritório 3",
-        price: 650,
-        images: gabinete3Images
+        name: "homepage.intro.products.office",
+        images: gabinete3Images,
+        number: 3,
     },
     gabinete4: {
         id: "Escritório 4",
         area: 22.15,
-        name: "Escritório 4",
-        price: 500,
-        images: gabinete4Images
+        name: "homepage.intro.products.office",
+        images: gabinete4Images,
+        number: 4,
     },
     gabinete5: {
         id: "Escritório 5",
         area: 22.2,
-        name: "Escritório 5",
-        price: 500,
-        images: gabinete5Images
+        name: "homepage.intro.products.office",
+        images: gabinete5Images,
+        number: 5,
     },
     gabinete6: {
         id: "Escritório 6",
         area: 23.25,
-        name: "Escritório 6",
-        price: 450,
-        images: gabinete6Images
+        name: "homepage.intro.products.office",
+        images: gabinete6Images,
+        number: 6,
     },
     gabinete7: {
         id: "Escritório 7",
         area: 24.8,
-        name: "Escritório 7",
-        price: 500,
-        images: gabinete7Images
+        name: "homepage.intro.products.office",
+        images: gabinete7Images,
+        number: 7,
     },
     gabinete8: {
         id: "Escritório 8",
         area: 20.2,
-        name: "Escritório 8",
-        price: 500,
-        images: gabinete8Images
+        name: "homepage.intro.products.office",
+        images: gabinete8Images,
+        number: 8,
     },
     gabinete9: {
         id: "Escritório 9",
         area: 8.4,
-        name: "Escritório 9",
-        price: 250,
-        images: gabinete9Images
+        name: "homepage.intro.products.office",
+        images: gabinete9Images,
+        number: 9,
     }
 };
 

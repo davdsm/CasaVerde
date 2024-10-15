@@ -1,6 +1,5 @@
 import React, { useReducer, useState } from "react";
 import Label from "../../components/label/Label";
-import TranslationsHelper from "../../utils/TranslationsHelper";
 import Title from "../../components/title/Title";
 import ContactsFormReducer, { ContactsFormUpdateType } from "./ContactsFormReducer";
 import Contact from "./Contact";
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { submitContactForm } from "../../services/services";
 import { Helmet } from "react-helmet-async";
+import { useIntl } from "react-intl";
 
 import Name from "../../assets/contacts/name.svg?react";
 import Email from "../../assets/contacts/email-field.svg?react";
@@ -38,12 +38,14 @@ const Contacts: React.FunctionComponent = () => {
     enableSumbit: false,
   });
 
-  const [submitButtonText, setSubmitButtonText] = useState<string>(TranslationsHelper.all.contacts.form.send);
+  const [submitButtonText, setSubmitButtonText] = useState<string>("contacts.form.send");
+
+  const intl = useIntl();
 
   return (
     <React.Fragment>
       <Helmet>
-        <title>Casa Verde | Contactos</title>
+        <title>Casa Verde | {intl.formatMessage({ id: "header.contacts" })}</title>
       </Helmet>
       <div className="contacts-page container">
         <div className="contact-form">
@@ -51,7 +53,7 @@ const Contacts: React.FunctionComponent = () => {
             <div className="adress" >
               <div className="icon" ><Location /></div>
               <span className="name">
-                {TranslationsHelper.all.homepage.intro.label}
+                {intl.formatMessage({ id: "homepage.intro.label" })}
               </span>
               <span>
                 {ADDRESS}
@@ -61,18 +63,18 @@ const Contacts: React.FunctionComponent = () => {
                   <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
                   <FontAwesomeIcon icon={faChevronRight} fontSize={"13px"} />
                 </div>
-                <span>{TranslationsHelper.all.contacts.maps}</span>
+                <span>{intl.formatMessage({ id: "contacts.maps" })}</span>
               </a>
             </div>
           </div>
           <div className="form" data-aos="fade-up" data-aos-duration="1500" >
-            <Label text={TranslationsHelper.all.contacts.form.label} />
-            <Title text={TranslationsHelper.all.contacts.form.title} />
+            <Label text={intl.formatMessage({ id: "contacts.form.label" })} />
+            <Title text={intl.formatMessage({ id: "contacts.form.title" })} />
             <div className="form-field" >
               <input
                 className={`form-field-input ${ContactsFormState.invalidName ? "invalid" : ""}`}
                 type="text"
-                placeholder={TranslationsHelper.all.contacts.form.fields.name}
+                placeholder={intl.formatMessage({ id: "contacts.form.fields.name" })}
                 value={ContactsFormState.name}
                 onChange={(event) => dispatchContactsFormUpdate({
                   type: ContactsFormUpdateType.UPDATE_NAME,
@@ -87,7 +89,7 @@ const Contacts: React.FunctionComponent = () => {
               <input
                 className={`form-field-input ${ContactsFormState.invalidEmail ? "invalid" : ""}`}
                 type="email"
-                placeholder={TranslationsHelper.all.contacts.form.fields.email}
+                placeholder={intl.formatMessage({ id: "contacts.form.fields.email" })}
                 value={ContactsFormState.email}
                 onChange={(event) => dispatchContactsFormUpdate({
                   type: ContactsFormUpdateType.UPDATE_EMAIL,
@@ -102,7 +104,7 @@ const Contacts: React.FunctionComponent = () => {
               <input
                 className={`form-field-input ${ContactsFormState.invalidContact ? "invalid" : ""}`}
                 type="text"
-                placeholder={TranslationsHelper.all.contacts.form.fields.contact}
+                placeholder={intl.formatMessage({ id: "contacts.form.fields.contact" })}
                 value={ContactsFormState.contact}
                 onChange={(event) => dispatchContactsFormUpdate({
                   type: ContactsFormUpdateType.UPDATE_CONTACT,
@@ -117,7 +119,7 @@ const Contacts: React.FunctionComponent = () => {
               <input
                 className={`form-field-input ${ContactsFormState.invalidSubject ? "invalid" : ""}`}
                 type="text"
-                placeholder={TranslationsHelper.all.contacts.form.fields.subject}
+                placeholder={intl.formatMessage({ id: "contacts.form.fields.subject" })}
                 value={ContactsFormState.subject}
                 onChange={(event) => dispatchContactsFormUpdate({
                   type: ContactsFormUpdateType.UPDATE_SUBJECT,
@@ -155,10 +157,10 @@ const Contacts: React.FunctionComponent = () => {
                   message: ContactsFormState.message
                 });
 
-                setSubmitButtonText(() => TranslationsHelper.all.contacts.form.sent);
+                setSubmitButtonText(() => intl.formatMessage({ id: "contacts.form.sent" }));
 
                 setTimeout(() => {
-                  setSubmitButtonText(() => TranslationsHelper.all.contacts.form.send)
+                  setSubmitButtonText(() => intl.formatMessage({ id: "contacts.form.send" }))
                 }, 5000);
 
                 dispatchContactsFormUpdate({
@@ -167,7 +169,7 @@ const Contacts: React.FunctionComponent = () => {
                 })
               }}
             >
-              {submitButtonText}
+              {intl.formatMessage({ id: submitButtonText })}
             </button>
           </div>
         </div>

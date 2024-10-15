@@ -1,4 +1,5 @@
 
+import { useIntl } from "react-intl";
 import "../../styles/components/Description.scss";
 
 interface IDescription {
@@ -7,9 +8,11 @@ interface IDescription {
 
 const Description: React.FunctionComponent<IDescription> = ({ text }: IDescription) => {
 
+  const intl = useIntl();
+
   return (
     <span className="description">
-      { text }
+      {intl.formatMessage({ id: text })}
     </span>
   )
 }

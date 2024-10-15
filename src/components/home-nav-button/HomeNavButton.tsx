@@ -4,6 +4,7 @@ import { faChevronRight, IconDefinition } from "@fortawesome/free-solid-svg-icon
 import { useNavigate } from "react-router-dom";
 
 import "../../styles/components/HomeNavButton.scss";
+import { useIntl } from "react-intl";
 
 interface IHomeNavButton {
   icon: IconDefinition;
@@ -14,15 +15,15 @@ interface IHomeNavButton {
 const HomeNavButton: React.FunctionComponent<IHomeNavButton> = ({ icon, text, link }: IHomeNavButton) => {
 
   const navigate = useNavigate();
+  const intl = useIntl();
 
   return (
     <button className="link" onClick={() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       navigate(link);
     }}>
         <div className="link-name">
             <span className="link-icon" ><FontAwesomeIcon icon={icon} fontSize={"11px"} /></span>
-            { text }
+            {intl.formatMessage({ id: text })}
         </div>
         <div className="link-arrow">
             <FontAwesomeIcon icon={faChevronRight} fontSize={"15px"} className="dark-green-60" />

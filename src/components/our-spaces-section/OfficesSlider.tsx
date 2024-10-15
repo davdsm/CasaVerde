@@ -47,7 +47,7 @@ const OfficesSlider: React.FunctionComponent<IOfficesSlider> = ({ exclude }: IOf
         data-aos-duration="2000"
       >
         {randomSpaces.map((space) => 
-          <SwiperSlide key={space.name}>
+          <SwiperSlide key={space.link}>
             <OfficeCard {...space} />
           </SwiperSlide>
         )}

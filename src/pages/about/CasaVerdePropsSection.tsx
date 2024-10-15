@@ -1,7 +1,11 @@
 import React from "react";
+import { useIntl } from "react-intl";
+
 import casaVerdeProps from "./casaVerdeProps";
 
 const CasaVerdePropsSection: React.FunctionComponent = () => {
+
+  const intl = useIntl();
 
   return (
     <div className="props-section">
@@ -12,10 +16,10 @@ const CasaVerdePropsSection: React.FunctionComponent = () => {
           </div>
           <div className="title-and-description">
             <span className="title">
-              {title}
+              { intl.formatMessage({ id: title }) }
             </span>
             <span className="description">
-              {description}
+              { intl.formatMessage({ id: description }) }
             </span>
           </div>
         </div>

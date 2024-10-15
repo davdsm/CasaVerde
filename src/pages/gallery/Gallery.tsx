@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import SectionNavButton from "../../components/section-nav-button/SectionNavButton";
-import TranslationsHelper from "../../utils/TranslationsHelper";
 import GridTemplate from "./GridTemplate";
 import { SpaceType } from "../../components/office-card/OfficeCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../Modal";
 import { Helmet } from "react-helmet-async";
+import { useIntl } from "react-intl";
 
 import galleryImages from "./galleryImages";
 import filters from "./filters";
@@ -27,6 +27,8 @@ const Gallery: React.FunctionComponent = () => {
   const [imageFullWidth, setImageFullWidth] = useState<string>();
 
   const imageFullWidthRef = useRef<HTMLDivElement>(null);
+
+  const intl = useIntl();
 
   const onFilter = (filter?: SpaceType) => {
 
@@ -77,7 +79,7 @@ const Gallery: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Casa Verde | Galeria</title>
+        <title>Casa Verde | {intl.formatMessage({ id: "header.gallery" })}</title>
       </Helmet>
       <div className="gallery container">
         <div className="filters" data-aos="fade-up" data-aos-duration="1500">
@@ -87,7 +89,7 @@ const Gallery: React.FunctionComponent = () => {
               className={`filter ${ filterSelected === type ?"active" : ""}`} 
               onClick={() => onFilter(type)}
             >
-              {name}
+              {intl.formatMessage({ id: name })}
             </button>
           )}
         </div>
@@ -106,7 +108,7 @@ const Gallery: React.FunctionComponent = () => {
           )}
         </div>
         { showLoadMoreButton && 
-          <SectionNavButton text={TranslationsHelper.all.gallery["load-more"]} onClick={onLoadMore} />
+          <SectionNavButton text={"gallery.load-more"} onClick={onLoadMore} />
         }
         {showImageFullWidth && 
           <Modal childrenRef={imageFullWidthRef}>
