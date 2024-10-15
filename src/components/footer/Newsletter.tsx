@@ -58,7 +58,7 @@ const Newsletter: React.FunctionComponent = () => {
             <div className="checkbox">
             <input 
                 type="checkbox"
-                id="terms-and-conditions"
+                id="terms-and-conditions-checkbox"
                 onClick={() => dispatchNewsletterFormUpdate({
                 type: NewsletterFormUpdateType.UPDATE_AGREEMENT,
                 payload: {}
@@ -70,7 +70,7 @@ const Newsletter: React.FunctionComponent = () => {
                 <FontAwesomeIcon className="checkbox-non-checked" icon={faSquare} />
             }
             </div>
-            <label htmlFor="terms-and-conditions">
+            <label htmlFor="terms-and-conditions-checkbox">
             {intl.formatMessage({ id: "footer.newsletter.checkbox" })}
             </label>
         </div>
