@@ -1,7 +1,10 @@
 {
   "header.homepage": "Home",
   "header.about": "About",
-  "header.offices": "Offices",
+  "header.spaces": "Spaces",
+  "header.spaces.common-spaces": "Common Spaces",
+  "header.spaces.offices": "Offices",
+  "header.spaces.commercial-space": "Commercial Spaces",
   "header.gallery": "Gallery",
   "header.contacts": "Contacts",
 
@@ -43,7 +46,10 @@
   "homepage.intro.products.office": "Office",
   "homepage.intro.products.offices": "Offices",
   "homepage.intro.products.meeting-room": "Meeting Room",
+  "homepage.intro.products.reception": "Reception",
   "homepage.intro.products.store": "Shop",
+  "homepage.intro.products.common-spaces": "Common Spaces",
+  "homepage.intro.products.commercial-space": "Commercial Space",
 
   "homepage.spaces.label": "Featured Spaces",
   "homepage.spaces.title": "Our Spaces",
@@ -55,7 +61,7 @@
   "homepage.benefits.internet.description": "Casa Verde has high-speed fiber optic internet and phone services.",
 
   "homepage.benefits.parking.title": "Parking",
-  "homepage.benefits.parking.description": "Private parking available for tenants and visitors.",
+  "homepage.benefits.parking.description": "Private parking available for tenants.",
 
   "homepage.benefits.green-spaces.title": "Green Spaces",
   "homepage.benefits.green-spaces.description": "Enjoy our wide range of outdoor common areas.",
@@ -105,9 +111,13 @@
   "about.props.refinement.title": "Refinement",
   "about.props.refinement.description": "Attention to detail, just for you.",
 
-  "offices.label": "Offices",
+  "offices.label": "Spaces",
   "offices.title": "Inside Exclusivity",
   "offices.price": "Price on request",
+
+  "spaces.common-spaces-description": "The common areas of Casa Verde consist of a reception area to welcome visitors or clients, with some special amenities that provide comfort and warmth to any guest. There is also a meeting room with seating capacity for around 8 people, offering privacy and a television for visual support for any related presentation.",
+  "spaces.commercial-space-description": "The commercial space of Casa Verde features a counter for public service and has an approximate size of 94m². In addition to this, it includes a private and easily accessible bathroom. The space was designed with rustic architecture in mind and a distinctive pattern characteristic of Casa Verde, offering tranquility and comfort. It also offers outdoor access with a naturally unique terrace. Furthermore, this space includes a storage room and an area for setting up a small kitchen, already equipped with a stove, electrical installations, and plumbing.",
+  "spaces.offices-description": "These are the 9 offices of Casa Verde, ranging from 20 to 30m², all with private bathrooms and the necessary comfort to be productive. For all the offices, we guarantee internet and air conditioning. Additionally, all Casa Verde clients can enjoy a private meeting in the meeting room free of charge, and have at their disposal a unique and exclusive reception service for visitors.",
 
   "gallery.load-more": "Load More",
   "gallery.filters.all": "All",

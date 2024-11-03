@@ -13,11 +13,11 @@ const IntroSection: React.FunctionComponent = () => {
             <div className="left-section" data-aos="fade-up" data-aos-duration="2000">
                 <div className="relative-element">
                     <div className="top-left-image"></div>
-                    <div className="bottom-right-image"></div>
+                    {/* <div className="bottom-right-image"></div>
                     <div className="bg-element">
                         <div className="dotted-bg"></div>
                         <div className="solid-bg"></div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="right-section" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">

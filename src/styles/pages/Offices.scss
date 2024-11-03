@@ -50,13 +50,16 @@
 
     .office-card {
         flex: 1 1 calc(calc(100% - 4rem) / 3);
+        max-width: calc(calc(100% - 4rem) / 3);
 
         @media (width >= 1000px) {
             &:nth-child(1) {
                 flex: 1 1 calc(calc(100% - 2rem) * 0.46);
+                max-width: 46%;
             }
             &:nth-child(2) {
                 flex: 1 1 calc(calc(100% - 2rem) * 0.51);
+                max-width: 51%;
             }
         }
 

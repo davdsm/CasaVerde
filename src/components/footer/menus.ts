@@ -9,7 +9,7 @@ const menus = [
             },
             {
                 name: "footer.menus.menu-1.option-2",
-                link: "/offices",
+                link: "/spaces/offices",
             },
             {
                 name: "footer.menus.menu-1.option-3",
@@ -22,15 +22,15 @@ const menus = [
         options: [
             {
                 name: "footer.menus.menu-2.option-1",
-                link: "/offices",
+                link: "/spaces/offices",
             },
             {
                 name: "footer.menus.menu-2.option-2",
-                link: "/offices/store",
+                link: "/spaces/commercial-space/store",
             },
             {
                 name: "footer.menus.menu-2.option-3",
-                link: "/offices/meeting-room",
+                link: "/spaces/common-spaces/meeting-room",
             }
         ]
     },
@@ -48,7 +48,6 @@ const menus = [
             {
                 name: "footer.menus.menu-3.option-3",
                 link: "https://www.livroreclamacoes.pt/Inicio/",
-                newTab: true,
             }
         ]
     }

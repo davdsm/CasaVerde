@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import GallerySection from "../../../components/gallery-section/GallerySection";
 import OurSpacesSection from "../../../components/our-spaces-section/OurSpacesSection";
 import IndividualOfficeInfo from "./IndividualOfficeInfo";
-import OfficeSlider from "./OfficeSlider";
 import { Helmet } from "react-helmet-async";
 import { useIntl } from "react-intl";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import offices from "./offices";
 
@@ -22,6 +21,7 @@ const IndividualOffice: React.FunctionComponent = () => {
   useEffect(() => {
     if ( id  === "store" ) setOffice(() => offices.loja)
     else if ( id  === "meeting-room" ) setOffice(() => offices.meetingRoom)
+    else if ( id  === "reception" ) setOffice(() => offices.reception)
     else if ( id  === "office1" ) setOffice(() => offices.gabinete1)
     else if ( id  === "office2" ) setOffice(() => offices.gabinete2)
     else if ( id  === "office3" ) setOffice(() => offices.gabinete3)
@@ -39,9 +39,25 @@ const IndividualOffice: React.FunctionComponent = () => {
         <title>Casa Verde | {intl.formatMessage({ id: office.name })}</title>
       </Helmet>
       <div className="individual-office container">
-        <OfficeSlider images={office.images} />
-        <GallerySection hideHeader={true} exclude={office.id} />
+        {/* <OfficeSlider images={office.images} /> */}
+        {/* <GallerySection hideHeader={true} exclude={office.id} /> */}
         <IndividualOfficeInfo {...office} />
+
+        <ResponsiveMasonry columnsCountBreakPoints={{ 50: 1, 300: 2, 500: 3 }}>
+          <Masonry className="space-gallery">
+            {office.images.map((image) => (
+                <img
+                  key={image.alt}
+                  className="space-gallery-image"
+                  src={image.src}
+                  alt={image.alt}
+                  data-aos="fade-up" 
+                  data-aos-duration="1500"
+                />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+
         <OurSpacesSection exclude={office.id} />
       </div>
     </React.Fragment>

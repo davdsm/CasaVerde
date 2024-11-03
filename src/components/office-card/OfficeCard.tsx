@@ -2,8 +2,6 @@
 import { useNavigate } from "react-router-dom";
 import { useIntl } from "react-intl";
 
-import Area from "../../assets/homepage/area.svg?react";
-
 import "../../styles/components/OfficeCard.scss";
 
 export enum SpaceType {
@@ -18,12 +16,12 @@ export enum SpaceType {
 interface IOfficeCard {
     imageSrc: string;
     label: SpaceType;
-    area: number;
+    // area: number;
     number?: number;
     link: string;
 }
 
-const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, area, number, link }: IOfficeCard) => {
+const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, number, link }: IOfficeCard) => {
 
     const navigate = useNavigate();
     const intl = useIntl();
@@ -39,16 +37,18 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, are
             <div className="card-inner-border">
                 <span className="card-label">
                     {label === SpaceType.MEETING_ROOM && intl.formatMessage({ id: "homepage.intro.products.meeting-room" })}
+                    {label === SpaceType.RECEPTION && intl.formatMessage({ id: "homepage.intro.products.reception" })}
                     {label === SpaceType.STORE && intl.formatMessage({ id: "homepage.intro.products.store" })}
                     {label === SpaceType.OFFICE && intl.formatMessage({ id: "homepage.intro.products.office" })}
                 </span>
                 <div className="card-info">
-                    <span className="card-info-area">
+                    {/* <span className="card-info-area">
                         <Area />
                         {area}m&#178;
-                    </span>
+                    </span> */}
                     <span className="card-info-name">
                         {label === SpaceType.MEETING_ROOM && intl.formatMessage({ id: "homepage.intro.products.meeting-room" })}
+                        {label === SpaceType.RECEPTION && intl.formatMessage({ id: "homepage.intro.products.reception" })}
                         {label === SpaceType.STORE && intl.formatMessage({ id: "homepage.intro.products.store" })}
                         {label === SpaceType.OFFICE && ( `${intl.formatMessage({ id: "homepage.intro.products.office" })} ${number ? number : ""}`)}
                     </span>

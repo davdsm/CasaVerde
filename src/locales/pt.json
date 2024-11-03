@@ -1,7 +1,10 @@
 {
   "header.homepage": "Início",
   "header.about": "Porquê",
-  "header.offices": "Escritórios",
+  "header.spaces": "Espaços",
+  "header.spaces.common-spaces": "Espaços Comuns",
+  "header.spaces.offices": "Escritórios",
+  "header.spaces.commercial-space": "Espaço Comercial",
   "header.gallery": "Galeria",
   "header.contacts": "Contactos",
 
@@ -44,7 +47,10 @@
   "homepage.intro.products.office": "Escritório",
   "homepage.intro.products.offices": "Escritórios",
   "homepage.intro.products.meeting-room": "Sala Reuniões",
+  "homepage.intro.products.reception": "Receção",
   "homepage.intro.products.store": "Loja",
+  "homepage.intro.products.common-spaces": "Espaços Comuns",
+  "homepage.intro.products.commercial-space": "Espaço Comercial",
 
   "homepage.spaces.label": "Espaços em Destaque",
   "homepage.spaces.title": "Os nossos espaços",
@@ -56,7 +62,7 @@
   "homepage.benefits.internet.description": "A Casa Verde oferece internet de fibra óptica de alta velocidade e serviço telefónico",
 
   "homepage.benefits.parking.title": "Estacionamento",
-  "homepage.benefits.parking.description": "Disponibilizamos estacionamento privativo para os inquilinos e visitantes",
+  "homepage.benefits.parking.description": "Disponibilizamos estacionamento privativo para os inquilinos",
 
   "homepage.benefits.green-spaces.title": "Espaços Verdes",
   "homepage.benefits.green-spaces.description": "A Casa Verde oferece uma vaste de espaços comuns exteriores como a sua manutenção",
@@ -106,9 +112,13 @@
   "about.props.refinement.title": "Requinte",
   "about.props.refinement.description": "Detalhes e pormenores a pensar no cliente",
 
-  "offices.label": "Escritórios",
+  "offices.label": "Espaços",
   "offices.title": "No Interior da Exclusividade",
   "offices.price": "Preço sob consulta",
+
+  "spaces.common-spaces-description": "Os espaços comuns da Casa Verde são constituídos por um espaço de recepção para receber visitantes ou clientes com algumas comodidades especiais que oferecem o conforto e o acolhimento a qualquer visitante. E uma sala de reuniões com capacidade para cerca de 8 pessoas sentadas, oferecendo privacidade, um televisor para utilização de suporte visual para alguma apresentação associada.",
+  "spaces.commercial-space-description": "O Espaço comercial da Casa Verde dispõe de um balcão para  serviço ao público e apresenta uma dimensão aproximadamente de 94m². Além de tudo isto, inclui uma casa de banho privada e de fácil acesso. O espaço foi desenhado a pensar numa arquitetura rústica e com um padrão bem caraterístico da Casa Verde, que oferece tranquilidade e conforto. Oferece ainda um acesso ao exterior com uma esplanada naturalmente única. Além disto, este espaço inclui um armazém e local para criação de uma cozinha pequena, já equipada com fogão, instalações elétricas e pichelaria.",
+  "spaces.offices-description": "Estes são os 9 escritórios da Casa Verde que vão dos 20 aos 30m² , todos com casa de banho privada e com conforto necessário para ser produtivo. Para todos os escritórios garantimos internet e ar condicionado. Porém, todos os clientes da Casa Verde podem usufruir gratuitamente de uma reunião privativa na sala de reuniões, e ainda ter à disposição um serviço de recepção único e exclusivo para os visitantes.",
 
   "gallery.load-more": "Carregar mais",
   "gallery.filters.all": "Todos",

@@ -51,14 +51,15 @@
 
             @media (width < 1000px) {
                 width: 60%;
-                padding-bottom: 20%;
+                // padding-bottom: 20%;
+                padding: 0 0 3.44rem 0;
             }
             @media (width < 600px) {
                 width: 80%;
             }
             @media (width < 500px) {
                 width: 100%;
-                padding-bottom: 35%;
+                // padding-bottom: 35%;
             }
 
             .relative-element {
@@ -78,14 +79,15 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                width: 360px;
-                border: 10px solid $white;
+                // width: 360px;
+                width: 87%;
+                // border: 10px solid $white;
                 aspect-ratio: 1520 / 1441;
                 height: auto;
 
-                @media (width < 1360px) {
-                    width: 62%;
-                }
+                // @media (width < 1360px) {
+                //     width: 62%;
+                // }
 
                 img {
                     width: 100%;
