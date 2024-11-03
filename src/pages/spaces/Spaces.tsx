@@ -47,16 +47,21 @@ const Spaces: React.FunctionComponent<ISpaces> = ({ spacesType }: ISpaces) => {
       </Helmet>
       <div className="offices container">
         <div className="label-and-title">
-          <Label text={"offices.label"} />
+          <Label text={
+            spacesType === SpacesType.COMMON_SPACES && "header.spaces.common-spaces" ||
+            spacesType === SpacesType.OFFICES && "header.spaces.offices" ||
+            spacesType === SpacesType.COMMERCIAL_SPACE && "header.spaces.commercial-space" || 
+            "header.spaces"
+          } />
           <Title text={"offices.title"} />
+          { spacesType !== SpacesType.ALL &&
+            <div className="description" data-aos="fade-up" data-aos-duration="1500">
+              { spacesType === SpacesType.COMMON_SPACES ? intl.formatMessage({ id: "spaces.common-spaces-description" }) : "" }
+              { spacesType === SpacesType.OFFICES ? intl.formatMessage({ id: "spaces.offices-description" }) : "" }
+              { spacesType === SpacesType.COMMERCIAL_SPACE ? intl.formatMessage({ id: "spaces.commercial-space-description" }) : "" }
+            </div>
+          }
         </div>
-        { spacesType !== SpacesType.ALL &&
-          <div className="description" data-aos="fade-up" data-aos-duration="1500">
-            { spacesType === SpacesType.COMMON_SPACES ? intl.formatMessage({ id: "spaces.common-spaces-description" }) : "" }
-            { spacesType === SpacesType.OFFICES ? intl.formatMessage({ id: "spaces.offices-description" }) : "" }
-            { spacesType === SpacesType.COMMERCIAL_SPACE ? intl.formatMessage({ id: "spaces.commercial-space-description" }) : "" }
-          </div>
-        }
         <div className="offices-grid">
           {visibleSpaces.map((space) => 
             <OfficeCard key={space.imageSrc} {...space} />

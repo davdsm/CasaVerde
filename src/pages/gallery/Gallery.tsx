@@ -7,15 +7,25 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../../Modal";
 import { Helmet } from "react-helmet-async";
 import { useIntl } from "react-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Navigation } from "swiper/modules";
+import SliderNavigation from "../spaces/individual-space/SliderNavigation";
 
 import galleryImages from "./galleryImages";
 import filters from "./filters";
 
+
 import "../../styles/pages/Gallery.scss";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 
 const Gallery: React.FunctionComponent = () => {
 
   type GalleryType = typeof galleryImages;
+
+  const [filteredImages, setFilteredImages] = useState<GalleryType>(galleryImages);
 
   const [gridTemplateImages, setGridTemplateImages] = useState<GalleryType[]>([galleryImages.slice(0, 7)]);
   const [gridTemplateRows, setGridTemplateRows] = useState<number[]>([4]);
@@ -24,7 +34,7 @@ const Gallery: React.FunctionComponent = () => {
   const [areAllImagesShown, setAreAllImagesShown] = useState<boolean>(galleryImages.length <= 7);
 
   const [showImageFullWidth, setShowImageFullWidth] = useState<boolean>(false);
-  const [imageFullWidth, setImageFullWidth] = useState<string>();
+  const [imageFullWidthIndex, setImageFullWidthIndex] = useState<number>(0);
 
   const imageFullWidthRef = useRef<HTMLDivElement>(null);
 
@@ -37,6 +47,7 @@ const Gallery: React.FunctionComponent = () => {
 
     if (filter) {
       galleryClone = [...galleryImages.filter(({ type }) => type === filter)];
+      setFilteredImages([...galleryClone]);
     }
 
     if (!areAllImagesShown) {
@@ -99,7 +110,8 @@ const Gallery: React.FunctionComponent = () => {
               {gridTemplateImages[index].map(({ src, alt }) => 
                 <div key={alt} className="grid-image" data-aos="fade-up" data-aos-duration="1500" >
                   <button style={{ backgroundImage: `url(${src})` }} onClick={() => {
-                    setImageFullWidth(src);
+                    const imageFullWidthIndex = filteredImages.findIndex((image) => image.src === src);
+                    setImageFullWidthIndex(imageFullWidthIndex);
                     setShowImageFullWidth(true);
                   }}></button>
                 </div>
@@ -115,19 +127,38 @@ const Gallery: React.FunctionComponent = () => {
             <div ref={imageFullWidthRef} id="image-full-width">
               <button className="close-mobile-menu" onClick={() => {
                   imageFullWidthRef.current && (imageFullWidthRef.current.style.animationName = "fade-out-left-100");
-                  setShowImageFullWidth(!showImageFullWidth);
+                  setTimeout(() => setShowImageFullWidth(!showImageFullWidth), 1000);
                 }} >
                 <FontAwesomeIcon icon={faXmark} fontSize={"30px"} />
               </button>
-              <img 
-                src={imageFullWidth}
-                alt="image-full-width"
-                onLoad={(element) => {
-                  if (element.currentTarget.width > element.currentTarget.height) {
-                    element.currentTarget.className = "horizontal";
-                  }
-                }}
-              />
+              <div className="gallery-slider">
+                <Swiper
+                  initialSlide={imageFullWidthIndex}
+                  slidesPerView={1}
+                  modules={[Navigation, EffectFade]}
+                  navigation={true}
+                  loop={true}
+                  effect={"fade"}
+                  fadeEffect={{
+                    crossFade: true
+                  }}
+                >
+                  {filteredImages.map(({ src, alt }) => 
+                    <SwiperSlide key={alt} > 
+                      <img
+                        src={src}
+                        alt="image-full-width"
+                        onLoad={(element) => {
+                          if (element.currentTarget.width > element.currentTarget.height) {
+                            element.currentTarget.className = "horizontal";
+                          }
+                        }}
+                      />
+                    </SwiperSlide>
+                  )}
+                  <SliderNavigation />
+                </Swiper>
+              </div>
             </div>
           </Modal>
         }

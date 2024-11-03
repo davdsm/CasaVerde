@@ -159,8 +159,10 @@
         }
     }
 
-    button:not(.language-button) {
+    button:not(.language-button),
+    a:not(.language-button) {
         background-color: transparent;
+        text-decoration: none;
         border: none;
 
         color: $header-gray-text;
