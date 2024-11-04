@@ -1,4 +1,5 @@
 import { useIntl } from "react-intl";
+import { Link } from "react-router-dom";
 
 interface IMenu {
     title: string;
@@ -19,16 +20,16 @@ const Menu: React.FunctionComponent<IMenu> = ({ title, options }: IMenu) => {
         </span>
         <div className="menu-options">
             {options.map(({ name, link }) => 
-                <a 
+                <Link 
                     key={name}
                     className="menu-option"
-                    href={link}
+                    to={link}
                     data-aos="fade-up"
                     data-delay="500"
                     data-aos-duration="1500"
                 >
                     {intl.formatMessage({ id: name })}
-                </a>
+                </Link>
             )}
         </div>
     </div>

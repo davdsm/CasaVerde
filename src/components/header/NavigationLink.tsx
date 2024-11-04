@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import NavigationMenu from "./NavigationMenu";
@@ -44,9 +44,9 @@ const NavigationLink: React.FunctionComponent<INavigationLink> = ({ href, id, te
             { childNavigationLinks ? 
                 <NavigationMenu href={href} id={id} text={text} childNavigationLinks={childNavigationLinks} onClickCallback={onClickCallback} />
                 :
-                <a id={id} href={href} className="navigation-link" style={isActive ? { color: "#008D36" } : undefined} onClick={() => onNavigate()} >
+                <Link id={id} to={href} className="navigation-link" style={isActive ? { color: "#008D36" } : undefined} onClick={() => onNavigate()} >
                     {intl.formatMessage({ id: text })}
-                </a>
+                </Link>
             }
         </React.Fragment>
     )
