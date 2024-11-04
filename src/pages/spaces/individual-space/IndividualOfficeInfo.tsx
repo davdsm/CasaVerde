@@ -1,6 +1,6 @@
 import { useIntl } from "react-intl";
+import { Link } from "react-router-dom";
 // import Area from "../../../assets/homepage/area.svg?react";
-import { useNavigate } from "react-router-dom";
 
 interface IIndividualOfficeInfo {
   name: string,
@@ -12,7 +12,6 @@ const IndividualOfficeInfo: React.FunctionComponent<IIndividualOfficeInfo> = ({
 }: IIndividualOfficeInfo) => {
 
   const intl = useIntl();
-  const navigate = useNavigate();
 
   return (
     <div className="individual-office-info">
@@ -26,9 +25,9 @@ const IndividualOfficeInfo: React.FunctionComponent<IIndividualOfficeInfo> = ({
           {intl.formatMessage({ id: name })} { number ? number : "" }
         </span>
       </span>
-      <button className="price" data-aos="fade-up" data-aos-duration="1500" onClick={() => navigate("/contacts")} >
+      <Link className="price" data-aos="fade-up" data-aos-duration="1500" to={"/contacts"} >
         {intl.formatMessage({ id: "offices.price" })}
-      </button>
+      </Link>
     </div>
   )
 }

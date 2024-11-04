@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-button.link {
+a.link{
     padding: 1rem 1.3125rem;
     color: $dark-gray;
     font-size: 1.25rem;
@@ -9,6 +9,7 @@ button.link {
     border: none;
     border-radius: 10px;
     font-weight: 500;
+    text-decoration: none;
 
     display: flex;
     flex-direction: row;

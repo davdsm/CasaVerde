@@ -1,6 +1,6 @@
 
-import { useNavigate } from "react-router-dom";
 import { useIntl } from "react-intl";
+import { Link } from "react-router-dom";
 
 import "../../styles/components/OfficeCard.scss";
 
@@ -23,16 +23,10 @@ interface IOfficeCard {
 
 const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, number, link }: IOfficeCard) => {
 
-    const navigate = useNavigate();
     const intl = useIntl();
 
     return (
-        <button className="office-card" onClick={() => {
-            if (location.pathname !== link) {
-                navigate(link);
-            }
-            else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
-        }} data-aos="fade-up" data-aos-duration="2000" >
+        <Link className="office-card" to={link} data-aos="fade-up" data-aos-duration="2000" >
             <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>
             <div className="card-inner-border">
                 <span className="card-label">
@@ -55,7 +49,7 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, num
                     <hr />
                 </div>
             </div>
-      </button>
+      </Link>
     )
   }
   

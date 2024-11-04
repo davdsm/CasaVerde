@@ -1,5 +1,6 @@
 @import "../variables.scss";
 
+a.section-nav-button,
 button.section-nav-button {
     padding: 0.8rem 2.25rem 0.8rem 3.25rem;
     color: $dark-gray;
@@ -9,6 +10,7 @@ button.section-nav-button {
     border: 1px solid $label-border-gray;
     border-radius: 15px;
     font-weight: 500;
+    text-decoration: none;
 
     display: flex;
     flex-direction: row;

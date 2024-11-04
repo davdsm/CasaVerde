@@ -4,7 +4,7 @@ import GreenLogo from "../../assets/logo/logo-green.png";
 import NavigationLink from "./NavigationLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { navigationLinks } from "./navigation-links";
 import Modal from "../../Modal";
 import { Locale } from "../../App";
@@ -19,7 +19,6 @@ const Header: React.FunctionComponent<IHeader> = ({ locale }: IHeader) => {
 
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
 
-  const navigate = useNavigate();
   const mobileHeaderRef = useRef<HTMLDivElement>(null);
 
   const languageButtons = (
@@ -67,14 +66,9 @@ const Header: React.FunctionComponent<IHeader> = ({ locale }: IHeader) => {
       }
       <div id="header" className="header" style={{ top: 0 }}>
         <div className="container">
-          <button className="logo" onClick={() => {
-            if (location.pathname !== "/") {
-              navigate("/");
-            }
-            else { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }
-          }}>
+          <Link className="logo" to={"/"} >
             <img src={GreenLogo} alt="logo" />
-          </button>
+          </Link>
           <div className="navigation-links">
             { navigationLinks.map((navigationLink) => <NavigationLink key={navigationLink.id} {...navigationLink} />) }
           </div>
