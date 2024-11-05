@@ -29,12 +29,12 @@ const OfficeCard: React.FunctionComponent<IOfficeCard> = ({ imageSrc, label, num
         <Link className="office-card" to={link} data-aos="fade-up" data-aos-duration="2000" >
             <div className="office-card-background" style={{ backgroundImage: `url(${imageSrc})` }}></div>
             <div className="card-inner-border">
-                <span className="card-label">
+                {/* <span className="card-label">
                     {label === SpaceType.MEETING_ROOM && intl.formatMessage({ id: "homepage.intro.products.meeting-room" })}
                     {label === SpaceType.RECEPTION && intl.formatMessage({ id: "homepage.intro.products.reception" })}
                     {label === SpaceType.STORE && intl.formatMessage({ id: "homepage.intro.products.store" })}
                     {label === SpaceType.OFFICE && intl.formatMessage({ id: "homepage.intro.products.office" })}
-                </span>
+                </span> */}
                 <div className="card-info">
                     {/* <span className="card-info-area">
                         <Area />
